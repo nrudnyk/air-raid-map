@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C0AD82E280FE4E20095ACCA /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
+		9C0AD82F280FE4E20095ACCA /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
+		9C0AD831280FE4EB0095ACCA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD830280FE4EB0095ACCA /* MapView.swift */; };
+		9C0AD832280FE4EB0095ACCA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD830280FE4EB0095ACCA /* MapView.swift */; };
+		9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
+		9C278F97281071A700811961 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
+		9C9E00012810807800410B75 /* AlertStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* AlertStateModel.swift */; };
+		9C9E00022810807800410B75 /* AlertStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* AlertStateModel.swift */; };
+		9C9E00032810807800410B75 /* AlertStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* AlertStateModel.swift */; };
+		9C9EFFF9281077E600410B75 /* test-sirens.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C9EFFF8281077E600410B75 /* test-sirens.json */; };
+		9C9EFFFA281077E600410B75 /* test-sirens.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C9EFFF8281077E600410B75 /* test-sirens.json */; };
+		9C9EFFFB281077E600410B75 /* test-sirens.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C9EFFF8281077E600410B75 /* test-sirens.json */; };
+		9C9EFFFD28107F0000410B75 /* RegionStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */; };
+		9C9EFFFE28107F0000410B75 /* RegionStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */; };
+		9C9EFFFF28107F0000410B75 /* RegionStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */; };
+		9CAB4DD12810A79400812938 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
+		9CAB4DD22810A79400812938 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
+		9CAB4DD32810A7AE00812938 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
+		9CAB4DD42810A7AF00812938 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
+		9CACBE712810AE5F004B79FC /* air-raid-map.app in Resources */ = {isa = PBXBuildFile; fileRef = 9CF79EC9280FD21B00FBAE90 /* air-raid-map.app */; };
+		9CE2A6C52810042900241EB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC3280FD21A00FBAE90 /* ContentView.swift */; };
+		9CE2A6C62810044600241EB4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD830280FE4EB0095ACCA /* MapView.swift */; };
+		9CE2A6C72810044A00241EB4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
+		9CE2A6C8281004E000241EB4 /* AirRaidMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC2280FD21A00FBAE90 /* AirRaidMapApp.swift */; };
+		9CE2A6CA2810054E00241EB4 /* regions.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9CE2A6C92810054E00241EB4 /* regions.geojson */; };
+		9CE2A6CB2810054E00241EB4 /* regions.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9CE2A6C92810054E00241EB4 /* regions.geojson */; };
+		9CE2A6CC2810054E00241EB4 /* regions.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9CE2A6C92810054E00241EB4 /* regions.geojson */; };
+		9CE2A6D62810414000241EB4 /* RegionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2A6D52810414000241EB4 /* RegionsRepository.swift */; };
+		9CE2A6D72810414000241EB4 /* RegionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2A6D52810414000241EB4 /* RegionsRepository.swift */; };
+		9CE2A6D82810414000241EB4 /* RegionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2A6D52810414000241EB4 /* RegionsRepository.swift */; };
+		9CE2A6DA2810539200241EB4 /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2A6D92810539200241EB4 /* RegionModel.swift */; };
+		9CE2A6DB2810539200241EB4 /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2A6D92810539200241EB4 /* RegionModel.swift */; };
+		9CE2A6DC2810539200241EB4 /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2A6D92810539200241EB4 /* RegionModel.swift */; };
+		9CEBC01928115D6300C16CD0 /* Assets-tvOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CEBC01228115D6300C16CD0 /* Assets-tvOS.xcassets */; };
+		9CF79ED2280FD21B00FBAE90 /* AirRaidMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC2280FD21A00FBAE90 /* AirRaidMapApp.swift */; };
+		9CF79ED3280FD21B00FBAE90 /* AirRaidMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC2280FD21A00FBAE90 /* AirRaidMapApp.swift */; };
+		9CF79ED4280FD21B00FBAE90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC3280FD21A00FBAE90 /* ContentView.swift */; };
+		9CF79ED5280FD21B00FBAE90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC3280FD21A00FBAE90 /* ContentView.swift */; };
+		9CF79ED6280FD21B00FBAE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */; };
+		9CF79ED7280FD21B00FBAE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9CACBE722810AE5F004B79FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CF79EBD280FD21A00FBAE90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CF79EC8280FD21B00FBAE90;
+			remoteInfo = "air-raid-map (iOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		9C0AD830280FE4EB0095ACCA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		9C278F94281061E500811961 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
+		9C278F96281071A700811961 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9C9E00002810807800410B75 /* AlertStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStateModel.swift; sourceTree = "<group>"; };
+		9C9EFFF8281077E600410B75 /* test-sirens.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-sirens.json"; sourceTree = "<group>"; };
+		9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStateModel.swift; sourceTree = "<group>"; };
+		9CE2A6B72810041000241EB4 /* air-raid-map (tvOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "air-raid-map (tvOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CE2A6C92810054E00241EB4 /* regions.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = regions.geojson; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
+		9CE2A6D52810414000241EB4 /* RegionsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionsRepository.swift; sourceTree = "<group>"; };
+		9CE2A6D92810539200241EB4 /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
+		9CEBC01228115D6300C16CD0 /* Assets-tvOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets-tvOS.xcassets"; sourceTree = "<group>"; };
+		9CEBC01328115D6300C16CD0 /* macOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		9CF79EC2280FD21A00FBAE90 /* AirRaidMapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirRaidMapApp.swift; sourceTree = "<group>"; };
+		9CF79EC3280FD21A00FBAE90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9CF79EC9280FD21B00FBAE90 /* air-raid-map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "air-raid-map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF79ECF280FD21B00FBAE90 /* air-raid-map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "air-raid-map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9CE2A6B42810041000241EB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF79EC6280FD21B00FBAE90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF79ECC280FD21B00FBAE90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C278F93281061CE00811961 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C278F94281061E500811961 /* MapViewRepresentable.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9CE2A6B2281002CD00241EB4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9CEBC01228115D6300C16CD0 /* Assets-tvOS.xcassets */,
+				9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */,
+				9CEBC01328115D6300C16CD0 /* macOS.entitlements */,
+				9CE2A6C92810054E00241EB4 /* regions.geojson */,
+				9C9EFFF8281077E600410B75 /* test-sirens.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9CE2A6CF28103EEE00241EB4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9C278F96281071A700811961 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9CE2A6D42810414000241EB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CE2A6D52810414000241EB4 /* RegionsRepository.swift */,
+				9CE2A6D92810539200241EB4 /* RegionModel.swift */,
+				9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */,
+				9C9E00002810807800410B75 /* AlertStateModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9CF79EBC280FD21A00FBAE90 = {
+			isa = PBXGroup;
+			children = (
+				9CE2A6D42810414000241EB4 /* Model */,
+				9CF79ECA280FD21B00FBAE90 /* Products */,
+				9CE2A6B2281002CD00241EB4 /* Resources */,
+				9CE2A6CF28103EEE00241EB4 /* Utils */,
+				9C278F93281061CE00811961 /* Views */,
+				9CF79EC2280FD21A00FBAE90 /* AirRaidMapApp.swift */,
+				9CF79EC3280FD21A00FBAE90 /* ContentView.swift */,
+				9C0AD830280FE4EB0095ACCA /* MapView.swift */,
+				9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */,
+			);
+			sourceTree = "<group>";
+		};
+		9CF79ECA280FD21B00FBAE90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CF79EC9280FD21B00FBAE90 /* air-raid-map.app */,
+				9CF79ECF280FD21B00FBAE90 /* air-raid-map.app */,
+				9CE2A6B72810041000241EB4 /* air-raid-map (tvOS).app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9CE2A6B62810041000241EB4 /* air-raid-map (tvOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CE2A6C22810041100241EB4 /* Build configuration list for PBXNativeTarget "air-raid-map (tvOS)" */;
+			buildPhases = (
+				9CE2A6B32810041000241EB4 /* Sources */,
+				9CE2A6B42810041000241EB4 /* Frameworks */,
+				9CE2A6B52810041000241EB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CACBE732810AE5F004B79FC /* PBXTargetDependency */,
+			);
+			name = "air-raid-map (tvOS)";
+			packageProductDependencies = (
+			);
+			productName = "air-raid-map (tvOS)";
+			productReference = 9CE2A6B72810041000241EB4 /* air-raid-map (tvOS).app */;
+			productType = "com.apple.product-type.application";
+		};
+		9CF79EC8280FD21B00FBAE90 /* air-raid-map (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CF79EDA280FD21B00FBAE90 /* Build configuration list for PBXNativeTarget "air-raid-map (iOS)" */;
+			buildPhases = (
+				9CF79EC5280FD21B00FBAE90 /* Sources */,
+				9CF79EC6280FD21B00FBAE90 /* Frameworks */,
+				9CF79EC7280FD21B00FBAE90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "air-raid-map (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "air-raid-map (iOS)";
+			productReference = 9CF79EC9280FD21B00FBAE90 /* air-raid-map.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9CF79ECE280FD21B00FBAE90 /* air-raid-map (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CF79EDD280FD21B00FBAE90 /* Build configuration list for PBXNativeTarget "air-raid-map (macOS)" */;
+			buildPhases = (
+				9CF79ECB280FD21B00FBAE90 /* Sources */,
+				9CF79ECC280FD21B00FBAE90 /* Frameworks */,
+				9CF79ECD280FD21B00FBAE90 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "air-raid-map (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "air-raid-map (macOS)";
+			productReference = 9CF79ECF280FD21B00FBAE90 /* air-raid-map.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9CF79EBD280FD21A00FBAE90 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					9CE2A6B62810041000241EB4 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					9CF79EC8280FD21B00FBAE90 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					9CF79ECE280FD21B00FBAE90 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 9CF79EC0280FD21A00FBAE90 /* Build configuration list for PBXProject "air-raid-map" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9CF79EBC280FD21A00FBAE90;
+			packageReferences = (
+			);
+			productRefGroup = 9CF79ECA280FD21B00FBAE90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9CF79EC8280FD21B00FBAE90 /* air-raid-map (iOS) */,
+				9CF79ECE280FD21B00FBAE90 /* air-raid-map (macOS) */,
+				9CE2A6B62810041000241EB4 /* air-raid-map (tvOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9CE2A6B52810041000241EB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C9EFFFB281077E600410B75 /* test-sirens.json in Resources */,
+				9CE2A6CC2810054E00241EB4 /* regions.geojson in Resources */,
+				9CACBE712810AE5F004B79FC /* air-raid-map.app in Resources */,
+				9CEBC01928115D6300C16CD0 /* Assets-tvOS.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF79EC7280FD21B00FBAE90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C9EFFF9281077E600410B75 /* test-sirens.json in Resources */,
+				9CF79ED6280FD21B00FBAE90 /* Assets.xcassets in Resources */,
+				9CE2A6CA2810054E00241EB4 /* regions.geojson in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF79ECD280FD21B00FBAE90 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C9EFFFA281077E600410B75 /* test-sirens.json in Resources */,
+				9CF79ED7280FD21B00FBAE90 /* Assets.xcassets in Resources */,
+				9CE2A6CB2810054E00241EB4 /* regions.geojson in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9CE2A6B32810041000241EB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CAB4DD42810A7AF00812938 /* MapViewRepresentable.swift in Sources */,
+				9CE2A6C52810042900241EB4 /* ContentView.swift in Sources */,
+				9CAB4DD22810A79400812938 /* Extensions.swift in Sources */,
+				9C9EFFFF28107F0000410B75 /* RegionStateModel.swift in Sources */,
+				9C9E00032810807800410B75 /* AlertStateModel.swift in Sources */,
+				9CE2A6DC2810539200241EB4 /* RegionModel.swift in Sources */,
+				9CE2A6C8281004E000241EB4 /* AirRaidMapApp.swift in Sources */,
+				9CE2A6C62810044600241EB4 /* MapView.swift in Sources */,
+				9CE2A6C72810044A00241EB4 /* MapViewModel.swift in Sources */,
+				9CE2A6D82810414000241EB4 /* RegionsRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF79EC5280FD21B00FBAE90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C9EFFFD28107F0000410B75 /* RegionStateModel.swift in Sources */,
+				9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */,
+				9CF79ED4280FD21B00FBAE90 /* ContentView.swift in Sources */,
+				9CE2A6DA2810539200241EB4 /* RegionModel.swift in Sources */,
+				9C278F97281071A700811961 /* Extensions.swift in Sources */,
+				9C0AD831280FE4EB0095ACCA /* MapView.swift in Sources */,
+				9CF79ED2280FD21B00FBAE90 /* AirRaidMapApp.swift in Sources */,
+				9C0AD82E280FE4E20095ACCA /* MapViewModel.swift in Sources */,
+				9C9E00012810807800410B75 /* AlertStateModel.swift in Sources */,
+				9CE2A6D62810414000241EB4 /* RegionsRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF79ECB280FD21B00FBAE90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CAB4DD32810A7AE00812938 /* MapViewRepresentable.swift in Sources */,
+				9CF79ED5280FD21B00FBAE90 /* ContentView.swift in Sources */,
+				9CAB4DD12810A79400812938 /* Extensions.swift in Sources */,
+				9C9EFFFE28107F0000410B75 /* RegionStateModel.swift in Sources */,
+				9C9E00022810807800410B75 /* AlertStateModel.swift in Sources */,
+				9CE2A6DB2810539200241EB4 /* RegionModel.swift in Sources */,
+				9C0AD832280FE4EB0095ACCA /* MapView.swift in Sources */,
+				9CF79ED3280FD21B00FBAE90 /* AirRaidMapApp.swift in Sources */,
+				9C0AD82F280FE4E20095ACCA /* MapViewModel.swift in Sources */,
+				9CE2A6D72810414000241EB4 /* RegionsRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9CACBE732810AE5F004B79FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CF79EC8280FD21B00FBAE90 /* air-raid-map (iOS) */;
+			targetProxy = 9CACBE722810AE5F004B79FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9CE2A6C32810041100241EB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FV78YE336Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nrudnyk.air-raid-map";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 15.2;
+			};
+			name = Debug;
+		};
+		9CE2A6C42810041100241EB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FV78YE336Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nrudnyk.air-raid-map";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 15.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9CF79ED8280FD21B00FBAE90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9CF79ED9280FD21B00FBAE90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		9CF79EDB280FD21B00FBAE90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FV78YE336Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nrudnyk.air-raid-map";
+				PRODUCT_NAME = "air-raid-map";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9CF79EDC280FD21B00FBAE90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FV78YE336Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nrudnyk.air-raid-map";
+				PRODUCT_NAME = "air-raid-map";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9CF79EDE280FD21B00FBAE90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Resources/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FV78YE336Y;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nrudnyk.air-raid-map";
+				PRODUCT_NAME = "air-raid-map";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9CF79EDF280FD21B00FBAE90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Resources/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FV78YE336Y;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nrudnyk.air-raid-map";
+				PRODUCT_NAME = "air-raid-map";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9CE2A6C22810041100241EB4 /* Build configuration list for PBXNativeTarget "air-raid-map (tvOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CE2A6C32810041100241EB4 /* Debug */,
+				9CE2A6C42810041100241EB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CF79EC0280FD21A00FBAE90 /* Build configuration list for PBXProject "air-raid-map" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CF79ED8280FD21B00FBAE90 /* Debug */,
+				9CF79ED9280FD21B00FBAE90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CF79EDA280FD21B00FBAE90 /* Build configuration list for PBXNativeTarget "air-raid-map (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CF79EDB280FD21B00FBAE90 /* Debug */,
+				9CF79EDC280FD21B00FBAE90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CF79EDD280FD21B00FBAE90 /* Build configuration list for PBXNativeTarget "air-raid-map (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CF79EDE280FD21B00FBAE90 /* Debug */,
+				9CF79EDF280FD21B00FBAE90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9CF79EBD280FD21A00FBAE90 /* Project object */;
+}

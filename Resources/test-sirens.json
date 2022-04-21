@@ -1,0 +1,30 @@
+{
+    "states":[
+        {"id":1,"name":"Вінницька область","name_en":"Vinnytsia oblast","alert":true,"changed":"2022-04-20T19:49:41+03:00"},
+        {"id":2,"name":"Волинська область","name_en":"Volyn oblast","alert":true,"changed":"2022-04-20T20:10:14+03:00"},
+        {"id":3,"name":"Дніпропетровська область","name_en":"Dnipropetrovsk oblast","alert":true,"changed":"2022-04-20T20:13:03+03:00"},
+        {"id":4,"name":"Донецька область","name_en":"Donetsk oblast","alert":false,"changed":"2022-04-20T19:30:53+03:00"},
+        {"id":5,"name":"Житомирська область","name_en":"Zhytomyr oblast","alert":true,"changed":"2022-04-20T20:15:56+03:00"},
+        {"id":6,"name":"Закарпатська область","name_en":"Zakarpattia oblast","alert":false,"changed":"2022-04-19T02:27:44+03:00"},
+        {"id":7,"name":"Запорізька область","name_en":"Zaporizhzhia oblast","alert":true,"changed":"2022-04-20T20:14:26+03:00"},
+        {"id":8,"name":"Івано-Франківська область","name_en":"Ivano-Frankivsk oblast","alert":true,"changed":"2022-04-20T20:17:06+03:00"},
+        {"id":9,"name":"Київська область","name_en":"Kyiv oblast","alert":false,"changed":"2022-04-19T02:13:09+03:00"},
+        {"id":10,"name":"Кіровоградська область","name_en":"Kirovohrad oblast","alert":true,"changed":"2022-04-20T20:16:29+03:00"},
+        {"id":11,"name":"Луганська область","name_en":"Luhansk oblast","alert":true,"changed":"2022-04-04T19:45:39+03:00"},
+        {"id":12,"name":"Львівська область","name_en":"Lviv oblast","alert":true,"changed":"2022-04-20T20:06:12+03:00"},
+        {"id":13,"name":"Миколаївська область","name_en":"Mykolaiv oblast","alert":true,"changed":"2022-04-20T20:02:55+03:00"},
+        {"id":14,"name":"Одеська область","name_en":"Odesa oblast","alert":true,"changed":"2022-04-20T20:03:11+03:00"},
+        {"id":15,"name":"Полтавська область","name_en":"Poltava oblast","alert":true,"changed":"2022-04-20T20:15:35+03:00"},
+        {"id":16,"name":"Рівненська область","name_en":"Rivne oblast","alert":true,"changed":"2022-04-20T20:08:41+03:00"},
+        {"id":17,"name":"Сумська область","name_en":"Sumy oblast","alert":false,"changed":"2022-04-19T02:07:37+03:00"},
+        {"id":18,"name":"Тернопільська область","name_en":"Ternopil oblast","alert":true,"changed":"2022-04-20T20:11:02+03:00"},
+        {"id":19,"name":"Харківська область","name_en":"Kharkiv oblast","alert":true,"changed":"2022-04-20T20:15:36+03:00"},
+        {"id":20,"name":"Херсонська область","name_en":"Kherson oblast","alert":false,"changed":"2022-04-15T00:43:33+03:00"},
+        {"id":21,"name":"Хмельницька область","name_en":"Khmelnytskyi oblast","alert":true,"changed":"2022-04-20T19:52:27+03:00"},
+        {"id":22,"name":"Черкаська область","name_en":"Cherkasy oblast","alert":true,"changed":"2022-04-20T20:16:26+03:00"},
+        {"id":23,"name":"Чернівецька область","name_en":"Chernivtsi oblast","alert":false,"changed":"2022-04-19T02:28:24+03:00"},
+        {"id":24,"name":"Чернігівська область","name_en":"Chernihiv oblast","alert":true,"changed":"2022-04-20T20:16:13+03:00"},
+        {"id":25,"name":"м. Київ","name_en":"Kyiv","alert":true,"changed":"2022-04-20T20:14:49+03:00"}
+    ],
+    "last_update":"2022-04-20T17:17:31.939788945Z"
+}
