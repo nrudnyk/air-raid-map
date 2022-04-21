@@ -8,16 +8,6 @@ import SwiftUI
 import MapKit
 import Combine
 
-#if os(iOS)
-import UIKit
-typealias PlatformColor = UIColor
-typealias PlatformViewRepresentable = UIViewRepresentable
-#elseif os(macOS)
-import AppKit
-typealias PlatformColor = NSColor
-typealias PlatformViewRepresentable = NSViewRepresentable
-#endif
-
 public struct MapViewRepresentable: PlatformViewRepresentable {
 
     let mapType: MKMapType
@@ -52,7 +42,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         return Coordinator(for: self)
     }
     
-#if os(iOS)
+#if os(iOS) || os (tvOS)
     public func makeUIView(context: Context) -> MKMapView {
         return createMapView(context)
     }
@@ -89,9 +79,9 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
             region.span.longitudeDelta != mapView.region.span.longitudeDelta {
             mapView.setRegion(region, animated: true)
         }
-        #if os(macOS)
+#if os(macOS)
         mapView.setRegion(region, animated: true)
-        #endif
+#endif
         
         mapView.isZoomEnabled = self.isZoomEnabled
         mapView.isScrollEnabled = self.isScrollEnabled
@@ -135,31 +125,12 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         }
         
         public func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-            guard overlay is (MKShape & MKGeoJSONObject)
+            guard let regionOverlay = overlay as? RegionOverlay
             else {
                 return MKOverlayRenderer(overlay: overlay)
             }
             
-            let renderer: MKOverlayPathRenderer
-            switch overlay {
-            case is MKMultiPolygon:
-                renderer = MKMultiPolygonRenderer(overlay: overlay)
-            case is MKPolygon:
-                renderer = MKPolygonRenderer(overlay: overlay)
-            case is MKMultiPolyline:
-                renderer = MKMultiPolylineRenderer(overlay: overlay)
-            case is MKPolyline:
-                renderer = MKPolylineRenderer(overlay: overlay)
-            default:
-                return MKOverlayRenderer(overlay: overlay)
-            }
-            
-            
-            renderer.fillColor = PlatformColor.red.withAlphaComponent(0.3)
-            renderer.strokeColor = PlatformColor.red.withAlphaComponent(0)
-            renderer.lineWidth = 1
-            
-            return renderer
+            return regionOverlay.getOverlayRenderer()
         }
     }
     

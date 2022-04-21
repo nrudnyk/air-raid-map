@@ -38,21 +38,17 @@ class MapViewModel: ObservableObject {
     private func updateOverlays() {
         guard let alertStates = MapViewModel.getAlertStates(from: "test-sirens") else { return }
         
-        var overlays = [MKOverlay]()
-        let filteredStated: [RegionStateModel] = alertStates.states
-            .filter { $0.alert }
-        
-        for state in filteredStated {
-            guard let region = regionsRepository.regions[state.id],
-                  let geometry = region.geometry.first
-            else { continue }
-            
-            let shape: MKShape = geometry
-            
-            overlays.append(shape as! MKOverlay)
-        }
-        
-        self.overlays = overlays
+        self.overlays = alertStates.states
+            .compactMap {
+                guard let region = regionsRepository.regions[$0.id],
+                      let geometry = region.geometry.first
+                else { return nil }
+                
+                let color = $0.alert
+                    ? PlatformColor(red: 194/255, green: 59/255, blue: 34/255, alpha: 1)
+                    : PlatformColor(red: 50/255, green: 200/255, blue: 210/255, alpha: 1)
+                return RegionOverlay(shape: geometry, color: color)
+            }
     }
     
     private static func getAlertStates(from json: String) -> AlertStateModel? {

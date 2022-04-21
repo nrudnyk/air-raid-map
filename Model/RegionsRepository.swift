@@ -9,38 +9,38 @@ import MapKit
 
 class RegionsRepository {
     
-    public let regions: [Int: RegionModel]
+    private let geoJSONDecoder = MKGeoJSONDecoder()
+    public let regions: [Int: Region]
     
     init() {
         self.regions = RegionsRepository.getRegionsInfo()
     }
     
-    private static func getRegionsInfo() -> [Int: RegionModel] {
-        guard let jsonData = RegionsRepository.getLocalGeoJSON(fileName: "regions") else { return [:] }
-              
+    private static func getRegionsInfo() -> [Int: Region] {
         do {
-            let features = try MKGeoJSONDecoder()
-                .decode(jsonData)
-                .compactMap { $0 as? MKGeoJSONFeature }
-            
-            return features
-                .compactMap(RegionModel.init)
-                .toDictionary { $0.fid }
-            
+            let features = try RegionsRepository.decodeFeatures(Region.self, from: "regions", in: Bundle.main)
+//            features.forEach {
+//                print("\($0.id) \($0.properties.region) | \($0.properties.rayon) | \($0.properties.rayon)")
+//            }
+            return features.toDictionary { $0.properties.fid }
         } catch {
-            print("Couldn't parse geojson, unexpected error: \(error)")
+            print(error)
+            return [:]
         }
-        
-        return [:]
     }
     
-    private static func getLocalGeoJSON(fileName: String) -> Data? {
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "geojson"),
-              let jsonData = try? Data(contentsOf: url)
+    private static func decodeFeatures<T: IDecodableGeoJSONFeature>(_ type: T.Type, from file: String, in bundle: Bundle) throws -> [T] {
+        guard let url = bundle.url(forResource: file, withExtension: "geojson"),
+              let geojsonData = try? Data(contentsOf: url),
+              let decodedGeoJSON = try? MKGeoJSONDecoder().decode(geojsonData)
         else {
-            return nil
+            throw GeoJSONError.invalidType
         }
-
-        return jsonData
+        
+        let features = try decodedGeoJSON
+            .compactMap { $0 as? MKGeoJSONFeature }
+            .map { try type.init(feature: $0) }
+        
+        return features
     }
 }
