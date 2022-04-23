@@ -1,18 +1,11 @@
 //
-//  RegionModel.swift
+//  RegionOverlay.swift
 //  air-raid-map
 //
-//  Created by Nazar Rudnyk on 20.04.2022.
+//  Created by Nazar Rudnyk on 21.04.2022.
 //
 
 import MapKit
-
-class Region: Feature<Region.Properties> {
-    struct Properties: Codable {
-        let fid: Int
-        let region: String
-    }
-}
 
 class RegionOverlay: NSObject, MKOverlay {
     let coordinate: CLLocationCoordinate2D
@@ -46,7 +39,7 @@ class RegionOverlay: NSObject, MKOverlay {
             return MKOverlayRenderer(overlay: overlay)
         }
         
-        renderer.fillColor = self.color.withAlphaComponent(0.5)
+        renderer.fillColor = self.color
         renderer.strokeColor = self.color.withAlphaComponent(0.1)
         renderer.lineWidth = 1
         

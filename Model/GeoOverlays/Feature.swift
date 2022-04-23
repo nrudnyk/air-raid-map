@@ -25,7 +25,14 @@ class Feature<Properties: Decodable>: NSObject, IDecodableGeoJSONFeature {
         if let data = feature.properties {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            properties = try decoder.decode(Properties.self, from: data)
+            
+            do {
+                properties = try decoder.decode(Properties.self, from: data)
+            } catch {
+                print(error)
+                throw GeoJSONError.invalidData
+            }
+            
         } else {
             throw GeoJSONError.invalidData
         }
