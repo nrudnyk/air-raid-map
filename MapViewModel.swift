@@ -7,9 +7,29 @@
 
 import MapKit
 import SwiftUI
+import Combine
+
+extension AlertStateModel {
+    fileprivate static var empty: AnyPublisher<AlertStateModel, Never> {
+        return Empty(outputType: AlertStateModel.self, failureType: Never.self).eraseToAnyPublisher()
+    }
+}
 
 class MapViewModel: ObservableObject {
+    private let alertsApiEndpoint = "https://alerts.com.ua/api/states"
+    private let apiKey = "X-API-Key"
+    private let apiKeyValue = "df0ad7ea014f74e2bc741960c6d2f681c9cf34fd"
+    
+    private lazy var jsonDecoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(.iso8601Full)
+        
+        return decoder
+    }()
+    
     private let regionsRepository = RegionsRepository()
+    
+    private var cancellables = Set<AnyCancellable>()
     
     @Published var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D.centerOfUkraine,
@@ -18,6 +38,16 @@ class MapViewModel: ObservableObject {
     @Published var overlays = [MKOverlay]()
     
     init() {
+        trySetUkraineBounds()
+        setUpTimer()
+        getRegionOverlays()
+        
+//        if let russiaGeometry = regionsRepository.russia.geometry.first {
+//            self.overlays.append(RegionOverlay(shape: russiaGeometry, color: .black.withAlphaComponent(0.75)))
+//        }
+    }
+    
+    private func trySetUkraineBounds() {
         let searchRequest = MKLocalSearch.Request()
         searchRequest.naturalLanguageQuery = "UA"
         
@@ -31,27 +61,47 @@ class MapViewModel: ObservableObject {
             let bounds = response.boundingRegion
             self.region = bounds
         }
-        
-        updateOverlays()
-//        if let russiaGeometry = regionsRepository.russia.geometry.first {
-//            self.overlays.append(RegionOverlay(shape: russiaGeometry, color: .black.withAlphaComponent(0.75)))
-//        }
     }
     
-    private func updateOverlays() {
-        guard let alertStates = MapViewModel.getAlertStates(from: "test-sirens") else { return }
+    var alertStatesSubscription: AnyCancellable?
+    
+    private func getRegionOverlays() {
+        guard let url = URL(string: alertsApiEndpoint) else { return }
         
-        self.overlays = alertStates.states
-            .compactMap {
-                guard let region = regionsRepository.regions[$0.id],
-                      let geometry = region.geometry.first
-                else { return nil }
+        var request = URLRequest(url: url)
+        request.setValue(apiKeyValue, forHTTPHeaderField: apiKey)
+        request.httpMethod = "GET"
+        
+        alertStatesSubscription = NetworkManager.download(request: request)
+            .decode(type: AlertStateModel.self, decoder: jsonDecoder)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] alertStateModel in
+                guard let self = self else { return }
                 
-                let color = $0.alert
-                    ? PlatformColor(red: 194/255, green: 59/255, blue: 34/255, alpha: 1)
-                    : PlatformColor(red: 50/255, green: 200/255, blue: 210/255, alpha: 1)
-                return RegionOverlay(shape: geometry, color: color.withAlphaComponent(0.5))
-            }
+                self.overlays = self.updateOverlays(states: alertStateModel.states)
+                self.alertStatesSubscription?.cancel()
+            })
+    }
+    
+    private func setUpTimer() {
+        Timer.publish(every: 30, on: .main, in: .common)
+            .autoconnect()
+            .sink { [weak self] _ in self?.getRegionOverlays() }
+            .store(in: &cancellables)
+    }
+    
+    private func updateOverlays(states: [RegionStateModel]) -> [RegionOverlay] {
+        return states.compactMap {
+            guard let region = regionsRepository.regions[$0.id],
+                  let geometry = region.geometry.first
+            else { return nil }
+            
+            let color = $0.alert
+                ? PlatformColor(red: 194/255, green: 59/255, blue: 34/255, alpha: 1)
+                : PlatformColor(red: 50/255, green: 200/255, blue: 210/255, alpha: 1)
+            
+            return RegionOverlay(shape: geometry, color: color.withAlphaComponent(0.5))
+        }
     }
     
     private static func getAlertStates(from json: String) -> AlertStateModel? {

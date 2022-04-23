@@ -26,6 +26,9 @@
 		9CAB4DD22810A79400812938 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
 		9CAB4DD32810A7AE00812938 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
 		9CAB4DD42810A7AF00812938 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
+		9CCD77A828144D930050584C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD77A728144D930050584C /* NetworkManager.swift */; };
+		9CCD77A928144D930050584C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD77A728144D930050584C /* NetworkManager.swift */; };
+		9CCD77AA28144D930050584C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD77A728144D930050584C /* NetworkManager.swift */; };
 		9CD63A7C2811A4F300116F1E /* PlaftormExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */; };
 		9CD63A7D2811A4F300116F1E /* PlaftormExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */; };
 		9CD63A7E2811A4F300116F1E /* PlaftormExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */; };
@@ -87,6 +90,7 @@
 		9C9E00002810807800410B75 /* AlertStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStateModel.swift; sourceTree = "<group>"; };
 		9C9EFFF8281077E600410B75 /* test-sirens.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-sirens.json"; sourceTree = "<group>"; wrapsLines = 1; };
 		9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStateModel.swift; sourceTree = "<group>"; };
+		9CCD77A728144D930050584C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaftormExtensions.swift; sourceTree = "<group>"; };
 		9CD63A902811D1AF00116F1E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		9CD63A982811D28A00116F1E /* RegionOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionOverlay.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 			children = (
 				9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */,
 				9C278F96281071A700811961 /* Extensions.swift */,
+				9CCD77A728144D930050584C /* NetworkManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				9C9E00032810807800410B75 /* AlertStateModel.swift in Sources */,
 				9CE2A6DC2810539200241EB4 /* Region.swift in Sources */,
 				9CEBC01D2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
+				9CCD77AA28144D930050584C /* NetworkManager.swift in Sources */,
 				9CE2A6C8281004E000241EB4 /* AirRaidMapApp.swift in Sources */,
 				9CE2A6C62810044600241EB4 /* MapView.swift in Sources */,
 				9CEBC0252811777700C16CD0 /* GeoJSONError.swift in Sources */,
@@ -389,6 +395,7 @@
 				9C278F97281071A700811961 /* Extensions.swift in Sources */,
 				9C0AD831280FE4EB0095ACCA /* MapView.swift in Sources */,
 				9CEBC01B2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
+				9CCD77A828144D930050584C /* NetworkManager.swift in Sources */,
 				9CF79ED2280FD21B00FBAE90 /* AirRaidMapApp.swift in Sources */,
 				9C0AD82E280FE4E20095ACCA /* MapViewModel.swift in Sources */,
 				9CEBC0232811777700C16CD0 /* GeoJSONError.swift in Sources */,
@@ -412,6 +419,7 @@
 				9C9E00022810807800410B75 /* AlertStateModel.swift in Sources */,
 				9CE2A6DB2810539200241EB4 /* Region.swift in Sources */,
 				9CEBC01C2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
+				9CCD77A928144D930050584C /* NetworkManager.swift in Sources */,
 				9C0AD832280FE4EB0095ACCA /* MapView.swift in Sources */,
 				9CF79ED3280FD21B00FBAE90 /* AirRaidMapApp.swift in Sources */,
 				9CEBC0242811777700C16CD0 /* GeoJSONError.swift in Sources */,
