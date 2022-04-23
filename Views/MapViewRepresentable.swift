@@ -133,25 +133,14 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
             return regionOverlay.getOverlayRenderer()
         }
     }
-    
 }
 
 #if DEBUG
-// MARK: - SwiftUI Preview
-struct MapView_Previews: PreviewProvider {
+struct MapViewRepresentable_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapViewRepresentable(
+            region: .constant(MKCoordinateRegion(center: CLLocationCoordinate2D.centerOfUkraine, span: MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)))
+        )
     }
 }
 #endif
-
-
-
-//struct MapViewRepresentable_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MapViewRepresentable(
-//            region: .constant(MKCoordinateRegion(center: CLLocationCoordinate2D.centerOfUkraine, span: MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2))),
-//            overlays: .constant([])
-//        )
-//    }
-//}
