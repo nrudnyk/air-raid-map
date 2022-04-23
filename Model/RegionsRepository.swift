@@ -10,23 +10,25 @@ import MapKit
 class RegionsRepository {
     
     private let geoJSONDecoder = MKGeoJSONDecoder()
-    public let regions: [Int: Region]
     
-    init() {
-        self.regions = RegionsRepository.getRegionsInfo()
-    }
+    public let regions: [Int: Region] = RegionsRepository.getRegionsInfo()
+    public let russia: Country = RegionsRepository.getrussiaInfo()
     
     private static func getRegionsInfo() -> [Int: Region] {
         do {
             let features = try RegionsRepository.decodeFeatures(Region.self, from: "regions", in: Bundle.main)
-//            features.forEach {
-//                print("\($0.id) \($0.properties.region) | \($0.properties.rayon) | \($0.properties.rayon)")
-//            }
             return features.toDictionary { $0.properties.fid }
         } catch {
             print(error)
             return [:]
         }
+    }
+    
+    private static func getrussiaInfo() -> Country {
+        let features = try? RegionsRepository.decodeFeatures(Country.self, from: "countries", in: Bundle.main)
+        let russia = features!.first!
+        
+        return russia
     }
     
     private static func decodeFeatures<T: IDecodableGeoJSONFeature>(_ type: T.Type, from file: String, in bundle: Bundle) throws -> [T] {

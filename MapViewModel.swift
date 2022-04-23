@@ -33,6 +33,9 @@ class MapViewModel: ObservableObject {
         }
         
         updateOverlays()
+//        if let russiaGeometry = regionsRepository.russia.geometry.first {
+//            self.overlays.append(RegionOverlay(shape: russiaGeometry, color: .black.withAlphaComponent(0.75)))
+//        }
     }
     
     private func updateOverlays() {
@@ -47,7 +50,7 @@ class MapViewModel: ObservableObject {
                 let color = $0.alert
                     ? PlatformColor(red: 194/255, green: 59/255, blue: 34/255, alpha: 1)
                     : PlatformColor(red: 50/255, green: 200/255, blue: 210/255, alpha: 1)
-                return RegionOverlay(shape: geometry, color: color)
+                return RegionOverlay(shape: geometry, color: color.withAlphaComponent(0.5))
             }
     }
     
