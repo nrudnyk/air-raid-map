@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RegionStateModel: Codable {
+struct RegionStateModel: Codable, Identifiable {
     let id: Int
     let name: String
     let name_en: String

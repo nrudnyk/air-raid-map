@@ -13,9 +13,17 @@
 		9C0AD832280FE4EB0095ACCA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD830280FE4EB0095ACCA /* MapView.swift */; };
 		9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
 		9C278F97281071A700811961 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
+		9C393A34281474FF00A9CCA6 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 9C393A33281474FF00A9CCA6 /* BottomSheet */; };
+		9C393A3628147BC600A9CCA6 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */; };
+		9C393A3728147BC600A9CCA6 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */; };
+		9C393A3828147BC600A9CCA6 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */; };
+		9C393A3A2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */; };
+		9C393A3B2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */; };
+		9C393A3C2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */; };
 		9C393A3E2815790A00A9CCA6 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */; };
 		9C393A3F2815790A00A9CCA6 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */; };
 		9C393A402815790A00A9CCA6 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */; };
+		9C393A4D28157E5400A9CCA6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C393A4C28157E5400A9CCA6 /* MapKit.framework */; };
 		9C393A502816860E00A9CCA6 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A4F2816860E00A9CCA6 /* Orientation.swift */; };
 		9C393A512816860E00A9CCA6 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A4F2816860E00A9CCA6 /* Orientation.swift */; };
 		9C393A522816860E00A9CCA6 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A4F2816860E00A9CCA6 /* Orientation.swift */; };
@@ -99,8 +107,13 @@
 		9C0AD830280FE4EB0095ACCA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		9C278F94281061E500811961 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		9C278F96281071A700811961 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineExtensions.swift; sourceTree = "<group>"; };
+		9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStateListItemView.swift; sourceTree = "<group>"; };
 		9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationManager.swift; sourceTree = "<group>"; };
+		9C393A4A28157E5400A9CCA6 /* air-raid-map--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "air-raid-map--iOS--Info.plist"; sourceTree = "<group>"; };
+		9C393A4C28157E5400A9CCA6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.4.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		9C393A4F2816860E00A9CCA6 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
+		9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeOrientation.swift; sourceTree = "<group>"; };
 		9C393A572816906800A9CCA6 /* MapContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContants.swift; sourceTree = "<group>"; };
 		9C9E00002810807800410B75 /* AlertStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStateModel.swift; sourceTree = "<group>"; };
 		9C9EFFF8281077E600410B75 /* test-sirens.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-sirens.json"; sourceTree = "<group>"; wrapsLines = 1; };
@@ -138,6 +151,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C393A4D28157E5400A9CCA6 /* MapKit.framework in Frameworks */,
+				9C393A34281474FF00A9CCA6 /* BottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,15 +170,27 @@
 			isa = PBXGroup;
 			children = (
 				9C278F94281061E500811961 /* MapViewRepresentable.swift */,
+				9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9C393A4B28157E5400A9CCA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C393A4C28157E5400A9CCA6 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9C393A4E2816860200A9CCA6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */,
+				9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */,
 				9C278F96281071A700811961 /* Extensions.swift */,
 				9C393A4F2816860E00A9CCA6 /* Orientation.swift */,
+				9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -183,9 +210,10 @@
 		9CE2A6B2281002CD00241EB4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9CD63AA02812847400116F1E /* countries.geojson */,
+				9C393A4A28157E5400A9CCA6 /* air-raid-map--iOS--Info.plist */,
 				9CEBC01228115D6300C16CD0 /* Assets-tvOS.xcassets */,
 				9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */,
+				9CD63AA02812847400116F1E /* countries.geojson */,
 				9CEBC01328115D6300C16CD0 /* macOS.entitlements */,
 				9CE2A6C92810054E00241EB4 /* regions.geojson */,
 				9C9EFFF8281077E600410B75 /* test-sirens.json */,
@@ -196,8 +224,6 @@
 		9CE2A6CF28103EEE00241EB4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */,
-				9C278F96281071A700811961 /* Extensions.swift */,
 				9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */,
 				9CCD77A728144D930050584C /* NetworkManager.swift */,
 			);
@@ -220,8 +246,8 @@
 		9CF79EBC280FD21A00FBAE90 = {
 			isa = PBXGroup;
 			children = (
+				9C393A4E2816860200A9CCA6 /* Extensions */,
 				9CE2A6D42810414000241EB4 /* Model */,
-				9CF79ECA280FD21B00FBAE90 /* Products */,
 				9CE2A6B2281002CD00241EB4 /* Resources */,
 				9CE2A6CF28103EEE00241EB4 /* Utils */,
 				9C278F93281061CE00811961 /* Views */,
@@ -229,6 +255,8 @@
 				9CF79EC3280FD21A00FBAE90 /* ContentView.swift */,
 				9C0AD830280FE4EB0095ACCA /* MapView.swift */,
 				9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */,
+				9C393A4B28157E5400A9CCA6 /* Frameworks */,
+				9CF79ECA280FD21B00FBAE90 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -279,6 +307,7 @@
 			);
 			name = "air-raid-map (iOS)";
 			packageProductDependencies = (
+				9C393A33281474FF00A9CCA6 /* BottomSheet */,
 			);
 			productName = "air-raid-map (iOS)";
 			productReference = 9CF79EC9280FD21B00FBAE90 /* air-raid-map.app */;
@@ -334,6 +363,7 @@
 			);
 			mainGroup = 9CF79EBC280FD21A00FBAE90;
 			packageReferences = (
+				9C393A32281474FF00A9CCA6 /* XCRemoteSwiftPackageReference "BottomSheet" */,
 			);
 			productRefGroup = 9CF79ECA280FD21B00FBAE90 /* Products */;
 			projectDirPath = "";
@@ -388,8 +418,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEBC021281176BD00C16CD0 /* Feature.swift in Sources */,
+				9C393A3828147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
 				9C393A5628168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */,
 				9CAB4DD42810A7AF00812938 /* MapViewRepresentable.swift in Sources */,
+				9C393A3C2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,
 				9CE2A6C52810042900241EB4 /* ContentView.swift in Sources */,
 				9CD63A9B2811D28A00116F1E /* RegionOverlay.swift in Sources */,
 				9CAB4DD22810A79400812938 /* Extensions.swift in Sources */,
@@ -416,8 +448,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEBC01F281176BD00C16CD0 /* Feature.swift in Sources */,
+				9C393A3628147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
 				9C393A5428168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */,
 				9C9EFFFD28107F0000410B75 /* RegionStateModel.swift in Sources */,
+				9C393A3A2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,
 				9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */,
 				9CD63A992811D28A00116F1E /* RegionOverlay.swift in Sources */,
 				9CF79ED4280FD21B00FBAE90 /* ContentView.swift in Sources */,
@@ -444,8 +478,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEBC020281176BD00C16CD0 /* Feature.swift in Sources */,
+				9C393A3728147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
 				9C393A5528168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */,
 				9CAB4DD32810A7AE00812938 /* MapViewRepresentable.swift in Sources */,
+				9C393A3B2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,
 				9CF79ED5280FD21B00FBAE90 /* ContentView.swift in Sources */,
 				9CD63A9A2811D28A00116F1E /* RegionOverlay.swift in Sources */,
 				9CAB4DD12810A79400812938 /* Extensions.swift in Sources */,
@@ -654,6 +690,7 @@
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Resources/air-raid-map--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -684,6 +721,7 @@
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Resources/air-raid-map--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -801,6 +839,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9C393A32281474FF00A9CCA6 /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lucaszischka/BottomSheet#examples";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9C393A33281474FF00A9CCA6 /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C393A32281474FF00A9CCA6 /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			productName = BottomSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9CF79EBD280FD21A00FBAE90 /* Project object */;
 }

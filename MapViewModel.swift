@@ -24,27 +24,28 @@ class MapViewModel: ObservableObject {
     private let regionsRepository = RegionsRepository()
     
     private var cancellables = Set<AnyCancellable>()
+    private var alertStatesSubscription: AnyCancellable?
     
     @Published var region = MapConstsants.boundsOfUkraine
+    @Published var regionStates: [RegionStateModel] = []
     @Published var overlays = [MKOverlay]()
+    @Published var lastUpdate: Date = Date()
     
     init() {
         fitUkraineBounds()
         setUpTimer()
-        getRegionOverlays()
+        updateRegionStates()
         
-//        if let russiaGeometry = regionsRepository.russia.geometry.first {
-//            self.overlays.append(RegionOverlay(shape: russiaGeometry, color: .black.withAlphaComponent(0.75)))
-//        }
+        //if let russiaGeometry = regionsRepository.russia.geometry.first {
+        //    self.overlays.append(RegionOverlay(shape: russiaGeometry, color: .black.withAlphaComponent(0.75)))
+        //}
     }
     
     func fitUkraineBounds() {
         self.region = MapConstsants.boundsOfUkraine
     }
     
-    var alertStatesSubscription: AnyCancellable?
-    
-    private func getRegionOverlays() {
+    func updateRegionStates() {
         guard let url = URL(string: alertsApiEndpoint) else { return }
         
         var request = URLRequest(url: url)
@@ -54,10 +55,18 @@ class MapViewModel: ObservableObject {
         alertStatesSubscription = NetworkManager.download(request: request)
             .decode(type: AlertStateModel.self, decoder: jsonDecoder)
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] alertStateModel in
+            .passthrough { [weak self] alertStateModel in
                 guard let self = self else { return }
                 
-                self.overlays = self.updateOverlays(states: alertStateModel.states)
+                self.lastUpdate = DateFormatter.iso8601UTC.date(from: alertStateModel.last_update) ?? Date()
+                self.regionStates = alertStateModel.states.filter(\.alert)
+            }
+            .map(\.states)
+            .map(updateOverlays(states:))
+            .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] overlays in
+                guard let self = self else { return }
+                
+                self.overlays = overlays
                 self.alertStatesSubscription?.cancel()
             })
     }
@@ -65,7 +74,8 @@ class MapViewModel: ObservableObject {
     private func setUpTimer() {
         Timer.publish(every: 30, on: .main, in: .common)
             .autoconnect()
-            .sink { [weak self] _ in self?.getRegionOverlays() }
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .sink { [weak self] _ in self?.updateRegionStates() }
             .store(in: &cancellables)
     }
     
