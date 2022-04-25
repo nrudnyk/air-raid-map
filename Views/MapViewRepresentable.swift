@@ -139,7 +139,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
 struct MapViewRepresentable_Previews: PreviewProvider {
     static var previews: some View {
         MapViewRepresentable(
-            region: .constant(MKCoordinateRegion(center: CLLocationCoordinate2D.centerOfUkraine, span: MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)))
+            region: .constant(MKCoordinateRegion(center: MapConstsants.centerOfUkraine, span: MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)))
         )
     }
 }

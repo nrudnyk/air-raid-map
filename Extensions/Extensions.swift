@@ -7,10 +7,6 @@
 
 import MapKit
 
-extension CLLocationCoordinate2D {
-    static let centerOfUkraine = CLLocationCoordinate2DMake(48.383022, 31.1828699)
-}
-
 extension Array {
     public func toDictionary<Key: Hashable>(_ selectKey: (Element) -> Key) -> [Key: Element] {
         var result = [Key: Element]()
@@ -39,6 +35,14 @@ extension DateFormatter {
         formatter.calendar = Calendar(identifier: .iso8601)
         formatter.timeZone = TimeZone(identifier: "UTC")
         formatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        return formatter
+    }()
+    
+    static let shortDateTime: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM, HH:mm"
+        formatter.locale = Locale.current
         
         return formatter
     }()

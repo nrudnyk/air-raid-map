@@ -9,12 +9,6 @@ import MapKit
 import SwiftUI
 import Combine
 
-extension AlertStateModel {
-    fileprivate static var empty: AnyPublisher<AlertStateModel, Never> {
-        return Empty(outputType: AlertStateModel.self, failureType: Never.self).eraseToAnyPublisher()
-    }
-}
-
 class MapViewModel: ObservableObject {
     private let alertsApiEndpoint = "https://alerts.com.ua/api/states"
     private let apiKey = "X-API-Key"
@@ -31,14 +25,11 @@ class MapViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    @Published var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D.centerOfUkraine,
-        span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-    )
+    @Published var region = MapConstsants.boundsOfUkraine
     @Published var overlays = [MKOverlay]()
     
     init() {
-        trySetUkraineBounds()
+        fitUkraineBounds()
         setUpTimer()
         getRegionOverlays()
         
@@ -47,20 +38,8 @@ class MapViewModel: ObservableObject {
 //        }
     }
     
-    private func trySetUkraineBounds() {
-        let searchRequest = MKLocalSearch.Request()
-        searchRequest.naturalLanguageQuery = "UA"
-        
-        let search = MKLocalSearch(request: searchRequest)
-        search.start { response, error in
-            guard let response = response else {
-                print("Error: \(error?.localizedDescription ?? "Unknown error").")
-                return
-            }
-            
-            let bounds = response.boundingRegion
-            self.region = bounds
-        }
+    func fitUkraineBounds() {
+        self.region = MapConstsants.boundsOfUkraine
     }
     
     var alertStatesSubscription: AnyCancellable?
