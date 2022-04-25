@@ -16,6 +16,8 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
     let userTrackingMode: MKUserTrackingMode
     let showsUserLocation: Bool
     
+    let showScale: Bool
+    
     @Binding var region: MKCoordinateRegion
     let overlays: [MKOverlay]
     
@@ -25,7 +27,8 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         region: Binding<MKCoordinateRegion>,
         isZoomEnabled: Bool = true,
         isScrollEnabled: Bool = true,
-        showsUserLocation: Bool = true,
+        showsUserLocation: Bool = false,
+        showScale: Bool = true,
         userTrackingMode: MKUserTrackingMode = .none,
         overlays: [MKOverlay] = []
     ) {
@@ -34,6 +37,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         self.isZoomEnabled = isZoomEnabled
         self.isScrollEnabled = isScrollEnabled
         self.showsUserLocation = showsUserLocation
+        self.showScale = showScale
         self.userTrackingMode = userTrackingMode
         self.overlays = overlays
     }
@@ -71,7 +75,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
     
     private func configureView(_ mapView: MKMapView, context: Context) {
         mapView.mapType = self.mapType
-        
+                
         let region = mapView.regionThatFits(self.region)
         if region.center.latitude != mapView.region.center.latitude ||
             region.center.longitude != mapView.region.center.longitude ||
@@ -79,14 +83,15 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
             region.span.longitudeDelta != mapView.region.span.longitudeDelta {
             mapView.setRegion(region, animated: true)
         }
-#if os(macOS)
-        mapView.setRegion(region, animated: true)
-#endif
         
         mapView.isZoomEnabled = self.isZoomEnabled
         mapView.isScrollEnabled = self.isScrollEnabled
         mapView.showsUserLocation = self.showsUserLocation
         mapView.userTrackingMode = self.userTrackingMode
+#if os(macOS)
+        mapView.showsZoomControls = self.showsZoomControls
+#endif
+        mapView.showsScale = self.showScale
         
         self.updateOverlays(in: mapView)
     }
@@ -105,12 +110,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         mapView.addOverlays(newOverlays)
     }
     
-    // MARK: - Interaction and delegate implementation
     public class Coordinator: NSObject, MKMapViewDelegate {
-        
-        /**
-         Reference to the SwiftUI `MapView`.
-        */
         private let context: MapViewRepresentable
         
         init(for context: MapViewRepresentable) {
@@ -119,9 +119,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         }
                 
         public func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-            DispatchQueue.main.async {
-                self.context.region = mapView.region
-            }
+            self.context.region = mapView.region
         }
         
         public func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
