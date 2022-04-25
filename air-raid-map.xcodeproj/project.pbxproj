@@ -13,6 +13,15 @@
 		9C0AD832280FE4EB0095ACCA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD830280FE4EB0095ACCA /* MapView.swift */; };
 		9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
 		9C278F97281071A700811961 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
+		9C393A3E2815790A00A9CCA6 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */; };
+		9C393A3F2815790A00A9CCA6 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */; };
+		9C393A402815790A00A9CCA6 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */; };
+		9C393A502816860E00A9CCA6 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A4F2816860E00A9CCA6 /* Orientation.swift */; };
+		9C393A512816860E00A9CCA6 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A4F2816860E00A9CCA6 /* Orientation.swift */; };
+		9C393A522816860E00A9CCA6 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A4F2816860E00A9CCA6 /* Orientation.swift */; };
+		9C393A5428168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */; };
+		9C393A5528168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */; };
+		9C393A5628168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */; };
 		9C393A582816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
 		9C393A592816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
 		9C393A5A2816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
@@ -90,6 +99,8 @@
 		9C0AD830280FE4EB0095ACCA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		9C278F94281061E500811961 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		9C278F96281071A700811961 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationManager.swift; sourceTree = "<group>"; };
+		9C393A4F2816860E00A9CCA6 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		9C393A572816906800A9CCA6 /* MapContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContants.swift; sourceTree = "<group>"; };
 		9C9E00002810807800410B75 /* AlertStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStateModel.swift; sourceTree = "<group>"; };
 		9C9EFFF8281077E600410B75 /* test-sirens.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-sirens.json"; sourceTree = "<group>"; wrapsLines = 1; };
@@ -148,6 +159,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9C393A4E2816860200A9CCA6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9C278F96281071A700811961 /* Extensions.swift */,
+				9C393A4F2816860E00A9CCA6 /* Orientation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9CD63A8F2811D18B00116F1E /* GeoOverlays */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +198,7 @@
 			children = (
 				9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */,
 				9C278F96281071A700811961 /* Extensions.swift */,
+				9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */,
 				9CCD77A728144D930050584C /* NetworkManager.swift */,
 			);
 			path = Utils;
@@ -367,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEBC021281176BD00C16CD0 /* Feature.swift in Sources */,
+				9C393A5628168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */,
 				9CAB4DD42810A7AF00812938 /* MapViewRepresentable.swift in Sources */,
 				9CE2A6C52810042900241EB4 /* ContentView.swift in Sources */,
 				9CD63A9B2811D28A00116F1E /* RegionOverlay.swift in Sources */,
@@ -375,6 +397,7 @@
 				9C9EFFFF28107F0000410B75 /* RegionStateModel.swift in Sources */,
 				9C9E00032810807800410B75 /* AlertStateModel.swift in Sources */,
 				9C393A5A2816906800A9CCA6 /* MapContants.swift in Sources */,
+				9C393A522816860E00A9CCA6 /* Orientation.swift in Sources */,
 				9CE2A6DC2810539200241EB4 /* Region.swift in Sources */,
 				9CEBC01D2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
 				9CCD77AA28144D930050584C /* NetworkManager.swift in Sources */,
@@ -383,6 +406,7 @@
 				9CEBC0252811777700C16CD0 /* GeoJSONError.swift in Sources */,
 				9CE2A6C72810044A00241EB4 /* MapViewModel.swift in Sources */,
 				9CD63A932811D1AF00116F1E /* Country.swift in Sources */,
+				9C393A402815790A00A9CCA6 /* OrientationManager.swift in Sources */,
 				9CE2A6D82810414000241EB4 /* RegionsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEBC01F281176BD00C16CD0 /* Feature.swift in Sources */,
+				9C393A5428168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */,
 				9C9EFFFD28107F0000410B75 /* RegionStateModel.swift in Sources */,
 				9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */,
 				9CD63A992811D28A00116F1E /* RegionOverlay.swift in Sources */,
@@ -400,6 +425,7 @@
 				9CE2A6DA2810539200241EB4 /* Region.swift in Sources */,
 				9C278F97281071A700811961 /* Extensions.swift in Sources */,
 				9C393A582816906800A9CCA6 /* MapContants.swift in Sources */,
+				9C393A502816860E00A9CCA6 /* Orientation.swift in Sources */,
 				9C0AD831280FE4EB0095ACCA /* MapView.swift in Sources */,
 				9CEBC01B2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
 				9CCD77A828144D930050584C /* NetworkManager.swift in Sources */,
@@ -408,6 +434,7 @@
 				9CEBC0232811777700C16CD0 /* GeoJSONError.swift in Sources */,
 				9C9E00012810807800410B75 /* AlertStateModel.swift in Sources */,
 				9CD63A912811D1AF00116F1E /* Country.swift in Sources */,
+				9C393A3E2815790A00A9CCA6 /* OrientationManager.swift in Sources */,
 				9CE2A6D62810414000241EB4 /* RegionsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEBC020281176BD00C16CD0 /* Feature.swift in Sources */,
+				9C393A5528168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */,
 				9CAB4DD32810A7AE00812938 /* MapViewRepresentable.swift in Sources */,
 				9CF79ED5280FD21B00FBAE90 /* ContentView.swift in Sources */,
 				9CD63A9A2811D28A00116F1E /* RegionOverlay.swift in Sources */,
@@ -425,6 +453,7 @@
 				9C9EFFFE28107F0000410B75 /* RegionStateModel.swift in Sources */,
 				9C9E00022810807800410B75 /* AlertStateModel.swift in Sources */,
 				9C393A592816906800A9CCA6 /* MapContants.swift in Sources */,
+				9C393A512816860E00A9CCA6 /* Orientation.swift in Sources */,
 				9CE2A6DB2810539200241EB4 /* Region.swift in Sources */,
 				9CEBC01C2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
 				9CCD77A928144D930050584C /* NetworkManager.swift in Sources */,
@@ -433,6 +462,7 @@
 				9CEBC0242811777700C16CD0 /* GeoJSONError.swift in Sources */,
 				9C0AD82F280FE4E20095ACCA /* MapViewModel.swift in Sources */,
 				9CD63A922811D1AF00116F1E /* Country.swift in Sources */,
+				9C393A3F2815790A00A9CCA6 /* OrientationManager.swift in Sources */,
 				9CE2A6D72810414000241EB4 /* RegionsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
