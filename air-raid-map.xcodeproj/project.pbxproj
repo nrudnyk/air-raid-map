@@ -821,7 +821,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		9C393A32281474FF00A9CCA6 /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/lucaszischka/BottomSheet#examples";
+			repositoryURL = "https://github.com/lucaszischka/BottomSheet";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;
