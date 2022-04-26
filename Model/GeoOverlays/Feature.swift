@@ -8,23 +8,12 @@
 import MapKit
 
 class Feature<Properties: Decodable>: NSObject, IDecodableGeoJSONFeature {
-    let id: Int
     let properties: Properties
     let geometry: [MKShape & MKGeoJSONObject]
     
     required init(feature: MKGeoJSONFeature) throws {
-        guard let id = feature.identifier else {
-            throw GeoJSONError.invalidData
-        }
-        if let identifier = Int(id) {
-            self.id = identifier
-        } else {
-            throw GeoJSONError.invalidData
-        }
-
         if let data = feature.properties {
             let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
             
             do {
                 properties = try decoder.decode(Properties.self, from: data)
@@ -32,7 +21,6 @@ class Feature<Properties: Decodable>: NSObject, IDecodableGeoJSONFeature {
                 print(error)
                 throw GeoJSONError.invalidData
             }
-            
         } else {
             throw GeoJSONError.invalidData
         }

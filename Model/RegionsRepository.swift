@@ -8,18 +8,15 @@
 import MapKit
 
 class RegionsRepository {
+    public let regions: [Region] = RegionsRepository.getRegionsInfo()
     
-    private let geoJSONDecoder = MKGeoJSONDecoder()
-    
-    public let regions: [Int: Region] = RegionsRepository.getRegionsInfo()
-    
-    private static func getRegionsInfo() -> [Int: Region] {
+    private static func getRegionsInfo() -> [Region] {
         do {
             let features = try RegionsRepository.decodeFeatures(Region.self, from: "regions", in: Bundle.main)
-            return features.toDictionary { $0.properties.fid }
+            return features
         } catch {
             print(error)
-            return [:]
+            return []
         }
     }
     
