@@ -87,8 +87,10 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         mapView.isZoomEnabled = self.isZoomEnabled
         mapView.isScrollEnabled = self.isScrollEnabled
         mapView.showsUserLocation = self.showsUserLocation
+#if !os(tvOS)
         mapView.isRotateEnabled = false
         mapView.showsCompass = false
+#endif
         mapView.userTrackingMode = self.userTrackingMode
 #if os(iOS) || os (tvOS)
         mapView.showsScale = true
