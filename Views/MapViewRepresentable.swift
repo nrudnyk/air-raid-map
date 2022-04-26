@@ -87,11 +87,14 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         mapView.isZoomEnabled = self.isZoomEnabled
         mapView.isScrollEnabled = self.isScrollEnabled
         mapView.showsUserLocation = self.showsUserLocation
+        mapView.isRotateEnabled = false
+        mapView.showsCompass = false
         mapView.userTrackingMode = self.userTrackingMode
-#if os(macOS)
-        mapView.showsZoomControls = self.showsZoomControls
+#if os(iOS) || os (tvOS)
+        mapView.showsScale = true
+#elseif os(macOS)
+        mapView.showsZoomControls = true
 #endif
-        mapView.showsScale = self.showScale
         
         self.updateOverlays(in: mapView)
     }

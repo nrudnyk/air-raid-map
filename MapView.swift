@@ -7,13 +7,17 @@
 
 import MapKit
 import SwiftUI
+#if os(iOS)
 import BottomSheet
+#endif
 
 struct MapView: View {
+#if os(iOS)
     @LandscapeOrientation var isLandscape
+    @State var bottomSheetPosition: BottomSheetPosition = .bottom
+#endif
     
     @StateObject private var viewModel = MapViewModel()
-    @State var bottomSheetPosition: BottomSheetPosition = .bottom
     
     var body: some View {
         ZStack {
@@ -21,51 +25,36 @@ struct MapView: View {
                 region: $viewModel.region,
                 overlays: viewModel.overlays
             ).ignoresSafeArea()
-            
+#if os(iOS)
             GeometryReader { gReader in
                 Color.clear
                     .bottomSheet(
                         bottomSheetPosition: $bottomSheetPosition,
                         headerContent: { regionListHeader },
                         mainContent: { regionListView }
-                    )       
+                    )
                     .padding(.trailing, isLandscape ? gReader.size.width / 7 * 4 : 0)
                     .offset(x: -gReader.safeAreaInsets.leading / 2, y: 0)
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+#endif
         }
     }
 }
 
+#if os(iOS)
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         if #available(iOS 15.0, *) {
-            MapView(
-                bottomSheetPosition: .top
-            ).previewInterfaceOrientation(.landscapeLeft)
-        } else {
             MapView(bottomSheetPosition: .middle)
+        } else {
+            MapView()
         }
     }
 }
+#endif
 
 extension MapView {
-    fileprivate var regionListHeader: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text("Активні тривоги (\(viewModel.regionStates.count))")
-                    .font(.title3).bold()
-                Text("станом на: \(DateFormatter.localizedString(from: viewModel.lastUpdate, dateStyle: .medium, timeStyle: .medium))")
-                    .italic()
-                    .font(.subheadline)
-                    .frame(alignment: .trailing)
-            }
-            Spacer()
-            fitUkraineButton
-            refreshButton
-        }
-    }
-    
     fileprivate var refreshButton: some View {
         Button(
             action: viewModel.updateRegionStates,
@@ -82,6 +71,24 @@ extension MapView {
         )
         .padding(4)
         .contentShape(Rectangle())
+    }
+    
+#if os(iOS)
+    
+    fileprivate var regionListHeader: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text("Активні тривоги (\(viewModel.regionStates.count))")
+                    .font(.title3).bold()
+                Text("станом на: \(DateFormatter.localizedString(from: viewModel.lastUpdate, dateStyle: .medium, timeStyle: .medium))")
+                    .italic()
+                    .font(.subheadline)
+                    .frame(alignment: .trailing)
+            }
+            Spacer()
+            fitUkraineButton
+            refreshButton
+        }
     }
     
     fileprivate var regionListView: some View {
@@ -118,4 +125,6 @@ extension MapView {
             }
         }
     }
+    
+#endif
 }
