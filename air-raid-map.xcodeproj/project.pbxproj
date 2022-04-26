@@ -23,7 +23,6 @@
 		9C393A3E2815790A00A9CCA6 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */; };
 		9C393A3F2815790A00A9CCA6 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */; };
 		9C393A402815790A00A9CCA6 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */; };
-		9C393A4D28157E5400A9CCA6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C393A4C28157E5400A9CCA6 /* MapKit.framework */; };
 		9C393A502816860E00A9CCA6 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A4F2816860E00A9CCA6 /* Orientation.swift */; };
 		9C393A512816860E00A9CCA6 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A4F2816860E00A9CCA6 /* Orientation.swift */; };
 		9C393A522816860E00A9CCA6 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A4F2816860E00A9CCA6 /* Orientation.swift */; };
@@ -58,9 +57,6 @@
 		9CD63A992811D28A00116F1E /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
 		9CD63A9A2811D28A00116F1E /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
 		9CD63A9B2811D28A00116F1E /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
-		9CD63AA12812847400116F1E /* countries.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9CD63AA02812847400116F1E /* countries.geojson */; };
-		9CD63AA22812847400116F1E /* countries.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9CD63AA02812847400116F1E /* countries.geojson */; };
-		9CD63AA32812847400116F1E /* countries.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9CD63AA02812847400116F1E /* countries.geojson */; };
 		9CE2A6C52810042900241EB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC3280FD21A00FBAE90 /* ContentView.swift */; };
 		9CE2A6C62810044600241EB4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD830280FE4EB0095ACCA /* MapView.swift */; };
 		9CE2A6C72810044A00241EB4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
@@ -122,7 +118,6 @@
 		9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaftormExtensions.swift; sourceTree = "<group>"; };
 		9CD63A902811D1AF00116F1E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		9CD63A982811D28A00116F1E /* RegionOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionOverlay.swift; sourceTree = "<group>"; };
-		9CD63AA02812847400116F1E /* countries.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = countries.geojson; sourceTree = "<group>"; };
 		9CE2A6B72810041000241EB4 /* air-raid-map (tvOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "air-raid-map (tvOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE2A6C92810054E00241EB4 /* regions.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = regions.geojson; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 0; };
 		9CE2A6D52810414000241EB4 /* RegionsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionsRepository.swift; sourceTree = "<group>"; };
@@ -151,7 +146,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C393A4D28157E5400A9CCA6 /* MapKit.framework in Frameworks */,
 				9C393A34281474FF00A9CCA6 /* BottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,7 +207,6 @@
 				9C393A4A28157E5400A9CCA6 /* air-raid-map--iOS--Info.plist */,
 				9CEBC01228115D6300C16CD0 /* Assets-tvOS.xcassets */,
 				9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */,
-				9CD63AA02812847400116F1E /* countries.geojson */,
 				9CEBC01328115D6300C16CD0 /* macOS.entitlements */,
 				9CE2A6C92810054E00241EB4 /* regions.geojson */,
 				9C9EFFF8281077E600410B75 /* test-sirens.json */,
@@ -381,7 +374,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CD63AA32812847400116F1E /* countries.geojson in Resources */,
 				9C9EFFFB281077E600410B75 /* test-sirens.json in Resources */,
 				9CE2A6CC2810054E00241EB4 /* regions.geojson in Resources */,
 				9CEBC01928115D6300C16CD0 /* Assets-tvOS.xcassets in Resources */,
@@ -392,7 +384,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CD63AA12812847400116F1E /* countries.geojson in Resources */,
 				9C9EFFF9281077E600410B75 /* test-sirens.json in Resources */,
 				9CF79ED6280FD21B00FBAE90 /* Assets.xcassets in Resources */,
 				9CE2A6CA2810054E00241EB4 /* regions.geojson in Resources */,
@@ -403,7 +394,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CD63AA22812847400116F1E /* countries.geojson in Resources */,
 				9C9EFFFA281077E600410B75 /* test-sirens.json in Resources */,
 				9CF79ED7280FD21B00FBAE90 /* Assets.xcassets in Resources */,
 				9CE2A6CB2810054E00241EB4 /* regions.geojson in Resources */,

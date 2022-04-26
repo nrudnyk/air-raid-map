@@ -12,7 +12,6 @@ class RegionsRepository {
     private let geoJSONDecoder = MKGeoJSONDecoder()
     
     public let regions: [Int: Region] = RegionsRepository.getRegionsInfo()
-    public let russia: Country = RegionsRepository.getrussiaInfo()
     
     private static func getRegionsInfo() -> [Int: Region] {
         do {
@@ -22,13 +21,6 @@ class RegionsRepository {
             print(error)
             return [:]
         }
-    }
-    
-    private static func getrussiaInfo() -> Country {
-        let features = try? RegionsRepository.decodeFeatures(Country.self, from: "countries", in: Bundle.main)
-        let russia = features!.first!
-        
-        return russia
     }
     
     private static func decodeFeatures<T: IDecodableGeoJSONFeature>(_ type: T.Type, from file: String, in bundle: Bundle) throws -> [T] {

@@ -35,10 +35,6 @@ class MapViewModel: ObservableObject {
         fitUkraineBounds()
         setUpTimer()
         updateRegionStates()
-        
-        //if let russiaGeometry = regionsRepository.russia.geometry.first {
-        //    self.overlays.append(RegionOverlay(shape: russiaGeometry, color: .black.withAlphaComponent(0.75)))
-        //}
     }
     
     func fitUkraineBounds() {
