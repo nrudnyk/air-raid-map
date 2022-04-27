@@ -57,7 +57,7 @@ struct MapView_Previews: PreviewProvider {
 extension MapView {
     fileprivate var refreshButton: some View {
         Button(
-            action: viewModel.updateRegionStates,
+            action: viewModel.reloadData,
             label: { Image(systemName: "arrow.clockwise") }
         )
         .padding(4)

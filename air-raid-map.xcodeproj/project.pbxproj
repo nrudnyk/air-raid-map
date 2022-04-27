@@ -29,6 +29,9 @@
 		9C5E600E2819446A00CEEBF1 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E600D2819446A00CEEBF1 /* AlertState.swift */; };
 		9C5E600F2819446A00CEEBF1 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E600D2819446A00CEEBF1 /* AlertState.swift */; };
 		9C5E60102819446A00CEEBF1 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E600D2819446A00CEEBF1 /* AlertState.swift */; };
+		9C5E60152819839800CEEBF1 /* AirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */; };
+		9C5E60162819839800CEEBF1 /* AirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */; };
+		9C5E60172819839800CEEBF1 /* AirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */; };
 		9C9E00012810807800410B75 /* RegionStatesDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* RegionStatesDecodable.swift */; };
 		9C9E00022810807800410B75 /* RegionStatesDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* RegionStatesDecodable.swift */; };
 		9C9E00032810807800410B75 /* RegionStatesDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* RegionStatesDecodable.swift */; };
@@ -108,6 +111,7 @@
 		9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeOrientation.swift; sourceTree = "<group>"; };
 		9C393A572816906800A9CCA6 /* MapContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContants.swift; sourceTree = "<group>"; };
 		9C5E600D2819446A00CEEBF1 /* AlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertState.swift; sourceTree = "<group>"; };
+		9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertsDataService.swift; sourceTree = "<group>"; };
 		9C9E00002810807800410B75 /* RegionStatesDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStatesDecodable.swift; sourceTree = "<group>"; };
 		9C9EFFF8281077E600410B75 /* test-sirens.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-sirens.json"; sourceTree = "<group>"; wrapsLines = 1; };
 		9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStateModel.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 		9C5E60122819833A00CEEBF1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEBC021281176BD00C16CD0 /* Feature.swift in Sources */,
+				9C5E60172819839800CEEBF1 /* AirAlertsDataService.swift in Sources */,
 				9C393A3828147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
 				9CAB4DD42810A7AF00812938 /* MapViewRepresentable.swift in Sources */,
 				9C393A3C2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,
@@ -466,6 +472,7 @@
 				9CF79ED2280FD21B00FBAE90 /* AirRaidMapApp.swift in Sources */,
 				9C0AD82E280FE4E20095ACCA /* MapViewModel.swift in Sources */,
 				9CEBC0232811777700C16CD0 /* GeoJSONError.swift in Sources */,
+				9C5E60152819839800CEEBF1 /* AirAlertsDataService.swift in Sources */,
 				9C9E00012810807800410B75 /* RegionStatesDecodable.swift in Sources */,
 				9CD63A912811D1AF00116F1E /* Country.swift in Sources */,
 				9C393A3E2815790A00A9CCA6 /* OrientationManager.swift in Sources */,
@@ -478,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEBC020281176BD00C16CD0 /* Feature.swift in Sources */,
+				9C5E60162819839800CEEBF1 /* AirAlertsDataService.swift in Sources */,
 				9C393A3728147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
 				9CAB4DD32810A7AE00812938 /* MapViewRepresentable.swift in Sources */,
 				9C393A3B2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,

@@ -10,9 +10,6 @@ import SwiftUI
 import Combine
 
 class MapViewModel: ObservableObject {
-    private let alertsApiEndpoint = "https://alerts.com.ua/api/states"
-    private let apiKey = "X-API-Key"
-    private let apiKeyValue = "df0ad7ea014f74e2bc741960c6d2f681c9cf34fd"
     
     private let regionsRepository = RegionsRepository()
     
@@ -23,51 +20,40 @@ class MapViewModel: ObservableObject {
     @Published var overlays = [MKOverlay]()
     @Published var lastUpdate: Date = Date()
     
+    private let airAlertsDataService = AirAlertsDataService()
+    
     init() {
         fitUkraineBounds()
         setUpTimer()
-        updateRegionStates()
+        
+        airAlertsDataService.$regionsData
+            .map { regions in regions.filter { $0.alertState.type == .airAlarm }}
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$alarmedRegion)
+
+        airAlertsDataService.$regionsData
+            .map(updateOverlays(regionStateModels:))
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$overlays)
+
+        airAlertsDataService.$lastUpdate
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$lastUpdate)
     }
     
     func fitUkraineBounds() {
         self.ukraineCoordinateRegion = MapConstsants.boundsOfUkraine
     }
     
-    func updateRegionStates() {
-        guard let url = URL(string: alertsApiEndpoint) else { return }
-        
-        var request = URLRequest(url: url)
-        request.setValue(apiKeyValue, forHTTPHeaderField: apiKey)
-        request.httpMethod = "GET"
-        
-        NetworkManager.download(request: request)
-            .decode(type: RegionStatesDecodable.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .map { [weak self] regionStatesDecodable in
-                guard let self = self else { return [] }
-                
-                self.lastUpdate = regionStatesDecodable.lastUpdate
-                
-                return self.regionsRepository.regions.map { region in
-                    RegionStateModel(
-                        id: region.properties.ID_0,
-                        name: region.properties.NAME_1,
-                        geometry: region.geometry.first!,
-                        alertState: regionStatesDecodable.alertState(for: region)
-                    )
-                }
-            }
-            .passthrough { [weak self] resionStateModels in self?.alarmedRegion = resionStateModels.filter { $0.alertState.type == .airAlarm } }
-            .map(updateOverlays(regionStateModels:))
-            .replaceError(with: [])
-            .assign(to: &$overlays)
+    func reloadData() {
+        airAlertsDataService.updateAlertsData()
     }
     
     private func setUpTimer() {
         Timer.publish(every: 30, on: .main, in: .common)
             .autoconnect()
             .subscribe(on: DispatchQueue.global(qos: .background))
-            .sink { [weak self] _ in self?.updateRegionStates() }
+            .sink { [weak self] _ in self?.airAlertsDataService.updateAlertsData() }
             .store(in: &cancellables)
     }
     
