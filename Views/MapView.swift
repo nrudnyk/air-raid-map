@@ -113,12 +113,12 @@ extension MapView {
             VStack {
                 ForEach(viewModel.alarmedRegion) { regionState in
                     RegionStateListItemView(regionState: regionState)
-                        .contextMenu {
-                            Text("item 1")
-                            Text("Item 3")
-                            Divider()
-                            Text("Item 2")
-                        }
+//                        .contextMenu {
+//                            Text("item 1")
+//                            Text("Item 3")
+//                            Divider()
+//                            Text("Item 2")
+//                        }
                     Divider()
                 }
                 Spacer()
