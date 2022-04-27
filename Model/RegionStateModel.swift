@@ -5,12 +5,11 @@
 //  Created by Nazar Rudnyk on 20.04.2022.
 //
 
-import Foundation
+import MapKit
 
-struct RegionStateModel: Codable, Identifiable {
+struct RegionStateModel: Identifiable {
     let id: Int
     let name: String
-    let name_en: String
-    let alert: Bool
-    let changed: Date
+    let geometry: MKShape & MKGeoJSONObject
+    let alertState: AlertState
 }

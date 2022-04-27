@@ -14,13 +14,6 @@ class MapViewModel: ObservableObject {
     private let apiKey = "X-API-Key"
     private let apiKeyValue = "df0ad7ea014f74e2bc741960c6d2f681c9cf34fd"
     
-    private lazy var jsonDecoder: JSONDecoder = {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(.iso8601Full)
-        
-        return decoder
-    }()
-    
     private let regionsRepository = RegionsRepository()
     
     private var cancellables = Set<AnyCancellable>()
@@ -48,23 +41,26 @@ class MapViewModel: ObservableObject {
         request.setValue(apiKeyValue, forHTTPHeaderField: apiKey)
         request.httpMethod = "GET"
         
-        alertStatesSubscription = NetworkManager.download(request: request)
-            .decode(type: AlertStateModel.self, decoder: jsonDecoder)
+        NetworkManager.download(request: request)
+            .decode(type: AlertStateModel.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
-            .passthrough { [weak self] alertStateModel in
-                guard let self = self else { return }
+            .passthrough { [weak self] alertStateModel in self?.lastUpdate = alertStateModel.lastUpdate }
+            .map { [weak self] alertStateModel in
+                guard let self = self else { return [] }
                 
-                self.lastUpdate = DateFormatter.iso8601UTC.date(from: alertStateModel.last_update) ?? Date()
-                self.regionStates = alertStateModel.states.filter(\.alert)
+                return self.regionsRepository.regions.map { region in
+                    RegionStateModel(
+                        id: region.properties.ID_0,
+                        name: region.properties.NAME_1,
+                        geometry: region.geometry.first!,
+                        alertState: alertStateModel.alertState(for: region)
+                    )
+                }
             }
-            .map(\.states)
-            .map(updateOverlays(states:))
-            .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] overlays in
-                guard let self = self else { return }
-                
-                self.overlays = overlays
-                self.alertStatesSubscription?.cancel()
-            })
+            .passthrough { [weak self] resionStateModels in self?.regionStates = resionStateModels.filter { $0.alertState.type == .airAlarm } }
+            .map(updateOverlays(regionStateModels:))
+            .replaceError(with: [])
+            .assign(to: &$overlays)
     }
     
     private func setUpTimer() {
@@ -75,31 +71,12 @@ class MapViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    private func updateOverlays(states: [RegionStateModel]) -> [RegionOverlay] {
-        return states.compactMap { state in
-            guard let region = regionsRepository.regions.first(where: { $0.properties.NAME_1.contains(state.name) }),
-                  let geometry = region.geometry.first
-            else { return nil }
-            
-            let color = state.alert
-                ? PlatformColor(red: 194/255, green: 59/255, blue: 34/255, alpha: 1)
-                : PlatformColor(red: 50/255, green: 200/255, blue: 210/255, alpha: 1)
-            
-            return RegionOverlay(shape: geometry, color: color.withAlphaComponent(0.5))
+    private func updateOverlays(regionStateModels: [RegionStateModel]) -> [RegionOverlay] {
+        return regionStateModels.map { model in
+            RegionOverlay(
+                shape: model.geometry,
+                color: model.alertState.type.color
+            )
         }
-    }
-    
-    private static func getAlertStates(from json: String) -> AlertStateModel? {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(.iso8601Full)
-        
-        guard let url = Bundle.main.url(forResource: json, withExtension: "json"),
-              let jsonData = try? Data(contentsOf: url),
-              let alertStates = try? decoder.decode(AlertStateModel.self, from: jsonData)
-        else {
-            return nil
-        }
-
-        return alertStates
     }
 }

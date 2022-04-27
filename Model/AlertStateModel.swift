@@ -7,7 +7,48 @@
 
 import Foundation
 
-struct AlertStateModel: Codable {
-    var states: [RegionStateModel]
-    var last_update: String
+struct AlertStateModel: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case lastUpdate = "last_update"
+        case states = "states"
+    }
+    
+    struct RegionDecodable: Decodable {
+        let id: Int
+        let name: String
+        let name_en: String
+        let alert: Bool
+        let changed: String
+    }
+    
+    var lastUpdate: Date
+    var regionStates: [RegionDecodable]
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        let lastUpdateString = try container.decode(String.self, forKey: .lastUpdate)
+        guard let date = DateFormatter.iso8601UTC.date(from: lastUpdateString)
+        else {
+            throw DecodingError.dataCorrupted(DecodingError.Context(
+                codingPath: [CodingKeys.lastUpdate],
+                debugDescription: "Date string looks to be invalid",
+                underlyingError: nil
+            ))
+        }
+        lastUpdate = date
+        
+        regionStates = try container.decode([RegionDecodable].self, forKey: .states)
+    }
+    
+    func alertState(for region: Region) -> AlertState {
+        if let regionState = regionStates.first(where: { region.properties.NAME_1.contains($0.name) }) {
+            return AlertState(
+                type: regionState.alert ? .airAlarm : .allClear,
+                changedAt: DateFormatter.iso8601Full.date(from: regionState.changed)!
+            )
+        }
+        
+        return AlertState()
+    }
 }

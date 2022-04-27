@@ -26,6 +26,9 @@
 		9C393A582816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
 		9C393A592816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
 		9C393A5A2816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
+		9C5E600E2819446A00CEEBF1 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E600D2819446A00CEEBF1 /* AlertState.swift */; };
+		9C5E600F2819446A00CEEBF1 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E600D2819446A00CEEBF1 /* AlertState.swift */; };
+		9C5E60102819446A00CEEBF1 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E600D2819446A00CEEBF1 /* AlertState.swift */; };
 		9C9E00012810807800410B75 /* AlertStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* AlertStateModel.swift */; };
 		9C9E00022810807800410B75 /* AlertStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* AlertStateModel.swift */; };
 		9C9E00032810807800410B75 /* AlertStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* AlertStateModel.swift */; };
@@ -105,6 +108,7 @@
 		9C393A4F2816860E00A9CCA6 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeOrientation.swift; sourceTree = "<group>"; };
 		9C393A572816906800A9CCA6 /* MapContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContants.swift; sourceTree = "<group>"; };
+		9C5E600D2819446A00CEEBF1 /* AlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertState.swift; sourceTree = "<group>"; };
 		9C9E00002810807800410B75 /* AlertStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStateModel.swift; sourceTree = "<group>"; };
 		9C9EFFF8281077E600410B75 /* test-sirens.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-sirens.json"; sourceTree = "<group>"; wrapsLines = 1; };
 		9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStateModel.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				9CE2A6D52810414000241EB4 /* RegionsRepository.swift */,
 				9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */,
 				9C393A572816906800A9CCA6 /* MapContants.swift */,
+				9C5E600D2819446A00CEEBF1 /* AlertState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -411,6 +416,7 @@
 				9CD63A7E2811A4F300116F1E /* PlaftormExtensions.swift in Sources */,
 				9C9EFFFF28107F0000410B75 /* RegionStateModel.swift in Sources */,
 				9C9E00032810807800410B75 /* AlertStateModel.swift in Sources */,
+				9C5E60102819446A00CEEBF1 /* AlertState.swift in Sources */,
 				9C393A5A2816906800A9CCA6 /* MapContants.swift in Sources */,
 				9CE2A6DC2810539200241EB4 /* Region.swift in Sources */,
 				9CEBC01D2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
@@ -432,6 +438,7 @@
 				9C393A3628147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
 				9C393A5428168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */,
 				9C9EFFFD28107F0000410B75 /* RegionStateModel.swift in Sources */,
+				9C5E600E2819446A00CEEBF1 /* AlertState.swift in Sources */,
 				9C393A3A2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,
 				9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */,
 				9CD63A992811D28A00116F1E /* RegionOverlay.swift in Sources */,
@@ -468,6 +475,7 @@
 				9CD63A7D2811A4F300116F1E /* PlaftormExtensions.swift in Sources */,
 				9C9EFFFE28107F0000410B75 /* RegionStateModel.swift in Sources */,
 				9C9E00022810807800410B75 /* AlertStateModel.swift in Sources */,
+				9C5E600F2819446A00CEEBF1 /* AlertState.swift in Sources */,
 				9C393A592816906800A9CCA6 /* MapContants.swift in Sources */,
 				9CE2A6DB2810539200241EB4 /* Region.swift in Sources */,
 				9CEBC01C2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct RegionStateListItemView: View {
     let regionState: RegionStateModel
@@ -20,12 +21,12 @@ struct RegionStateListItemView: View {
                         
                     Spacer()
                     HStack {
-                        Text(DateFormatter.shortDateTime.string(from: regionState.changed))
+                        Text(DateFormatter.shortDateTime.string(from: regionState.alertState.changedAt))
                     }.font(.subheadline)
                 }
                 HStack {
                     Text("⚠️Триває").italic()
-                    Text(regionState.changed, style: .relative).italic()
+                    Text(regionState.alertState.changedAt, style: .relative).italic()
                 }.foregroundColor(.red)
             }
         }
@@ -37,9 +38,8 @@ struct RegionStateListItemView_Previews: PreviewProvider {
         RegionStateListItemView(regionState: RegionStateModel(
             id: 0,
             name: "Київська Область",
-            name_en: "Kyiv Region",
-            alert: true,
-            changed: Date()
+            geometry: MKPolygon(),
+            alertState: AlertState()
         ))
         .previewLayout(.sizeThatFits)
     }
