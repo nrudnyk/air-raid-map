@@ -159,6 +159,7 @@
 		9C278F93281061CE00811961 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9C0AD830280FE4EB0095ACCA /* MapView.swift */,
 				9C278F94281061E500811961 /* MapViewRepresentable.swift */,
 				9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */,
 			);
@@ -183,6 +184,21 @@
 				9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9C5E60122819833A00CEEBF1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9C5E60132819835000CEEBF1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		9CD63A8F2811D18B00116F1E /* GeoOverlays */ = {
@@ -237,15 +253,15 @@
 			children = (
 				9C393A4E2816860200A9CCA6 /* Extensions */,
 				9CE2A6D42810414000241EB4 /* Model */,
+				9CF79ECA280FD21B00FBAE90 /* Products */,
 				9CE2A6B2281002CD00241EB4 /* Resources */,
+				9C5E60122819833A00CEEBF1 /* Services */,
 				9CE2A6CF28103EEE00241EB4 /* Utils */,
+				9C5E60132819835000CEEBF1 /* ViewModels */,
 				9C278F93281061CE00811961 /* Views */,
 				9CF79EC2280FD21A00FBAE90 /* AirRaidMapApp.swift */,
 				9CF79EC3280FD21A00FBAE90 /* ContentView.swift */,
-				9C0AD830280FE4EB0095ACCA /* MapView.swift */,
-				9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */,
 				9C393A4B28157E5400A9CCA6 /* Frameworks */,
-				9CF79ECA280FD21B00FBAE90 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
