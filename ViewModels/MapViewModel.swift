@@ -11,17 +11,14 @@ import Combine
 
 class MapViewModel: ObservableObject {
     
-    private let regionsRepository = RegionsRepository()
-    
-    private var cancellables = Set<AnyCancellable>()
-    
     @Published var ukraineCoordinateRegion = MapConstsants.boundsOfUkraine
     @Published var alarmedRegion: [RegionStateModel] = []
     @Published var overlays = [MKOverlay]()
     @Published var lastUpdate: Date = Date()
     
     private let airAlertsDataService = AirAlertsDataService()
-    
+    private var cancellables = Set<AnyCancellable>()
+
     init() {
         fitUkraineBounds()
         setUpTimer()
