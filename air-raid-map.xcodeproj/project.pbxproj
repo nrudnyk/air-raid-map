@@ -67,7 +67,6 @@
 		9CE2A6DA2810539200241EB4 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2A6D92810539200241EB4 /* Region.swift */; };
 		9CE2A6DB2810539200241EB4 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2A6D92810539200241EB4 /* Region.swift */; };
 		9CE2A6DC2810539200241EB4 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2A6D92810539200241EB4 /* Region.swift */; };
-		9CEBC01928115D6300C16CD0 /* Assets-tvOS.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CEBC01228115D6300C16CD0 /* Assets-tvOS.xcassets */; };
 		9CEBC01B2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEBC01A2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift */; };
 		9CEBC01C2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEBC01A2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift */; };
 		9CEBC01D2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEBC01A2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift */; };
@@ -120,7 +119,6 @@
 		9CE2A6C92810054E00241EB4 /* regions.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = regions.geojson; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 0; };
 		9CE2A6D52810414000241EB4 /* RegionsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionsRepository.swift; sourceTree = "<group>"; };
 		9CE2A6D92810539200241EB4 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
-		9CEBC01228115D6300C16CD0 /* Assets-tvOS.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets-tvOS.xcassets"; sourceTree = "<group>"; };
 		9CEBC01328115D6300C16CD0 /* macOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		9CEBC01A2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDecodableGeoJSONFeature.swift; sourceTree = "<group>"; };
 		9CEBC01E281176BD00C16CD0 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
@@ -203,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				9C393A4A28157E5400A9CCA6 /* air-raid-map--iOS--Info.plist */,
-				9CEBC01228115D6300C16CD0 /* Assets-tvOS.xcassets */,
 				9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */,
 				9CEBC01328115D6300C16CD0 /* macOS.entitlements */,
 				9CE2A6C92810054E00241EB4 /* regions.geojson */,
@@ -375,7 +372,6 @@
 			files = (
 				9C9EFFFB281077E600410B75 /* test-sirens.json in Resources */,
 				9CE2A6CC2810054E00241EB4 /* regions.geojson in Resources */,
-				9CEBC01928115D6300C16CD0 /* Assets-tvOS.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
