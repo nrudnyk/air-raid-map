@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct AlertStateModel: Decodable {
+struct RegionStatesDecodable: Decodable {
     private enum CodingKeys: String, CodingKey {
         case lastUpdate = "last_update"
         case states = "states"
     }
     
-    struct RegionDecodable: Decodable {
+    private struct RegionDecodable: Decodable {
         let id: Int
         let name: String
         let name_en: String
@@ -21,8 +21,8 @@ struct AlertStateModel: Decodable {
         let changed: String
     }
     
-    var lastUpdate: Date
-    var regionStates: [RegionDecodable]
+    let lastUpdate: Date
+    private let regionStates: [RegionDecodable]
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

@@ -22,7 +22,7 @@ struct MapView: View {
     var body: some View {
         ZStack {
             MapViewRepresentable(
-                region: $viewModel.region,
+                region: $viewModel.ukraineCoordinateRegion,
                 overlays: viewModel.overlays
             ).ignoresSafeArea()
 #if os(iOS)
@@ -78,7 +78,7 @@ extension MapView {
     fileprivate var regionListHeader: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Активні тривоги (\(viewModel.regionStates.count))")
+                Text("Активні тривоги (\(viewModel.alarmedRegion.count))")
                     .font(.title3).bold()
                 Text("станом на: \(DateFormatter.localizedString(from: viewModel.lastUpdate, dateStyle: .medium, timeStyle: .medium))")
                     .italic()
@@ -111,7 +111,7 @@ extension MapView {
     fileprivate var regionList: some View {
         ScrollView(bottomSheetPosition == .top ? .vertical : []) {
             VStack {
-                ForEach(viewModel.regionStates) { regionState in
+                ForEach(viewModel.alarmedRegion) { regionState in
                     RegionStateListItemView(regionState: regionState)
                         .contextMenu {
                             Text("item 1")

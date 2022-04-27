@@ -17,10 +17,9 @@ class MapViewModel: ObservableObject {
     private let regionsRepository = RegionsRepository()
     
     private var cancellables = Set<AnyCancellable>()
-    private var alertStatesSubscription: AnyCancellable?
     
-    @Published var region = MapConstsants.boundsOfUkraine
-    @Published var regionStates: [RegionStateModel] = []
+    @Published var ukraineCoordinateRegion = MapConstsants.boundsOfUkraine
+    @Published var alarmedRegion: [RegionStateModel] = []
     @Published var overlays = [MKOverlay]()
     @Published var lastUpdate: Date = Date()
     
@@ -31,7 +30,7 @@ class MapViewModel: ObservableObject {
     }
     
     func fitUkraineBounds() {
-        self.region = MapConstsants.boundsOfUkraine
+        self.ukraineCoordinateRegion = MapConstsants.boundsOfUkraine
     }
     
     func updateRegionStates() {
@@ -42,22 +41,23 @@ class MapViewModel: ObservableObject {
         request.httpMethod = "GET"
         
         NetworkManager.download(request: request)
-            .decode(type: AlertStateModel.self, decoder: JSONDecoder())
+            .decode(type: RegionStatesDecodable.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
-            .passthrough { [weak self] alertStateModel in self?.lastUpdate = alertStateModel.lastUpdate }
-            .map { [weak self] alertStateModel in
+            .map { [weak self] regionStatesDecodable in
                 guard let self = self else { return [] }
+                
+                self.lastUpdate = regionStatesDecodable.lastUpdate
                 
                 return self.regionsRepository.regions.map { region in
                     RegionStateModel(
                         id: region.properties.ID_0,
                         name: region.properties.NAME_1,
                         geometry: region.geometry.first!,
-                        alertState: alertStateModel.alertState(for: region)
+                        alertState: regionStatesDecodable.alertState(for: region)
                     )
                 }
             }
-            .passthrough { [weak self] resionStateModels in self?.regionStates = resionStateModels.filter { $0.alertState.type == .airAlarm } }
+            .passthrough { [weak self] resionStateModels in self?.alarmedRegion = resionStateModels.filter { $0.alertState.type == .airAlarm } }
             .map(updateOverlays(regionStateModels:))
             .replaceError(with: [])
             .assign(to: &$overlays)
