@@ -7,25 +7,21 @@
 
 import MapKit
 import SwiftUI
-#if os(iOS)
 import BottomSheet
-#endif
 
-struct MapView: View {
-#if os(iOS)
+struct HomeView: View {
     @LandscapeOrientation var isLandscape
     @State var bottomSheetPosition: BottomSheetPosition = .bottom
-#endif
     
     @StateObject private var viewModel = MapViewModel()
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .topTrailing) {
             MapViewRepresentable(
                 region: $viewModel.ukraineCoordinateRegion,
                 overlays: viewModel.overlays
             ).ignoresSafeArea()
-#if os(iOS)
+            toolbar
             GeometryReader { gReader in
                 Color.clear
                     .bottomSheet(
@@ -37,43 +33,62 @@ struct MapView: View {
                     .offset(x: -gReader.safeAreaInsets.leading / 2, y: 0)
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-#endif
         }
     }
 }
 
-#if os(iOS)
-struct MapView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         if #available(iOS 15.0, *) {
-            MapView(bottomSheetPosition: .middle)
+            HomeView(bottomSheetPosition: .middle)
+                .previewInterfaceOrientation(.landscapeLeft)
+                .preferredColorScheme(.dark)
         } else {
-            MapView()
+            HomeView()
         }
     }
 }
-#endif
 
-extension MapView {
+extension HomeView {
+    fileprivate var toolbar: some View {
+        VStack(spacing: 0) {
+            fitUkraineButton
+            Divider()
+            refreshButton
+        }
+        .fixedSize(horizontal: true, vertical: false)
+        .background(Color(.secondarySystemBackground))
+        .foregroundColor(Color.secondary)
+        .cornerRadius(8)
+        .padding(.top, isLandscape ? 8 : -8)
+        .padding(.trailing, isLandscape ? -8 : 8)
+    }
+    
     fileprivate var refreshButton: some View {
         Button(
-            action: viewModel.reloadData,
-            label: { Image(systemName: "arrow.clockwise") }
+            action: {
+                viewModel.reloadData()
+                selectionHapticFeedback()
+            },
+            label: {
+                Image(systemName: "arrow.clockwise")
+                    .padding(12)
+            }
         )
-        .padding(4)
-        .contentShape(Rectangle())
     }
     
     fileprivate var fitUkraineButton: some View {
         Button(
-            action: viewModel.fitUkraineBounds,
-            label: { Image(systemName: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left") }
+            action: {
+                viewModel.fitUkraineBounds()
+                selectionHapticFeedback()
+            },
+            label: {
+                Image(systemName: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left")
+                    .padding(12)
+            }
         )
-        .padding(4)
-        .contentShape(Rectangle())
     }
-    
-#if os(iOS)
     
     fileprivate var regionListHeader: some View {
         HStack {
@@ -86,26 +101,14 @@ extension MapView {
                     .frame(alignment: .trailing)
             }
             Spacer()
-            fitUkraineButton
-            refreshButton
         }
     }
     
     fileprivate var regionListView: some View {
         VStack {
-            regionListSectionHeader
             Divider()
             regionList
         }.padding([.top, .horizontal])
-    }
-    
-    fileprivate var regionListSectionHeader: some View {
-        HStack {
-            Text("Регіон")
-            Spacer()
-            Text("Оголошено в")
-        }
-        .font(.headline)
     }
     
     fileprivate var regionList: some View {
@@ -113,18 +116,10 @@ extension MapView {
             VStack {
                 ForEach(viewModel.alarmedRegion) { regionState in
                     RegionStateListItemView(regionState: regionState)
-//                        .contextMenu {
-//                            Text("item 1")
-//                            Text("Item 3")
-//                            Divider()
-//                            Text("Item 2")
-//                        }
                     Divider()
                 }
                 Spacer()
             }
         }
     }
-    
-#endif
 }

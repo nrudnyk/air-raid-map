@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		9C0AD82E280FE4E20095ACCA /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
 		9C0AD82F280FE4E20095ACCA /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
-		9C0AD831280FE4EB0095ACCA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD830280FE4EB0095ACCA /* MapView.swift */; };
-		9C0AD832280FE4EB0095ACCA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD830280FE4EB0095ACCA /* MapView.swift */; };
+		9C0AD831280FE4EB0095ACCA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD830280FE4EB0095ACCA /* HomeView.swift */; };
 		9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
 		9C278F97281071A700811961 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
 		9C393A34281474FF00A9CCA6 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 9C393A33281474FF00A9CCA6 /* BottomSheet */; };
@@ -32,6 +31,11 @@
 		9C5E60152819839800CEEBF1 /* AirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */; };
 		9C5E60162819839800CEEBF1 /* AirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */; };
 		9C5E60172819839800CEEBF1 /* AirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */; };
+		9C5E601A2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */; };
+		9C5E601B2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */; };
+		9C5E601C2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */; };
+		9C5E602E281A633200CEEBF1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E602C281A633200CEEBF1 /* HomeView.swift */; };
+		9C5E6034281AB8C300CEEBF1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E6033281AB8C300CEEBF1 /* HomeView.swift */; };
 		9C9E00012810807800410B75 /* RegionStatesDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* RegionStatesDecodable.swift */; };
 		9C9E00022810807800410B75 /* RegionStatesDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* RegionStatesDecodable.swift */; };
 		9C9E00032810807800410B75 /* RegionStatesDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* RegionStatesDecodable.swift */; };
@@ -58,7 +62,6 @@
 		9CD63A9A2811D28A00116F1E /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
 		9CD63A9B2811D28A00116F1E /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
 		9CE2A6C52810042900241EB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC3280FD21A00FBAE90 /* ContentView.swift */; };
-		9CE2A6C62810044600241EB4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD830280FE4EB0095ACCA /* MapView.swift */; };
 		9CE2A6C72810044A00241EB4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
 		9CE2A6C8281004E000241EB4 /* AirRaidMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC2280FD21A00FBAE90 /* AirRaidMapApp.swift */; };
 		9CE2A6CA2810054E00241EB4 /* regions.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9CE2A6C92810054E00241EB4 /* regions.geojson */; };
@@ -99,7 +102,7 @@
 
 /* Begin PBXFileReference section */
 		9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		9C0AD830280FE4EB0095ACCA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		9C0AD830280FE4EB0095ACCA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9C278F94281061E500811961 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		9C278F96281071A700811961 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineExtensions.swift; sourceTree = "<group>"; };
@@ -112,6 +115,9 @@
 		9C393A572816906800A9CCA6 /* MapContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContants.swift; sourceTree = "<group>"; };
 		9C5E600D2819446A00CEEBF1 /* AlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertState.swift; sourceTree = "<group>"; };
 		9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertsDataService.swift; sourceTree = "<group>"; };
+		9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackExtension.swift; sourceTree = "<group>"; };
+		9C5E602C281A633200CEEBF1 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9C5E6033281AB8C300CEEBF1 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9C9E00002810807800410B75 /* RegionStatesDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStatesDecodable.swift; sourceTree = "<group>"; };
 		9C9EFFF8281077E600410B75 /* test-sirens.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-sirens.json"; sourceTree = "<group>"; wrapsLines = 1; };
 		9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStateModel.swift; sourceTree = "<group>"; };
@@ -163,7 +169,6 @@
 		9C278F93281061CE00811961 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9C0AD830280FE4EB0095ACCA /* MapView.swift */,
 				9C278F94281061E500811961 /* MapViewRepresentable.swift */,
 				9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */,
 			);
@@ -186,6 +191,7 @@
 				9C278F96281071A700811961 /* Extensions.swift */,
 				9C393A4F2816860E00A9CCA6 /* Orientation.swift */,
 				9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */,
+				9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -204,6 +210,30 @@
 				9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9C5E6029281A630600CEEBF1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9C0AD830280FE4EB0095ACCA /* HomeView.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		9C5E602A281A630B00CEEBF1 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				9C5E602C281A633200CEEBF1 /* HomeView.swift */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		9C5E602B281A630F00CEEBF1 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				9C5E6033281AB8C300CEEBF1 /* HomeView.swift */,
+			);
+			path = tvOS;
 			sourceTree = "<group>";
 		};
 		9CD63A8F2811D18B00116F1E /* GeoOverlays */ = {
@@ -256,6 +286,9 @@
 		9CF79EBC280FD21A00FBAE90 = {
 			isa = PBXGroup;
 			children = (
+				9C5E602B281A630F00CEEBF1 /* tvOS */,
+				9C5E602A281A630B00CEEBF1 /* macOS */,
+				9C5E6029281A630600CEEBF1 /* iOS */,
 				9C393A4E2816860200A9CCA6 /* Extensions */,
 				9CE2A6D42810414000241EB4 /* Model */,
 				9CF79ECA280FD21B00FBAE90 /* Products */,
@@ -374,6 +407,8 @@
 			mainGroup = 9CF79EBC280FD21A00FBAE90;
 			packageReferences = (
 				9C393A32281474FF00A9CCA6 /* XCRemoteSwiftPackageReference "BottomSheet" */,
+				9C5E601D28199D4B00CEEBF1 /* XCRemoteSwiftPackageReference "swiftui-system-colors" */,
+				9C5E6030281AB06300CEEBF1 /* XCRemoteSwiftPackageReference "Pulse" */,
 			);
 			productRefGroup = 9CF79ECA280FD21B00FBAE90 /* Products */;
 			projectDirPath = "";
@@ -432,6 +467,7 @@
 				9CD63A9B2811D28A00116F1E /* RegionOverlay.swift in Sources */,
 				9CAB4DD22810A79400812938 /* Extensions.swift in Sources */,
 				9CD63A7E2811A4F300116F1E /* PlaftormExtensions.swift in Sources */,
+				9C5E601C2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */,
 				9C9EFFFF28107F0000410B75 /* RegionStateModel.swift in Sources */,
 				9C9E00032810807800410B75 /* RegionStatesDecodable.swift in Sources */,
 				9C5E60102819446A00CEEBF1 /* AlertState.swift in Sources */,
@@ -440,9 +476,9 @@
 				9CEBC01D2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
 				9CCD77AA28144D930050584C /* NetworkManager.swift in Sources */,
 				9CE2A6C8281004E000241EB4 /* AirRaidMapApp.swift in Sources */,
-				9CE2A6C62810044600241EB4 /* MapView.swift in Sources */,
 				9CEBC0252811777700C16CD0 /* GeoJSONError.swift in Sources */,
 				9CE2A6C72810044A00241EB4 /* MapViewModel.swift in Sources */,
+				9C5E6034281AB8C300CEEBF1 /* HomeView.swift in Sources */,
 				9CD63A932811D1AF00116F1E /* Country.swift in Sources */,
 				9CE2A6D82810414000241EB4 /* RegionsRepository.swift in Sources */,
 			);
@@ -466,9 +502,10 @@
 				9C278F97281071A700811961 /* Extensions.swift in Sources */,
 				9C393A582816906800A9CCA6 /* MapContants.swift in Sources */,
 				9C393A502816860E00A9CCA6 /* Orientation.swift in Sources */,
-				9C0AD831280FE4EB0095ACCA /* MapView.swift in Sources */,
+				9C0AD831280FE4EB0095ACCA /* HomeView.swift in Sources */,
 				9CEBC01B2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
 				9CCD77A828144D930050584C /* NetworkManager.swift in Sources */,
+				9C5E601A2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */,
 				9CF79ED2280FD21B00FBAE90 /* AirRaidMapApp.swift in Sources */,
 				9C0AD82E280FE4E20095ACCA /* MapViewModel.swift in Sources */,
 				9CEBC0232811777700C16CD0 /* GeoJSONError.swift in Sources */,
@@ -485,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEBC020281176BD00C16CD0 /* Feature.swift in Sources */,
+				9C5E602E281A633200CEEBF1 /* HomeView.swift in Sources */,
 				9C5E60162819839800CEEBF1 /* AirAlertsDataService.swift in Sources */,
 				9C393A3728147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
 				9CAB4DD32810A7AE00812938 /* MapViewRepresentable.swift in Sources */,
@@ -493,6 +531,7 @@
 				9CD63A9A2811D28A00116F1E /* RegionOverlay.swift in Sources */,
 				9CAB4DD12810A79400812938 /* Extensions.swift in Sources */,
 				9CD63A7D2811A4F300116F1E /* PlaftormExtensions.swift in Sources */,
+				9C5E601B2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */,
 				9C9EFFFE28107F0000410B75 /* RegionStateModel.swift in Sources */,
 				9C9E00022810807800410B75 /* RegionStatesDecodable.swift in Sources */,
 				9C5E600F2819446A00CEEBF1 /* AlertState.swift in Sources */,
@@ -500,7 +539,6 @@
 				9CE2A6DB2810539200241EB4 /* Region.swift in Sources */,
 				9CEBC01C2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
 				9CCD77A928144D930050584C /* NetworkManager.swift in Sources */,
-				9C0AD832280FE4EB0095ACCA /* MapView.swift in Sources */,
 				9CF79ED3280FD21B00FBAE90 /* AirRaidMapApp.swift in Sources */,
 				9CEBC0242811777700C16CD0 /* GeoJSONError.swift in Sources */,
 				9C0AD82F280FE4E20095ACCA /* MapViewModel.swift in Sources */,
@@ -691,9 +729,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FV78YE336Y;
+				DEVELOPMENT_TEAM = 4RZQG425FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Resources/air-raid-map--iOS--Info.plist";
@@ -710,6 +749,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nrudnyk.air-raid-map";
 				PRODUCT_NAME = "air-raid-map";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -722,9 +762,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FV78YE336Y;
+				DEVELOPMENT_TEAM = 4RZQG425FX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Resources/air-raid-map--iOS--Info.plist";
@@ -741,6 +782,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nrudnyk.air-raid-map";
 				PRODUCT_NAME = "air-raid-map";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -853,6 +895,22 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;
+			};
+		};
+		9C5E601D28199D4B00CEEBF1 /* XCRemoteSwiftPackageReference "swiftui-system-colors" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/diniska/swiftui-system-colors";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		9C5E6030281AB06300CEEBF1 /* XCRemoteSwiftPackageReference "Pulse" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Pulse";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

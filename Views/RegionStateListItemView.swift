@@ -12,23 +12,28 @@ struct RegionStateListItemView: View {
     let regionState: RegionStateModel
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                HStack(alignment: .top) {
-                    Text(regionState.name)
-                        .font(.title3)
-                        .bold()
-                        
-                    Spacer()
-                    HStack {
-                        Text(DateFormatter.shortDateTime.string(from: regionState.alertState.changedAt))
-                    }.font(.subheadline)
-                }
-                HStack {
-                    Text("⚠️Триває").italic()
-                    Text(regionState.alertState.changedAt, style: .relative).italic()
-                }.foregroundColor(.red)
+        VStack(alignment: .leading) {
+            HStack(alignment: .top) {
+                Text(regionState.name)
+                    .font(.headline)
+                    .bold()
+                Spacer()
             }
+            
+            HStack(spacing: 0) {
+                Image(systemName: "clock.arrow.circlepath")
+                Text(" триває ").italic()
+                Text(regionState.alertState.changedAt, style: .relative).italic()
+            }
+            .font(.footnote)
+            .foregroundColor(.red)
+            
+            HStack(spacing: 0) {
+                Image(systemName: "megaphone")
+                Text(" оголошено \(DateFormatter.shortString(from: regionState.alertState.changedAt))").italic()
+            }
+            .font(.footnote)
+            .foregroundColor(.yellow)
         }
     }
 }
@@ -36,7 +41,7 @@ struct RegionStateListItemView: View {
 struct RegionStateListItemView_Previews: PreviewProvider {
     static var previews: some View {
         RegionStateListItemView(regionState: RegionStateModel(
-            id: 0,
+            id_0: 0,
             name: "Київська Область",
             geometry: MKPolygon(),
             alertState: AlertState()

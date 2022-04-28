@@ -38,7 +38,7 @@ class AirAlertsDataService {
                 
                 return self.regionsRepository.regions.map { region in
                     RegionStateModel(
-                        id: region.properties.ID_0,
+                        id_0: region.properties.ID_0,
                         name: region.properties.NAME_1,
                         geometry: region.geometry.first!,
                         alertState: regionStatesDecodable.alertState(for: region)

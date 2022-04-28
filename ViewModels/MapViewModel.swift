@@ -39,7 +39,9 @@ class MapViewModel: ObservableObject {
     }
     
     func fitUkraineBounds() {
-        self.ukraineCoordinateRegion = MapConstsants.boundsOfUkraine
+        DispatchQueue.main.async {
+            self.ukraineCoordinateRegion = MapConstsants.boundsOfUkraine
+        }
     }
     
     func reloadData() {

@@ -8,7 +8,11 @@
 import MapKit
 
 struct RegionStateModel: Identifiable {
-    let id: Int
+    var id: String {
+        return name
+    }
+    
+    let id_0: Int
     let name: String
     let geometry: MKShape & MKGeoJSONObject
     let alertState: AlertState

@@ -41,9 +41,16 @@ extension DateFormatter {
     
     static let shortDateTime: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMM, HH:mm"
+        formatter.dateFormat = "HH:mm, dd MMM"
         formatter.locale = Locale.current
         
         return formatter
     }()
+    
+    static func shortString(from date: Date) -> String {
+        let hour = Calendar.current.component(.hour, from: date)
+        let preposition = hour == 11 ? "об" : "о"
+    
+        return "\(preposition) \(DateFormatter.shortDateTime.string(from: date))"
+    }
 }
