@@ -25,6 +25,7 @@
 		9C393A582816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
 		9C393A592816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
 		9C393A5A2816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
+		9C50475E281C477F00AA817A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */; };
 		9C5E600E2819446A00CEEBF1 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E600D2819446A00CEEBF1 /* AlertState.swift */; };
 		9C5E600F2819446A00CEEBF1 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E600D2819446A00CEEBF1 /* AlertState.swift */; };
 		9C5E60102819446A00CEEBF1 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E600D2819446A00CEEBF1 /* AlertState.swift */; };
@@ -427,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9EFFFB281077E600410B75 /* test-sirens.json in Resources */,
+				9C50475E281C477F00AA817A /* Assets.xcassets in Resources */,
 				9CE2A6CC2810054E00241EB4 /* regions.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
