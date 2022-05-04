@@ -37,15 +37,40 @@ class AirAlertsDataService {
                 self.lastUpdate = regionStatesDecodable.lastUpdate
                 
                 return self.regionsRepository.regions.map { region in
-                    RegionStateModel(
-                        id_0: region.properties.ID_0,
-                        name: region.properties.NAME_1,
-                        geometry: region.geometry.first!,
-                        alertState: regionStatesDecodable.alertState(for: region)
-                    )
+                    return self.makeRegionStateModel(region, alertState: regionStatesDecodable.alertState(for: region))
                 }
             }
             .replaceError(with: [])
             .assign(to: &$regionsData)
+    }
+    
+    func updateAlertsData(completion: @escaping ([RegionStateModel]) -> Void) {
+        guard let url = URL(string: alertsApiEndpoint) else { return }
+        
+        var request = URLRequest(url: url)
+        request.setValue(apiKeyValue, forHTTPHeaderField: apiKey)
+        request.httpMethod = "GET"
+ 
+        NetworkManager.download(request: request) { data in
+            do {
+                let regionsDecodable = try JSONDecoder().decode(RegionStatesDecodable.self, from: data)
+                let regionStatesModel = self.regionsRepository.regions.map { region in
+                    return self.makeRegionStateModel(region, alertState: regionsDecodable.alertState(for: region))
+                }
+
+                completion(regionStatesModel)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func makeRegionStateModel(_ region: Region, alertState: AlertState) -> RegionStateModel {
+        return  RegionStateModel(
+            id_0: region.properties.ID_0,
+            name: region.properties.NAME_1,
+            geometry: region.geometry.first!,
+            alertState: alertState
+        )
     }
 }

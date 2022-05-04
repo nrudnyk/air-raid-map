@@ -36,6 +36,21 @@ class NetworkManager {
             .eraseToAnyPublisher()
     }
     
+    static func download(request: URLRequest, completion: @escaping (Data) -> Void) {
+        URLSession.shared.dataTask(with: request) { data, urlResponse, error in
+            guard let response = urlResponse as? HTTPURLResponse,
+                  response.statusCode >= 200 && response.statusCode < 300,
+                  let data = data
+            else {
+                if let description = NetworkingError.badURLResponse(url: request.url!).errorDescription { print(description) }
+                if let description = error?.localizedDescription { print(description) }
+                return
+            }
+            
+            completion(data)
+        }.resume()
+    }
+    
     static func handleURLResponse(output: URLSession.DataTaskPublisher.Output, url: URL) throws -> Data {
         guard let response = output.response as? HTTPURLResponse,
               response.statusCode >= 200 && response.statusCode < 300 else {
