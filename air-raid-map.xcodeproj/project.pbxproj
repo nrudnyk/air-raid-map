@@ -30,7 +30,7 @@
 		9C393A5A2816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
 		9C459580281E673600DD561D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C45957F281E673600DD561D /* WidgetKit.framework */; platformFilter = maccatalyst; };
 		9C459582281E673600DD561D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C459581281E673600DD561D /* SwiftUI.framework */; platformFilter = maccatalyst; };
-		9C45958B281E673700DD561D /* air-raid-map (iOS-Widget).appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C45957E281E673600DD561D /* air-raid-map (iOS-Widget).appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9C45958B281E673700DD561D /* air-raid-map-iOS-widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9C459595281E83E200DD561D /* WidgetMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C459594281E83E200DD561D /* WidgetMapView.swift */; };
 		9C459596281E84C100DD561D /* MapStatusTimelinePovider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C459590281E6E8B00DD561D /* MapStatusTimelinePovider.swift */; };
 		9C459597281E84C300DD561D /* MapStatusEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C459592281E6F0A00DD561D /* MapStatusEntry.swift */; };
@@ -134,7 +134,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				9C45958B281E673700DD561D /* air-raid-map (iOS-Widget).appex in Embed App Extensions */,
+				9C45958B281E673700DD561D /* air-raid-map-iOS-widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,7 +156,7 @@
 		9C393A4F2816860E00A9CCA6 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeOrientation.swift; sourceTree = "<group>"; };
 		9C393A572816906800A9CCA6 /* MapContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContants.swift; sourceTree = "<group>"; };
-		9C45957E281E673600DD561D /* air-raid-map (iOS-Widget).appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "air-raid-map (iOS-Widget).appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "air-raid-map-iOS-widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C45957F281E673600DD561D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		9C459581281E673600DD561D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		9C459588281E673700DD561D /* Info-iOS-widget.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS-widget.plist"; sourceTree = "<group>"; };
@@ -386,7 +386,7 @@
 				9CF79EC9280FD21B00FBAE90 /* air-raid-map.app */,
 				9CF79ECF280FD21B00FBAE90 /* air-raid-map.app */,
 				9CE2A6B72810041000241EB4 /* УКРМАПА.app */,
-				9C45957E281E673600DD561D /* air-raid-map (iOS-Widget).appex */,
+				9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -394,9 +394,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9C45957D281E673600DD561D /* air-raid-map (iOS-Widget) */ = {
+		9C45957D281E673600DD561D /* air-raid-map-iOS-widget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C45958C281E673700DD561D /* Build configuration list for PBXNativeTarget "air-raid-map (iOS-Widget)" */;
+			buildConfigurationList = 9C45958C281E673700DD561D /* Build configuration list for PBXNativeTarget "air-raid-map-iOS-widget" */;
 			buildPhases = (
 				9C45957A281E673600DD561D /* Sources */,
 				9C45957B281E673600DD561D /* Frameworks */,
@@ -406,9 +406,9 @@
 			);
 			dependencies = (
 			);
-			name = "air-raid-map (iOS-Widget)";
+			name = "air-raid-map-iOS-widget";
 			productName = "air-raid-map-widgetExtension";
-			productReference = 9C45957E281E673600DD561D /* air-raid-map (iOS-Widget).appex */;
+			productReference = 9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		9CE2A6B62810041000241EB4 /* air-raid-map (tvOS) */ = {
@@ -516,7 +516,7 @@
 				9CF79EC8280FD21B00FBAE90 /* air-raid-map (iOS) */,
 				9CF79ECE280FD21B00FBAE90 /* air-raid-map (macOS) */,
 				9CE2A6B62810041000241EB4 /* air-raid-map (tvOS) */,
-				9C45957D281E673600DD561D /* air-raid-map (iOS-Widget) */,
+				9C45957D281E673600DD561D /* air-raid-map-iOS-widget */,
 			);
 		};
 /* End PBXProject section */
@@ -690,7 +690,7 @@
 /* Begin PBXTargetDependency section */
 		9C45958A281E673700DD561D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C45957D281E673600DD561D /* air-raid-map (iOS-Widget) */;
+			target = 9C45957D281E673600DD561D /* air-raid-map-iOS-widget */;
 			targetProxy = 9C459589281E673700DD561D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -935,7 +935,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -971,7 +971,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1061,7 +1061,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C45958C281E673700DD561D /* Build configuration list for PBXNativeTarget "air-raid-map (iOS-Widget)" */ = {
+		9C45958C281E673700DD561D /* Build configuration list for PBXNativeTarget "air-raid-map-iOS-widget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C45958D281E673700DD561D /* Debug */,
