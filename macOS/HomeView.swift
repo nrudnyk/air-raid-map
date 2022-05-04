@@ -15,16 +15,13 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             regionListView
-                .frame(minWidth: 275)
+                .toolbar { sidebarToolbar }
+                .frame(minWidth: 250)
             mapView
                 .navigationTitle("")
             
         }.toolbar { toolbar }
     }
-}
-
-private func toggleSidebar() {
-    NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
 }
 
 struct HomeView_Previews: PreviewProvider {
@@ -37,14 +34,20 @@ struct HomeView_Previews: PreviewProvider {
 
 extension HomeView {
     @ToolbarContentBuilder
-    fileprivate var toolbar: some ToolbarContent {
-        ToolbarItemGroup(placement: .navigation) {
+    fileprivate var sidebarToolbar: some ToolbarContent {
+        ToolbarItem(placement: .status) {
             Button(action: toggleSidebar, label: {
                 Image(systemName: "sidebar.leading")
             })
+        }
+    }
+    
+    @ToolbarContentBuilder
+    fileprivate var toolbar: some ToolbarContent {
+        ToolbarItemGroup(placement: .navigation) {
             regionListHeader
         }
-        ToolbarItemGroup {
+        ToolbarItemGroup(placement: .navigation) {
             Button(
                 action: { viewModel.fitUkraineBounds() },
                 label: { Image(systemName: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left") }
@@ -65,7 +68,7 @@ extension HomeView {
     
     fileprivate var regionListView: some View {
         VStack {
-            regionListSectionHeader
+//            regionListSectionHeader
             Divider()
             regionList
         }.padding([.horizontal])
@@ -105,4 +108,8 @@ extension HomeView {
             }
         }
     }
+}
+
+private func toggleSidebar() {
+    NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
 }
