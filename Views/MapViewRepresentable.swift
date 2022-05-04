@@ -77,16 +77,13 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         mapView.mapType = self.mapType
                 
         let region = mapView.regionThatFits(self.region)
-        DispatchQueue.main.async {
-            mapView.setRegion(region, animated: true)
-        }
         if region.center.latitude != mapView.region.center.latitude ||
             region.center.longitude != mapView.region.center.longitude ||
             region.span.latitudeDelta != mapView.region.span.latitudeDelta ||
             region.span.longitudeDelta != mapView.region.span.longitudeDelta {
-//            DispatchQueue.main.async {
-//                mapView.setRegion(region, animated: true)
-//            }
+            DispatchQueue.main.async {
+                mapView.setRegion(region, animated: true)
+            }
         }
         
         mapView.isZoomEnabled = self.isZoomEnabled
