@@ -29,7 +29,7 @@ class MapViewModel: ObservableObject {
             .assign(to: &$alarmedRegion)
 
         airAlertsDataService.$regionsData
-            .map(updateOverlays(regionStateModels:))
+            .map { $0.map { model in RegionOverlay(shape: model.geometry, color: model.alertState.type.color) }}
             .receive(on: DispatchQueue.main)
             .assign(to: &$overlays)
 
@@ -54,14 +54,5 @@ class MapViewModel: ObservableObject {
             .subscribe(on: DispatchQueue.global(qos: .background))
             .sink { [weak self] _ in self?.airAlertsDataService.updateAlertsData() }
             .store(in: &cancellables)
-    }
-    
-    private func updateOverlays(regionStateModels: [RegionStateModel]) -> [RegionOverlay] {
-        return regionStateModels.map { model in
-            RegionOverlay(
-                shape: model.geometry,
-                color: model.alertState.type.color
-            )
-        }
     }
 }
