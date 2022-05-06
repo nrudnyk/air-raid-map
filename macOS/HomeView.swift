@@ -19,8 +19,8 @@ struct HomeView: View {
                 .frame(minWidth: 250)
             mapView
                 .navigationTitle("")
-            
-        }.toolbar { toolbar }
+                .toolbar { toolbar }
+        }
     }
 }
 
@@ -47,7 +47,7 @@ extension HomeView {
         ToolbarItemGroup(placement: .navigation) {
             regionListHeader
         }
-        ToolbarItemGroup(placement: .navigation) {
+        ToolbarItemGroup(placement: .confirmationAction) {
             Button(
                 action: { viewModel.fitUkraineBounds() },
                 label: { Image(systemName: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left") }
@@ -68,7 +68,6 @@ extension HomeView {
     
     fileprivate var regionListView: some View {
         VStack {
-//            regionListSectionHeader
             Divider()
             regionList
         }.padding([.horizontal])
