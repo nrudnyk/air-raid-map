@@ -16,24 +16,26 @@ class MapViewModel: ObservableObject {
     @Published var overlays = [MKOverlay]()
     @Published var lastUpdate: Date = Date()
     
-    private let airAlertsDataService = AirAlertsDataService()
+    private let mapViewInteractor: MapViewInteractor
     private var cancellables = Set<AnyCancellable>()
 
-    init() {
+    init(mapViewInteractor: MapViewInteractor = MapViewInteractor()) {
+        self.mapViewInteractor = mapViewInteractor
+        
         fitUkraineBounds()
         setUpTimer()
-        
-        airAlertsDataService.$regionsData
+
+        self.mapViewInteractor.$regionsData
             .map { regions in regions.filter { $0.alertState.type == .airAlarm }}
             .receive(on: DispatchQueue.main)
             .assign(to: &$alarmedRegion)
 
-        airAlertsDataService.$regionsData
+        self.mapViewInteractor.$regionsData
             .map { $0.map { model in RegionOverlay(shape: model.geometry, color: model.alertState.type.color) }}
             .receive(on: DispatchQueue.main)
             .assign(to: &$overlays)
 
-        airAlertsDataService.$lastUpdate
+        self.mapViewInteractor.$lastUpdate
             .receive(on: DispatchQueue.main)
             .assign(to: &$lastUpdate)
     }
@@ -45,14 +47,14 @@ class MapViewModel: ObservableObject {
     }
     
     func reloadData() {
-        airAlertsDataService.updateAlertsData()
+        mapViewInteractor.reloadData()
     }
     
     private func setUpTimer() {
         Timer.publish(every: 30, on: .main, in: .common)
             .autoconnect()
             .subscribe(on: DispatchQueue.global(qos: .background))
-            .sink { [weak self] _ in self?.airAlertsDataService.updateAlertsData() }
+            .sink { [weak self] _ in self?.mapViewInteractor.reloadData() }
             .store(in: &cancellables)
     }
 }

@@ -8,28 +8,30 @@
 import Foundation
 import Combine
 
-class AirAlertsDataService {
+class AirAlertsDataService: IAirAlertsDataService {
     private let alertsApiEndpoint = "https://alerts.com.ua/api/states"
     private let apiKey = "X-API-Key"
     private let apiKeyValue = "df0ad7ea014f74e2bc741960c6d2f681c9cf34fd"
 
     @Published var lastUpdate: Date = Date()
-    @Published var regionsData: [RegionStateModel] = []
 
     private let regionsRepository = RegionsRepository()
     
-    init() {
-        updateAlertsData()
+    func getLastUpdate() -> AnyPublisher<Date, Never> {
+        return $lastUpdate.eraseToAnyPublisher()
     }
     
-    func updateAlertsData() {
-        guard let url = URL(string: alertsApiEndpoint) else { return }
+    func getData() -> AnyPublisher<[RegionStateModel], Error> {
+        guard let url = URL(string: alertsApiEndpoint) else {
+            return Fail(error: NSError(domain: "Missing Air-Raid Alarms URL", code: -10001, userInfo: nil))
+                .eraseToAnyPublisher()
+        }
         
         var request = URLRequest(url: url)
         request.setValue(apiKeyValue, forHTTPHeaderField: apiKey)
         request.httpMethod = "GET"
  
-        NetworkManager.download(request: request)
+        return NetworkManager.download(request: request)
             .decode(type: RegionStatesDecodable.self, decoder: JSONDecoder())
             .map { [weak self] regionStatesDecodable in
                 guard let self = self else { return [] }
@@ -40,8 +42,7 @@ class AirAlertsDataService {
                     return self.makeRegionStateModel(region, alertState: regionStatesDecodable.alertState(for: region))
                 }
             }
-            .replaceError(with: [])
-            .assign(to: &$regionsData)
+            .eraseToAnyPublisher()
     }
     
     func updateAlertsData(completion: @escaping ([RegionStateModel]) -> Void) {
