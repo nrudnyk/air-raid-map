@@ -27,6 +27,7 @@ class MapViewModel: ObservableObject {
 
         self.mapViewInteractor.$regionsData
             .map { regions in regions.filter { $0.alertState.type == .airAlarm }}
+            .map { regions in regions.sorted(by: { $0.alertState.changedAt > $1.alertState.changedAt} )}
             .receive(on: DispatchQueue.main)
             .assign(to: &$alarmedRegion)
 
