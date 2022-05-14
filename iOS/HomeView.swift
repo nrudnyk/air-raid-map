@@ -14,6 +14,7 @@ struct HomeView: View {
     
     @LandscapeOrientation var isLandscape
     @State var bottomSheetPosition: BottomSheetPosition = .bottom
+    @State var currentCoordinateRegion: MKCoordinateRegion = MapConstsants.boundsOfUkraine
     
     @StateObject private var viewModel = MapViewModel()
     
@@ -21,7 +22,7 @@ struct HomeView: View {
         GeometryReader { geometryProxy in
             ZStack(alignment: .topTrailing) {
                 MapViewRepresentable(
-                    region: $viewModel.ukraineCoordinateRegion,
+                    coordinateRegion: $currentCoordinateRegion,
                     overlays: viewModel.overlays,
                     padding: getMapViewPadding(geometryProxy)
                 ).ignoresSafeArea()
@@ -36,6 +37,9 @@ struct HomeView: View {
                     .offset(x: -geometryProxy.safeAreaInsets.leading / 2, y: 0)
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             }
+        }
+        .onReceive(viewModel.$ukraineCoordinateRegion) {
+            currentCoordinateRegion = $0
         }
     }
 }

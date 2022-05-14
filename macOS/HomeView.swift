@@ -11,6 +11,7 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject private var viewModel = MapViewModel()
+    @State var currentCoordinateRegion: MKCoordinateRegion = MapConstsants.boundsOfUkraine
     
     var body: some View {
         NavigationView {
@@ -20,6 +21,9 @@ struct HomeView: View {
             mapView
                 .navigationTitle("")
                 .toolbar { toolbar }
+        }
+        .onReceive(viewModel.$ukraineCoordinateRegion) {
+            currentCoordinateRegion = $0            
         }
     }
 }
@@ -61,7 +65,7 @@ extension HomeView {
     
     fileprivate var mapView: some View {
         MapViewRepresentable(
-            region: $viewModel.ukraineCoordinateRegion,
+            coordinateRegion: $currentCoordinateRegion,
             overlays: viewModel.overlays
         )
     }

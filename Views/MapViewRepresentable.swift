@@ -18,14 +18,14 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
     
     let showScale: Bool
     
-    @Binding var region: MKCoordinateRegion
+    @Binding var coordinateRegion: MKCoordinateRegion
     let overlays: [MKOverlay]
     
     let padding: PlatformEdgeInsets
     
     public init(
         mapType: MKMapType = .standard,
-        region: Binding<MKCoordinateRegion>,
+        coordinateRegion: Binding<MKCoordinateRegion>,
         isZoomEnabled: Bool = true,
         isScrollEnabled: Bool = true,
         showsUserLocation: Bool = false,
@@ -35,7 +35,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         padding: PlatformEdgeInsets = .zero
     ) {
         self.mapType = mapType
-        self._region = region
+        self._coordinateRegion = coordinateRegion
         self.isZoomEnabled = isZoomEnabled
         self.isScrollEnabled = isScrollEnabled
         self.showsUserLocation = showsUserLocation
@@ -79,12 +79,12 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
     private func configureView(_ mapView: MKMapView, context: Context) {
         mapView.mapType = self.mapType
                 
-        if region.center.latitude != mapView.region.center.latitude ||
-            region.center.longitude != mapView.region.center.longitude ||
-            region.span.latitudeDelta != mapView.region.span.latitudeDelta ||
-            region.span.longitudeDelta != mapView.region.span.longitudeDelta {
+        if coordinateRegion.center.latitude != mapView.region.center.latitude ||
+            coordinateRegion.center.longitude != mapView.region.center.longitude ||
+            coordinateRegion.span.latitudeDelta != mapView.region.span.latitudeDelta ||
+            coordinateRegion.span.longitudeDelta != mapView.region.span.longitudeDelta {
             DispatchQueue.main.async {
-                mapView.setCoordinateRegion(region, edgePadding: self.padding, animated: true)
+                mapView.setCoordinateRegion(coordinateRegion, edgePadding: self.padding, animated: true)
             }
         }
         
@@ -128,11 +128,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         }
                 
         public func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-//            print("CHANGED")
-//            DispatchQueue.main.async {
-//                print("CHANGED in ASYNC")
-//                self.context.region = mapView.region
-//            }
+            self.context.coordinateRegion = mapView.region
         }
         
         public func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -150,7 +146,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
 struct MapViewRepresentable_Previews: PreviewProvider {
     static var previews: some View {
         MapViewRepresentable(
-            region: .constant(MKCoordinateRegion(center: MapConstsants.centerOfUkraine, span: MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)))
+            coordinateRegion: .constant(MKCoordinateRegion(center: MapConstsants.centerOfUkraine, span: MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)))
         )
     }
 }

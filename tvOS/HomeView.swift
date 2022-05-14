@@ -13,6 +13,7 @@ struct HomeView: View {
     @State private var isSidebarVisible = false
     
     @StateObject private var viewModel = MapViewModel()
+    @State var currentCoordinateRegion: MKCoordinateRegion = MapConstsants.boundsOfUkraine
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -25,7 +26,7 @@ struct HomeView: View {
 
                 ZStack(alignment: .topTrailing) {
                     MapViewRepresentable(
-                        region: $viewModel.ukraineCoordinateRegion,
+                        coordinateRegion: $currentCoordinateRegion,
                         isZoomEnabled: false,
                         isScrollEnabled: false,
                         overlays: viewModel.overlays
@@ -45,6 +46,9 @@ struct HomeView: View {
                     }
                 }.focusSection()
             }
+        }
+        .onReceive(viewModel.$ukraineCoordinateRegion) {
+            currentCoordinateRegion = $0
         }
     }
 }
