@@ -11,8 +11,10 @@ import SwiftUI
 import UIKit
 typealias PlatformColor = UIColor
 typealias PlatformViewRepresentable = UIViewRepresentable
+public typealias PlatformEdgeInsets = UIEdgeInsets
 #elseif os(macOS)
 import AppKit
 typealias PlatformColor = NSColor
 typealias PlatformViewRepresentable = NSViewRepresentable
+public typealias PlatformEdgeInsets = NSEdgeInsets
 #endif

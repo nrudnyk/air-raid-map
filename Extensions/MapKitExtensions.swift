@@ -34,7 +34,7 @@ extension MKMapView {
         )
     }
     
-    func setCoordinateRegion(_ region: MKCoordinateRegion, edgePadding: UIEdgeInsets = .zero, animated: Bool = true) {
+    func setCoordinateRegion(_ region: MKCoordinateRegion, edgePadding: PlatformEdgeInsets = .zero, animated: Bool = true) {
         let mapRect = MKMapView.mapRect(for: region)
         
         self.setVisibleMapRect(mapRect, edgePadding: edgePadding, animated: animated)
