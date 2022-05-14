@@ -128,7 +128,11 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         }
                 
         public func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-//            self.context.region = mapView.region
+//            print("CHANGED")
+//            DispatchQueue.main.async {
+//                print("CHANGED in ASYNC")
+//                self.context.region = mapView.region
+//            }
         }
         
         public func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
