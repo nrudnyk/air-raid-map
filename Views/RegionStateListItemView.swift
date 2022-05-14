@@ -10,8 +10,40 @@ import MapKit
 
 struct RegionStateListItemView: View {
     let regionState: RegionStateModel
+    let onItemSelected: () -> Void
+    
+    init(_ regionState: RegionStateModel, onItemSelected: @escaping () -> Void = {}) {
+        self.regionState = regionState
+        self.onItemSelected = onItemSelected
+    }
     
     var body: some View {
+#if os(macOS) || os(iOS)
+        regionStateListItemContent
+            .contentShape(Rectangle())
+            .onTapGesture(perform: onItemSelected)
+#elseif os(tvOS)
+        Button(action: onItemSelected) {
+            regionStateListItemContent
+                .padding()
+        }
+#endif
+    }
+}
+
+struct RegionStateListItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        RegionStateListItemView(RegionStateModel(
+            name: "Київська Область",
+            geometry: MKPolygon(),
+            alertState: AlertState()
+        ))
+        .previewLayout(.sizeThatFits)
+    }
+}
+
+extension RegionStateListItemView {
+    fileprivate var regionStateListItemContent: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .top) {
                 Text(regionState.name)
@@ -35,16 +67,5 @@ struct RegionStateListItemView: View {
             .font(.footnote)
             .foregroundColor(.yellow)
         }
-    }
-}
-
-struct RegionStateListItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        RegionStateListItemView(regionState: RegionStateModel(
-            name: "Київська Область",
-            geometry: MKPolygon(),
-            alertState: AlertState()
-        ))
-        .previewLayout(.sizeThatFits)
     }
 }

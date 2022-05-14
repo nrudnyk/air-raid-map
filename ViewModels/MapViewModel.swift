@@ -41,6 +41,10 @@ class MapViewModel: ObservableObject {
             .assign(to: &$lastUpdate)
     }
     
+    func focusOnRegion(_ region: RegionStateModel) {
+        ukraineCoordinateRegion = MKCoordinateRegion(region.boudingRegion)
+    }
+    
     func fitUkraineBounds() {
         DispatchQueue.main.async {
             self.ukraineCoordinateRegion = MapConstsants.boundsOfUkraine

@@ -111,11 +111,8 @@ extension HomeView {
     
     fileprivate var regionList: some View {
         List(viewModel.alarmedRegion) { regionState in
-            Button {
-                print("pressed at \(regionState.name)")
-            } label: {
-                RegionStateListItemView(regionState: regionState)
-                    .padding()
+            RegionStateListItemView(regionState) {
+                viewModel.focusOnRegion(regionState)
             }
         }
     }

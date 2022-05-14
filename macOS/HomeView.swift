@@ -100,7 +100,9 @@ extension HomeView {
         ScrollView() {
             VStack {
                 ForEach(viewModel.alarmedRegion) { regionState in
-                    RegionStateListItemView(regionState: regionState)
+                    RegionStateListItemView(regionState) {
+                        viewModel.focusOnRegion(regionState)
+                    }
                     Divider()
                 }
                 Spacer()
