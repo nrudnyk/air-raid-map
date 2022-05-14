@@ -41,7 +41,6 @@ struct RegionStateListItemView: View {
 struct RegionStateListItemView_Previews: PreviewProvider {
     static var previews: some View {
         RegionStateListItemView(regionState: RegionStateModel(
-            id_0: 0,
             name: "Київська Область",
             geometry: MKPolygon(),
             alertState: AlertState()

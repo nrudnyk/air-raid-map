@@ -28,25 +28,17 @@ class StubAirAlertsDataService: IAirAlertsDataService {
         
         return Just(jsonData)
             .decode(type: RegionStatesDecodable.self, decoder: JSONDecoder())
-            .map { [weak self] regionStatesDecodable in
+            .map { [weak self] regionsDecodable in
                 guard let self = self else { return [] }
     
-                self.lastUpdate = regionStatesDecodable.lastUpdate
+                self.lastUpdate = regionsDecodable.lastUpdate
                 
                 return self.regionsRepository.regions.map { region in
-                    return self.makeRegionStateModel(region, alertState: regionStatesDecodable.alertState(for: region))
+                    let alertState = regionsDecodable.alertState(for: region.properties.NAME_1)
+                    return RegionStateModel(region: region, alertState: alertState)
                 }
             }
             .eraseToAnyPublisher()
-    }
-    
-    private func makeRegionStateModel(_ region: Region, alertState: AlertState) -> RegionStateModel {
-        return  RegionStateModel(
-            id_0: region.properties.ID_0,
-            name: region.properties.NAME_1,
-            geometry: region.geometry.first!,
-            alertState: alertState
-        )
     }
 }
 

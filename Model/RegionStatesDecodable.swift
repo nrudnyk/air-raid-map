@@ -41,8 +41,8 @@ struct RegionStatesDecodable: Decodable {
         regionStates = try container.decode([RegionDecodable].self, forKey: .states)
     }
     
-    func alertState(for region: Region) -> AlertState {
-        if let regionState = regionStates.first(where: { region.properties.NAME_1.contains($0.name) }) {
+    func alertState(for regionName: String) -> AlertState {
+        if let regionState = regionStates.first(where: { regionName.contains($0.name) }) {
             return AlertState(
                 type: regionState.alert ? .airAlarm : .allClear,
                 changedAt: DateFormatter.iso8601Full.date(from: regionState.changed)!

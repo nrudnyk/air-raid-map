@@ -33,13 +33,14 @@ class AirAlertsDataService: IAirAlertsDataService {
  
         return NetworkManager.download(request: request)
             .decode(type: RegionStatesDecodable.self, decoder: JSONDecoder())
-            .map { [weak self] regionStatesDecodable in
+            .map { [weak self] regionsDecodable in
                 guard let self = self else { return [] }
                 
-                self.lastUpdate = regionStatesDecodable.lastUpdate
+                self.lastUpdate = regionsDecodable.lastUpdate
                 
                 return self.regionsRepository.regions.map { region in
-                    return self.makeRegionStateModel(region, alertState: regionStatesDecodable.alertState(for: region))
+                    let alertState = regionsDecodable.alertState(for: region.properties.NAME_1)
+                    return RegionStateModel(region: region, alertState: alertState)
                 }
             }
             .eraseToAnyPublisher()
@@ -55,8 +56,9 @@ class AirAlertsDataService: IAirAlertsDataService {
         NetworkManager.download(request: request) { data in
             do {
                 let regionsDecodable = try JSONDecoder().decode(RegionStatesDecodable.self, from: data)
-                let regionStatesModel = self.regionsRepository.regions.map { region in
-                    return self.makeRegionStateModel(region, alertState: regionsDecodable.alertState(for: region))
+                let regionStatesModel = self.regionsRepository.regions.map { region -> RegionStateModel in
+                    let alertState = regionsDecodable.alertState(for: region.properties.NAME_1)
+                    return RegionStateModel(region: region, alertState: alertState)
                 }
 
                 completion(regionStatesModel)
@@ -64,14 +66,5 @@ class AirAlertsDataService: IAirAlertsDataService {
                 print(error.localizedDescription)
             }
         }
-    }
-    
-    private func makeRegionStateModel(_ region: Region, alertState: AlertState) -> RegionStateModel {
-        return  RegionStateModel(
-            id_0: region.properties.ID_0,
-            name: region.properties.NAME_1,
-            geometry: region.geometry.first!,
-            alertState: alertState
-        )
     }
 }

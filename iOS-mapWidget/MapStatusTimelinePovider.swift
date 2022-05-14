@@ -19,9 +19,7 @@ class MapStatusTimelinePovider: TimelineProvider {
     init() {
         previewRegions = regionRepository.regions.map { region in
             RegionStateModel(
-                id_0: region.properties.ID_0,
-                name: region.properties.NAME_1,
-                geometry: region.geometry.first!,
+                region: region,
                 alertState: AlertState(type: .allClear, changedAt: Date())
             )
         }
