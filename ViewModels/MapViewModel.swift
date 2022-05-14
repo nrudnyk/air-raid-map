@@ -12,7 +12,8 @@ import Combine
 class MapViewModel: ObservableObject {
     
     @Published var ukraineCoordinateRegion = MapConstsants.boundsOfUkraine
-    @Published var alarmedRegion: [RegionStateModel] = []
+    @Published var alarmedRegions: [RegionStateModel] = []
+    @Published var focusedRegion: RegionStateModel? = nil
     @Published var overlays = [MKOverlay]()
     @Published var lastUpdate: Date = Date()
     
@@ -29,8 +30,8 @@ class MapViewModel: ObservableObject {
             .map { regions in regions.filter { $0.alertState.type == .airAlarm }}
             .map { regions in regions.sorted(by: { $0.alertState.changedAt > $1.alertState.changedAt} )}
             .receive(on: DispatchQueue.main)
-            .assign(to: &$alarmedRegion)
-
+            .assign(to: &$alarmedRegions)
+        
         self.mapViewInteractor.$regionsData
             .map { $0.map { model in RegionOverlay(shape: model.geometry, color: model.alertState.type.color) }}
             .receive(on: DispatchQueue.main)
@@ -43,12 +44,14 @@ class MapViewModel: ObservableObject {
     
     func focusOnRegion(_ region: RegionStateModel) {
         ukraineCoordinateRegion = MKCoordinateRegion(region.boudingRegion)
+        focusedRegion = region
     }
     
     func fitUkraineBounds() {
         DispatchQueue.main.async {
             self.ukraineCoordinateRegion = MapConstsants.boundsOfUkraine
         }
+        focusedRegion = nil
     }
     
     func reloadData() {

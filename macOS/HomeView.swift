@@ -76,7 +76,7 @@ extension HomeView {
     fileprivate var regionListHeader: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Активні тривоги (\(viewModel.alarmedRegion.count))")
+                Text("Активні тривоги (\(viewModel.alarmedRegions.count))")
                     .font(.title3).bold()
                 Text("станом на: \(DateFormatter.localizedString(from: viewModel.lastUpdate, dateStyle: .medium, timeStyle: .medium))")
                     .italic()
@@ -99,7 +99,7 @@ extension HomeView {
     fileprivate var regionList: some View {
         ScrollView() {
             VStack {
-                ForEach(viewModel.alarmedRegion) { regionState in
+                ForEach(viewModel.alarmedRegions) { regionState in
                     RegionStateListItemView(regionState) {
                         viewModel.focusOnRegion(regionState)
                     }
