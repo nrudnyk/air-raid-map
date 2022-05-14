@@ -29,20 +29,23 @@ class OrientationManager: ObservableObject {
                 
             default: type = .unknown
         }
+        tryUpdateIsLandscape(orientation: type)
         
         NotificationCenter.default
             .publisher(for: UIDevice.orientationDidChangeNotification)
             .map { _ in UIDevice.current.orientation }
-            .passthrough { [weak self] orientation in
-                switch orientation {
-                case .portrait, .portraitUpsideDown:
-                    self?.isLandscape = false
-                case .landscapeLeft, .landscapeRight:
-                    self?.isLandscape = true
-                default:
-                    break
-                }
-            }
+            .passthrough(tryUpdateIsLandscape(orientation:))
             .assign(to: &$type)
+    }
+    
+    private func tryUpdateIsLandscape(orientation: UIDeviceOrientation) {
+        switch orientation {
+        case .portrait, .portraitUpsideDown:
+            isLandscape = false
+        case .landscapeLeft, .landscapeRight:
+            isLandscape = true
+        default:
+            break
+        }
     }
 }
