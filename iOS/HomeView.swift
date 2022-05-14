@@ -10,29 +10,32 @@ import SwiftUI
 import BottomSheet
 
 struct HomeView: View {
+    static let landscapeSheetWidthFraction = 1.0 / 7 * 3
+    
     @LandscapeOrientation var isLandscape
     @State var bottomSheetPosition: BottomSheetPosition = .bottom
     
     @StateObject private var viewModel = MapViewModel()
     
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            MapViewRepresentable(
-                region: $viewModel.ukraineCoordinateRegion,
-                overlays: viewModel.overlays
-            ).ignoresSafeArea()
-            toolbar
-            GeometryReader { gReader in
+        GeometryReader { geometryProxy in
+            ZStack(alignment: .topTrailing) {
+                MapViewRepresentable(
+                    region: $viewModel.ukraineCoordinateRegion,
+                    overlays: viewModel.overlays,
+                    padding: getMapViewPadding(geometryProxy)
+                ).ignoresSafeArea()
+                toolbar
                 Color.clear
                     .bottomSheet(
                         bottomSheetPosition: $bottomSheetPosition,
                         headerContent: { regionListHeader },
                         mainContent: { regionListView }
                     )
-                    .padding(.trailing, isLandscape ? gReader.size.width / 7 * 4 : 0)
-                    .offset(x: -gReader.safeAreaInsets.leading / 2, y: 0)
+                    .padding(.trailing, getBottomSheetPadding(geometryProxy))
+                    .offset(x: -geometryProxy.safeAreaInsets.leading / 2, y: 0)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             }
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
         }
     }
 }
@@ -121,5 +124,30 @@ extension HomeView {
                 Spacer()
             }
         }
+    }
+    
+    fileprivate func getBottomSheetLandscapeWidth(_ geometryProxy: GeometryProxy) -> CGFloat {
+        return geometryProxy.size.width * HomeView.landscapeSheetWidthFraction
+    }
+    
+    fileprivate func getBottomSheetPadding(_ geometryProxy: GeometryProxy) -> CGFloat {
+        return isLandscape
+            ? geometryProxy.size.width * (1 - HomeView.landscapeSheetWidthFraction)
+            : 0
+    }
+    
+    fileprivate func getMapViewPadding(_ geometryProxy: GeometryProxy) -> UIEdgeInsets {
+        let size = geometryProxy.size
+        
+        let padding: UIEdgeInsets
+        if bottomSheetPosition == .top || bottomSheetPosition == .middle {
+            padding = isLandscape
+                ? UIEdgeInsets(top: 0, left: geometryProxy.size.width * HomeView.landscapeSheetWidthFraction, bottom: 0, right: 0)
+                : UIEdgeInsets(top: 0, left: 0, bottom: size.height * BottomSheetPosition.middle.rawValue, right: 0)
+        } else {
+            padding = .zero
+        }
+        
+        return padding
     }
 }

@@ -21,6 +21,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
     @Binding var region: MKCoordinateRegion
     let overlays: [MKOverlay]
     
+    let padding: PlatformEdgeInsets
     
     public init(
         mapType: MKMapType = .standard,
@@ -30,7 +31,8 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         showsUserLocation: Bool = false,
         showScale: Bool = true,
         userTrackingMode: MKUserTrackingMode = .none,
-        overlays: [MKOverlay] = []
+        overlays: [MKOverlay] = [],
+        padding: PlatformEdgeInsets = .zero
     ) {
         self.mapType = mapType
         self._region = region
@@ -40,6 +42,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         self.showScale = showScale
         self.userTrackingMode = userTrackingMode
         self.overlays = overlays
+        self.padding = padding
     }
 
     public func makeCoordinator() -> MapViewRepresentable.Coordinator {
@@ -76,13 +79,12 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
     private func configureView(_ mapView: MKMapView, context: Context) {
         mapView.mapType = self.mapType
                 
-        let region = mapView.regionThatFits(self.region)
         if region.center.latitude != mapView.region.center.latitude ||
             region.center.longitude != mapView.region.center.longitude ||
             region.span.latitudeDelta != mapView.region.span.latitudeDelta ||
             region.span.longitudeDelta != mapView.region.span.longitudeDelta {
             DispatchQueue.main.async {
-                mapView.setRegion(region, animated: true)
+                mapView.setCoordinateRegion(region, edgePadding: self.padding, animated: true)
             }
         }
         
