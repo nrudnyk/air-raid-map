@@ -44,6 +44,15 @@ class MapWidgetSnapshotter {
         }
     }
     
+    static func makeMapSnapshot(for regionOverlays: [RegionOverlay], size: CGSize, completion: @escaping (UIImage) -> Void) {
+        let snapsnotter = makeMapSnapshotter(coordinateRegion: MapConstsants.boundsOfUkraine, size: size)
+        snapsnotter.start { snapshot, error in
+            if let snapshot = tryMakeMapSnapshot(snapshot, regionOverlays: regionOverlays) {
+                completion(snapshot)
+            }
+        }
+    }
+    
     private static func tryMakeMapSnapshot(_ snapshot: MKMapSnapshotter.Snapshot?, regionOverlays: [RegionOverlay]) -> UIImage? {
         guard let snapshot = snapshot else { return nil }
         
@@ -62,11 +71,13 @@ class MapWidgetSnapshotter {
         return imageWithOverlays
     }
     
-    static func makeMapSnapshotter(coordinateRegion: MKCoordinateRegion, size: CGSize, colorScheme: UIUserInterfaceStyle) -> MKMapSnapshotter {
+    static func makeMapSnapshotter(coordinateRegion: MKCoordinateRegion, size: CGSize, colorScheme: UIUserInterfaceStyle? = nil) -> MKMapSnapshotter {
         let options = MKMapSnapshotter.Options()
         options.region = coordinateRegion
         options.size = size
-        options.traitCollection = UITraitCollection(traitsFrom: [options.traitCollection, UITraitCollection(userInterfaceStyle: colorScheme)])
+        if let colorScheme = colorScheme {
+            options.traitCollection = UITraitCollection(traitsFrom: [options.traitCollection, UITraitCollection(userInterfaceStyle: colorScheme)])
+        }
         
         return MKMapSnapshotter(options: options)
     }

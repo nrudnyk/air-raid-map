@@ -11,6 +11,9 @@ import Combine
 
 class MapViewModel: ObservableObject {
     
+    @Published var activeAlarmsTitle: String = ""
+    @Published var activeAlarmsSubtitle: String = ""
+    
     @Published var ukraineCoordinateRegion = MapConstsants.boundsOfUkraine
     @Published var alarmedRegions: [RegionStateModel] = []
     @Published var focusedRegion: RegionStateModel? = nil
@@ -40,6 +43,14 @@ class MapViewModel: ObservableObject {
         self.mapViewInteractor.$lastUpdate
             .receive(on: DispatchQueue.main)
             .assign(to: &$lastUpdate)
+        
+        $alarmedRegions
+            .map { "\("active_sirens".localized) - \($0.count)" }
+            .assign(to: &$activeAlarmsTitle)
+        
+        $lastUpdate
+            .map { "\("as_of".localized) \(DateFormatter.localizedString(from: $0, dateStyle: .medium, timeStyle: .medium))" }
+            .assign(to: &$activeAlarmsSubtitle)
     }
     
     func focusOnRegion(_ region: RegionStateModel) {
@@ -56,6 +67,22 @@ class MapViewModel: ObservableObject {
     
     func reloadData() {
         mapViewInteractor.reloadData()
+    }
+    
+    func shareMapSnapshot() {
+        let overlays = mapViewInteractor.regionsData.map(RegionOverlay.init)
+        MapWidgetSnapshotter.makeMapSnapshot(for: overlays, size: CGSize(width: 800, height: 600)) { [weak self] snapshot in
+            guard let self = self else { return }
+            
+            let imageActivityItemSource = ImageActivityItemSource(
+                title: self.activeAlarmsTitle,
+                text: self.activeAlarmsSubtitle,
+                image: snapshot
+            )
+            
+            let activityController = UIActivityViewController(activityItems: [imageActivityItemSource], applicationActivities: nil)
+            UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
+        }
     }
     
     private func setUpTimer() {

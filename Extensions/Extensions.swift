@@ -5,7 +5,7 @@
 //  Created by Nazar Rudnyk on 20.04.2022.
 //
 
-import MapKit
+import Foundation
 
 extension Array {
     public func toDictionary<Key: Hashable>(_ selectKey: (Element) -> Key) -> [Key: Element] {
@@ -15,6 +15,12 @@ extension Array {
         }
         
         return result
+    }
+}
+
+extension String {
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
     }
 }
 

@@ -137,6 +137,7 @@
 		9CFEAE6128327F2600841EDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6428327F2600841EDB /* Localizable.strings */; };
 		9CFEAE6228327F2600841EDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6428327F2600841EDB /* Localizable.strings */; };
 		9CFEAE6928329B1000841EDB /* HapticFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6828329B1000841EDB /* HapticFeedbackButton.swift */; };
+		9CFEAE6D28329F9F00841EDB /* ImageActivityItemSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6C28329F9F00841EDB /* ImageActivityItemSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,7 @@
 		9CFEAE6328327F2600841EDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CFEAE6528327F2800841EDB /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CFEAE6828329B1000841EDB /* HapticFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackButton.swift; sourceTree = "<group>"; };
+		9CFEAE6C28329F9F00841EDB /* ImageActivityItemSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageActivityItemSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */,
+				9CFEAE6C28329F9F00841EDB /* ImageActivityItemSource.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				9CFEAE6928329B1000841EDB /* HapticFeedbackButton.swift in Sources */,
 				9C393A3628147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
 				9C393A5428168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */,
+				9CFEAE6D28329F9F00841EDB /* ImageActivityItemSource.swift in Sources */,
 				9CA0FFF0282C330000545C02 /* StubAirAlertsDataService.swift in Sources */,
 				9C9EFFFD28107F0000410B75 /* RegionStateModel.swift in Sources */,
 				9CA0FFEB282C310600545C02 /* IAirAlertsDataService.swift in Sources */,

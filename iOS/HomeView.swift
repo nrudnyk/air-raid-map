@@ -59,6 +59,8 @@ struct HomeView_Previews: PreviewProvider {
 extension HomeView {
     fileprivate var toolbar: some View {
         VStack(spacing: 0) {
+            shareButton
+            Divider()
             fitUkraineButton
             Divider()
             refreshButton
@@ -69,6 +71,14 @@ extension HomeView {
         .cornerRadius(8)
         .padding(.top, isLandscape ? 8 : -8)
         .padding(.trailing, isLandscape ? -8 : 8)
+    }
+    
+    
+    fileprivate var shareButton: some View {
+        HapticFeedbackButton(
+            action: viewModel.shareMapSnapshot,
+            label: { Image(systemName: "square.and.arrow.up").padding(12) }
+        )
     }
     
     fileprivate var refreshButton: some View {
@@ -88,9 +98,9 @@ extension HomeView {
     fileprivate var regionListHeader: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Активні тривоги (\(viewModel.alarmedRegions.count))")
+                Text(viewModel.activeAlarmsTitle)
                     .font(.title3).bold()
-                Text("станом на: \(DateFormatter.localizedString(from: viewModel.lastUpdate, dateStyle: .medium, timeStyle: .medium))")
+                Text(viewModel.activeAlarmsSubtitle)
                     .italic()
                     .font(.subheadline)
                     .frame(alignment: .trailing)
