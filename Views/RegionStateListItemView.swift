@@ -34,11 +34,12 @@ struct RegionStateListItemView: View {
 struct RegionStateListItemView_Previews: PreviewProvider {
     static var previews: some View {
         RegionStateListItemView(RegionStateModel(
-            name: "Київська Область",
+            nameKey: "Kyiv",
             geometry: MKPolygon(),
             alertState: AlertState()
         ))
         .previewLayout(.sizeThatFits)
+        .environment(\.locale, .init(identifier: "uk"))
     }
 }
 
@@ -46,7 +47,7 @@ extension RegionStateListItemView {
     fileprivate var regionStateListItemContent: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .top) {
-                Text(regionState.name)
+                Text(LocalizedStringKey(regionState.nameKey))
                     .font(.headline)
                     .bold()
                 Spacer()
@@ -54,7 +55,9 @@ extension RegionStateListItemView {
             
             HStack(spacing: 0) {
                 Image(systemName: "clock.arrow.circlepath")
-                Text(" триває ").italic()
+                Text(" ")
+                Text("last").italic()
+                Text(" ")
                 Text(regionState.alertState.changedAt, style: .relative).italic()
             }
             .font(.footnote)
@@ -62,7 +65,12 @@ extension RegionStateListItemView {
             
             HStack(spacing: 0) {
                 Image(systemName: "megaphone")
-                Text(" оголошено \(DateFormatter.shortString(from: regionState.alertState.changedAt))").italic()
+                Text(" ")
+                Text("announced")
+                Text(" ")
+                Text(DateFormatter.timePreposition(for: regionState.alertState.changedAt))
+                Text(" ")
+                Text(regionState.alertState.changedAt, style: .time)
             }
             .font(.footnote)
             .foregroundColor(.yellow)

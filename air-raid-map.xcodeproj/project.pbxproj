@@ -105,6 +105,7 @@
 		9CD63A992811D28A00116F1E /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
 		9CD63A9A2811D28A00116F1E /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
 		9CD63A9B2811D28A00116F1E /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
+		9CE05A2D28325802000383D5 /* MapWidgetSnapshotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E856281F04DC005A3A37 /* MapWidgetSnapshotter.swift */; };
 		9CE2A6C52810042900241EB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC3280FD21A00FBAE90 /* ContentView.swift */; };
 		9CE2A6C72810044A00241EB4 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
 		9CE2A6C8281004E000241EB4 /* AirRaidMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC2280FD21A00FBAE90 /* AirRaidMapApp.swift */; };
@@ -132,6 +133,9 @@
 		9CF79ED5280FD21B00FBAE90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC3280FD21A00FBAE90 /* ContentView.swift */; };
 		9CF79ED6280FD21B00FBAE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */; };
 		9CF79ED7280FD21B00FBAE90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */; };
+		9CFEAE6028327F2600841EDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6428327F2600841EDB /* Localizable.strings */; };
+		9CFEAE6128327F2600841EDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6428327F2600841EDB /* Localizable.strings */; };
+		9CFEAE6228327F2600841EDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6428327F2600841EDB /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +215,8 @@
 		9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CF79EC9280FD21B00FBAE90 /* air-raid-map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "air-raid-map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF79ECF280FD21B00FBAE90 /* air-raid-map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "air-raid-map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CFEAE6328327F2600841EDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9CFEAE6528327F2800841EDB /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +379,7 @@
 				9CEBC01328115D6300C16CD0 /* macOS.entitlements */,
 				9CE2A6C92810054E00241EB4 /* regions.geojson */,
 				9C9EFFF8281077E600410B75 /* test-sirens.json */,
+				9CFEAE6428327F2600841EDB /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -545,12 +552,12 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = 9CF79EBC280FD21A00FBAE90;
 			packageReferences = (
 				9C393A32281474FF00A9CCA6 /* XCRemoteSwiftPackageReference "BottomSheet" */,
 				9C5E601D28199D4B00CEEBF1 /* XCRemoteSwiftPackageReference "swiftui-system-colors" */,
-				9C5E6030281AB06300CEEBF1 /* XCRemoteSwiftPackageReference "Pulse" */,
 			);
 			productRefGroup = 9CF79ECA280FD21B00FBAE90 /* Products */;
 			projectDirPath = "";
@@ -578,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9EFFFB281077E600410B75 /* test-sirens.json in Resources */,
+				9CFEAE6228327F2600841EDB /* Localizable.strings in Resources */,
 				9C50475E281C477F00AA817A /* Assets.xcassets in Resources */,
 				9CE2A6CC2810054E00241EB4 /* regions.geojson in Resources */,
 			);
@@ -588,6 +596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9EFFF9281077E600410B75 /* test-sirens.json in Resources */,
+				9CFEAE6028327F2600841EDB /* Localizable.strings in Resources */,
 				9CF79ED6280FD21B00FBAE90 /* Assets.xcassets in Resources */,
 				9CE2A6CA2810054E00241EB4 /* regions.geojson in Resources */,
 			);
@@ -598,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9EFFFA281077E600410B75 /* test-sirens.json in Resources */,
+				9CFEAE6128327F2600841EDB /* Localizable.strings in Resources */,
 				9CF79ED7280FD21B00FBAE90 /* Assets.xcassets in Resources */,
 				9CE2A6CB2810054E00241EB4 /* regions.geojson in Resources */,
 			);
@@ -686,6 +696,7 @@
 				9C393A3A2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,
 				9CA0FFF5282FE12200545C02 /* MapKitExtensions.swift in Sources */,
 				9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */,
+				9CE05A2D28325802000383D5 /* MapWidgetSnapshotter.swift in Sources */,
 				9CD63A992811D28A00116F1E /* RegionOverlay.swift in Sources */,
 				9CF79ED4280FD21B00FBAE90 /* ContentView.swift in Sources */,
 				9CD63A7C2811A4F300116F1E /* PlaftormExtensions.swift in Sources */,
@@ -754,6 +765,18 @@
 			targetProxy = 9C459589281E673700DD561D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9CFEAE6428327F2600841EDB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CFEAE6328327F2600841EDB /* en */,
+				9CFEAE6528327F2800841EDB /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9C45958D281E673700DD561D /* Debug */ = {
@@ -930,6 +953,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -983,6 +1007,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
@@ -1184,14 +1209,6 @@
 		9C5E601D28199D4B00CEEBF1 /* XCRemoteSwiftPackageReference "swiftui-system-colors" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/diniska/swiftui-system-colors";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		9C5E6030281AB06300CEEBF1 /* XCRemoteSwiftPackageReference "Pulse" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kean/Pulse";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;

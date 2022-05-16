@@ -47,10 +47,17 @@ extension DateFormatter {
         return formatter
     }()
     
-    static func shortString(from date: Date) -> String {
-        let hour = Calendar.current.component(.hour, from: date)
-        let preposition = hour == 11 ? "об" : "о"
-    
-        return "\(preposition) \(DateFormatter.shortDateTime.string(from: date))"
+    static func timePreposition(for date: Date) -> String {
+        let langCode = Locale.current.languageCode
+        switch langCode {
+        case "uk":
+            let hour = Calendar.current.component(.hour, from: date)
+            let preposition = hour == 11 ? "об" : "о"
+            return preposition
+        case "en":
+            return "at"
+        default:
+            return ""
+        }
     }
 }

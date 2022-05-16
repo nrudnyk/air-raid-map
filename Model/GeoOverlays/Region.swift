@@ -14,6 +14,7 @@ class Region: Feature<Region.Properties> {
         let NAME_0: String
         let ID_1: Int
         let NAME_1: String
+        let NAME_ENG_1: String
         let VARNAME_1: String
         let NL_NAME_1: String
         let HASC_1: String

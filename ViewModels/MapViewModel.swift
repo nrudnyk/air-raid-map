@@ -33,7 +33,7 @@ class MapViewModel: ObservableObject {
             .assign(to: &$alarmedRegions)
         
         self.mapViewInteractor.$regionsData
-            .map { $0.map { model in RegionOverlay(shape: model.geometry, color: model.alertState.type.color) }}
+            .map { $0.map(RegionOverlay.init) }
             .receive(on: DispatchQueue.main)
             .assign(to: &$overlays)
 

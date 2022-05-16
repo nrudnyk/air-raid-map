@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  air-raid-map
+
+  Created by Nazar Rudnyk on 16.05.2022.
+*/
+
+"active_sirens" = "Active sirens";
+"as_of" = "as of";
+"last" = "last";
+"announced" = "announced";
+
+// MARK: Regions
+"Vinnytsia oblast" = "Vinnytsia oblast";
+"Volyn oblast" = "Volyn oblast";
+"Dnipropetrovsk oblast" = "Dnipropetrovsk oblast";
+"Donetsk oblast" = "Donetsk oblast";
+"Zhytomyr oblast" = "Zhytomyr oblast";
+"Zakarpattia oblast" = "Zakarpattia oblast";
+"Zaporizhzhia oblast" = "Zaporizhzhia oblast";
+"Ivano-Frankivsk oblast" = "Ivano-Frankivsk oblast";
+"Kyiv oblast" = "Kyiv oblast";
+"Kirovohrad oblast" = "Kirovohrad oblast";
+"Luhansk oblast" = "Luhansk oblast";
+"Lviv oblast" = "Lviv oblast";
+"Mykolaiv oblast" = "Mykolaiv oblast";
+"Odesa oblast" = "Odesa oblast";
+"Poltava oblast" = "Poltava oblast";
+"Rivne oblast" = "Rivne oblast";
+"Sumy oblast" = "Sumy oblast";
+"Ternopil oblast" = "Ternopil oblast";
+"Kharkiv oblast" = "Kharkiv oblast";
+"Kherson oblast" = "Kherson oblast";
+"Khmelnytskyi oblast" = "Khmelnytskyi oblast";
+"Cherkasy oblast" = "Cherkasy oblast";
+"Chernivtsi oblast" = "Chernivtsi oblast";
+"Chernihiv oblast" = "Chernihiv oblast";
+"Kyiv" = "Kyiv";
