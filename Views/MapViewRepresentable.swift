@@ -11,12 +11,8 @@ import Combine
 public struct MapViewRepresentable: PlatformViewRepresentable {
 
     let mapType: MKMapType
-    let isZoomEnabled: Bool
-    let isScrollEnabled: Bool
     let userTrackingMode: MKUserTrackingMode
     let showsUserLocation: Bool
-    
-    let showScale: Bool
     
     @Binding var coordinateRegion: MKCoordinateRegion
     let overlays: [MKOverlay]
@@ -26,20 +22,14 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
     public init(
         mapType: MKMapType = .standard,
         coordinateRegion: Binding<MKCoordinateRegion>,
-        isZoomEnabled: Bool = true,
-        isScrollEnabled: Bool = true,
         showsUserLocation: Bool = false,
-        showScale: Bool = true,
         userTrackingMode: MKUserTrackingMode = .none,
         overlays: [MKOverlay] = [],
         padding: PlatformEdgeInsets = .zero
     ) {
         self.mapType = mapType
         self._coordinateRegion = coordinateRegion
-        self.isZoomEnabled = isZoomEnabled
-        self.isScrollEnabled = isScrollEnabled
         self.showsUserLocation = showsUserLocation
-        self.showScale = showScale
         self.userTrackingMode = userTrackingMode
         self.overlays = overlays
         self.padding = padding
@@ -87,20 +77,26 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
                 mapView.setCoordinateRegion(coordinateRegion, edgePadding: self.padding, animated: true)
             }
         }
-        
-        mapView.isZoomEnabled = self.isZoomEnabled
-        mapView.isScrollEnabled = self.isScrollEnabled
-        mapView.showsUserLocation = self.showsUserLocation
-#if !os(tvOS)
-        mapView.isRotateEnabled = false
-        mapView.showsCompass = false
-#endif
-        mapView.userTrackingMode = self.userTrackingMode
+
 #if os(iOS) || os (tvOS)
         mapView.showsScale = true
 #elseif os(macOS)
         mapView.showsZoomControls = true
 #endif
+        
+#if os(tvOS)
+        mapView.isZoomEnabled = false
+        mapView.isScrollEnabled = false
+#else
+        mapView.isZoomEnabled = true
+        mapView.isScrollEnabled = true
+        
+        mapView.isRotateEnabled = false
+        mapView.showsCompass = false
+#endif
+        
+        mapView.showsUserLocation = self.showsUserLocation
+        mapView.userTrackingMode = self.userTrackingMode
         
         self.updateOverlays(in: mapView)
     }

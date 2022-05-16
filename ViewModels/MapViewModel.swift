@@ -70,6 +70,7 @@ class MapViewModel: ObservableObject {
     }
     
     func shareMapSnapshot() {
+#if os(iOS)
         let overlays = mapViewInteractor.regionsData.map(RegionOverlay.init)
         MapWidgetSnapshotter.makeMapSnapshot(for: overlays, size: CGSize(width: 800, height: 600)) { [weak self] snapshot in
             guard let self = self else { return }
@@ -83,6 +84,7 @@ class MapViewModel: ObservableObject {
             let activityController = UIActivityViewController(activityItems: [imageActivityItemSource], applicationActivities: nil)
             UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
         }
+#endif
     }
     
     private func setUpTimer() {

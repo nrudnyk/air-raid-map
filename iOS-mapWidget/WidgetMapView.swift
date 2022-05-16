@@ -20,10 +20,14 @@ struct WidgetMapView: View {
                 Color(UIColor.secondarySystemBackground)
             }
             
-            Text("станом на: \(DateFormatter.localizedString(from: entry.date, dateStyle: .none, timeStyle: .short))")
-                .bold()
-                .foregroundColor(.secondary)
-                .font(.footnote)
+            HStack(spacing: 0) {
+                Text("as_of")
+                Text(" ")
+                Text(DateFormatter.localizedString(from: entry.date, dateStyle: .none, timeStyle: .short))
+                    .bold()
+                    .foregroundColor(.secondary)
+                    .font(.footnote)
+            }
         }
     }
 }
