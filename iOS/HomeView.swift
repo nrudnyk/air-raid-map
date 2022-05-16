@@ -72,28 +72,16 @@ extension HomeView {
     }
     
     fileprivate var refreshButton: some View {
-        Button(
-            action: {
-                viewModel.reloadData()
-                selectionHapticFeedback()
-            },
-            label: {
-                Image(systemName: "arrow.clockwise")
-                    .padding(12)
-            }
+        HapticFeedbackButton(
+            action: viewModel.reloadData,
+            label: { Image(systemName: "arrow.clockwise").padding(12) }
         )
     }
     
     fileprivate var fitUkraineButton: some View {
-        Button(
-            action: {
-                viewModel.fitUkraineBounds()
-                selectionHapticFeedback()
-            },
-            label: {
-                Image(systemName: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left")
-                    .padding(12)
-            }
+        HapticFeedbackButton(
+            action: viewModel.fitUkraineBounds,
+            label: { Image(systemName: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left").padding(12) }
         )
     }
     

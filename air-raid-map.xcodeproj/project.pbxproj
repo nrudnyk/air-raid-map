@@ -136,6 +136,7 @@
 		9CFEAE6028327F2600841EDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6428327F2600841EDB /* Localizable.strings */; };
 		9CFEAE6128327F2600841EDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6428327F2600841EDB /* Localizable.strings */; };
 		9CFEAE6228327F2600841EDB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6428327F2600841EDB /* Localizable.strings */; };
+		9CFEAE6928329B1000841EDB /* HapticFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6828329B1000841EDB /* HapticFeedbackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,6 +218,7 @@
 		9CF79ECF280FD21B00FBAE90 /* air-raid-map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "air-raid-map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CFEAE6328327F2600841EDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CFEAE6528327F2800841EDB /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9CFEAE6828329B1000841EDB /* HapticFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,6 +413,7 @@
 		9CF79EBC280FD21A00FBAE90 = {
 			isa = PBXGroup;
 			children = (
+				9CFEAE6728329A1A00841EDB /* CustomViews */,
 				9C5E602B281A630F00CEEBF1 /* tvOS */,
 				9C5E602A281A630B00CEEBF1 /* macOS */,
 				9C5E6029281A630600CEEBF1 /* iOS */,
@@ -439,6 +442,14 @@
 				9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9CFEAE6728329A1A00841EDB /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				9CFEAE6828329B1000841EDB /* HapticFeedbackButton.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -687,6 +698,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEBC01F281176BD00C16CD0 /* Feature.swift in Sources */,
+				9CFEAE6928329B1000841EDB /* HapticFeedbackButton.swift in Sources */,
 				9C393A3628147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
 				9C393A5428168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */,
 				9CA0FFF0282C330000545C02 /* StubAirAlertsDataService.swift in Sources */,
