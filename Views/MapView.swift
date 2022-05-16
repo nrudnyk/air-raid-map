@@ -31,7 +31,7 @@ struct MapView: View {
                     mapView(size: geometryProxy.size)
                         .ignoresSafeArea()
                     toolbar
-                    bottomSheet
+                    bottomSheet(geometryProxy: geometryProxy)
                 }
             }
 #elseif os(macOS)
@@ -160,7 +160,7 @@ extension MapView {
 #if os(iOS)
         if bottomSheetPosition == .top || bottomSheetPosition == .middle {
             return isLandscape
-                ? UIEdgeInsets(top: 0, left: geometryProxy.size.width * MapView.landscapeSheetWidthFraction, bottom: 0, right: 0)
+                ? UIEdgeInsets(top: 0, left: size.width * MapView.landscapeSheetWidthFraction, bottom: 0, right: 0)
                 : UIEdgeInsets(top: 0, left: 0, bottom: size.height * BottomSheetPosition.middle.rawValue, right: 0)
         }
 #endif
@@ -189,7 +189,7 @@ extension MapView {
         .padding(.trailing, isLandscape ? -8 : 8)
     }
     
-    fileprivate var bottomSheet: some View {
+    fileprivate func bottomSheet(geometryProxy: GeometryProxy) -> some View {
         Color.clear
             .bottomSheet(
                 bottomSheetPosition: $bottomSheetPosition,
