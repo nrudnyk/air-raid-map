@@ -38,14 +38,13 @@ class MapStatusTimelinePovider: TimelineProvider {
         let date = Date()
         
         if context.isPreview {
-            let overlays = getOverlays(previewRegions)
-
+            let overlays = previewRegions.map(RegionOverlay.init)
             MapWidgetSnapshotter.makeMapSnapshots(for: overlays, size: context.displaySize) { snapshots in
                 completion(MapStatusEntry(date: date, mapSnapshots: snapshots))
             }
         } else {
             airAlertsDataService.updateAlertsData { regions in
-                let overlays = self.getOverlays(regions)
+                let overlays = regions.map(RegionOverlay.init)
                 MapWidgetSnapshotter.makeMapSnapshots(for: overlays, size: context.displaySize) { snapshots in
                     completion(MapStatusEntry(date: date, mapSnapshots: snapshots))
                 }
@@ -57,19 +56,13 @@ class MapStatusTimelinePovider: TimelineProvider {
         let date = Date()
         
         airAlertsDataService.updateAlertsData { regions in
-            let overlays = self.getOverlays(regions)
+            let overlays = regions.map(RegionOverlay.init)
             MapWidgetSnapshotter.makeMapSnapshots(for: overlays, size: context.displaySize) { snapshots in
                 completion(Timeline(
                     entries: [MapStatusEntry(date: date, mapSnapshots: snapshots)],
                     policy: .after(Calendar.current.date(byAdding: .minute, value: 5, to: date)!)
                 ))
             }
-        }
-    }
-    
-    private func getOverlays(_ regions: [RegionStateModel]) -> [RegionOverlay] {
-        return regions.map { model in
-            return RegionOverlay(shape: model.geometry, color: model.alertState.type.color)
         }
     }
 }

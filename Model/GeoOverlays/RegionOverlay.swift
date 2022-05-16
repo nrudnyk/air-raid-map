@@ -14,6 +14,10 @@ class RegionOverlay: NSObject, MKOverlay {
     
     private let shape: MKShape & MKGeoJSONObject
     private let overlay: MKOverlay
+   
+    convenience init(regionStateModel: RegionStateModel) {
+        self.init(shape: regionStateModel.geometry, color: regionStateModel.alertState.type.color)
+    }
     
     init(shape: MKShape & MKGeoJSONObject, color: PlatformColor) {
         self.shape = shape
