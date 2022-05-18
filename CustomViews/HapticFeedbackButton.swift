@@ -17,7 +17,7 @@ struct HapticFeedbackButton<Label: View>: View {
 #if os(iOS)
     private let hapticFeedbacGenerator = UINotificationFeedbackGenerator()
     
-    let feedbackType: UINotificationFeedbackGenerator.FeedbackType
+    let feedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle
 #endif
     let action: () -> Void
     let label: () -> Label
@@ -26,9 +26,9 @@ struct HapticFeedbackButton<Label: View>: View {
     init(
         action: @escaping () -> Void,
         label: @escaping () -> Label,
-        feedbackType: UINotificationFeedbackGenerator.FeedbackType = .success
+        feedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle = .light
     ) {
-        self.feedbackType = feedbackType
+        self.feedbackStyle = feedbackStyle
         self.action = action
         self.label = label
     }
@@ -47,7 +47,7 @@ struct HapticFeedbackButton<Label: View>: View {
         Button(
             action: {
 #if os(iOS)
-                hapticFeedbacGenerator.notificationOccurred(feedbackType)
+                UIImpactFeedbackGenerator(style: feedbackStyle).impactOccurred()
 #endif
                 action()
             },

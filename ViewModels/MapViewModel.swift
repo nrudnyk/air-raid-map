@@ -82,7 +82,10 @@ class MapViewModel: ObservableObject {
             )
             
             let activityController = UIActivityViewController(activityItems: [imageActivityItemSource], applicationActivities: nil)
-            UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
+            UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: {
+                let hapticFeedbacGenerator = UINotificationFeedbackGenerator()
+                hapticFeedbacGenerator.notificationOccurred(.success)
+            })
         }
 #endif
     }
