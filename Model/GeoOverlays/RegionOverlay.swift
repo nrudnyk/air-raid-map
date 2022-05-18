@@ -16,7 +16,7 @@ class RegionOverlay: NSObject, MKOverlay {
     private let overlay: MKOverlay
    
     convenience init(regionStateModel: RegionStateModel) {
-        self.init(shape: regionStateModel.geometry, color: regionStateModel.alertState.type.color)
+        self.init(shape: regionStateModel.geometry, color: regionStateModel.alertState.color)
     }
     
     init(shape: MKShape & MKGeoJSONObject, color: PlatformColor) {
@@ -44,14 +44,14 @@ class RegionOverlay: NSObject, MKOverlay {
         }
         
         renderer.fillColor = self.color
-        renderer.strokeColor = self.color.withAlphaComponent(0.2)
+        renderer.strokeColor = self.color.withAlphaComponent(0.3)
         renderer.lineWidth = 1
         
         return renderer
     }
     
     public func tryDrawOverlay(in context: CGContext, to snapshot: MKMapSnapshotter.Snapshot) {
-        context.setStrokeColor(self.color.withAlphaComponent(0.2).cgColor)
+        context.setStrokeColor(self.color.withAlphaComponent(0.3).cgColor)
         context.setFillColor(self.color.cgColor)
         context.setLineWidth(1.0)
 
