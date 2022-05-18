@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 public enum AlertType {
     case airAlarm

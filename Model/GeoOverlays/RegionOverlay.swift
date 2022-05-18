@@ -51,9 +51,9 @@ class RegionOverlay: NSObject, MKOverlay {
     }
     
     public func tryDrawOverlay(in context: CGContext, to snapshot: MKMapSnapshotter.Snapshot) {
-        context.setStrokeColor(self.color.withAlphaComponent(0.3).cgColor)
+        context.setStrokeColor(self.color.cgColor)
         context.setFillColor(self.color.cgColor)
-        context.setLineWidth(1.0)
+        context.setLineWidth(0.5)
 
         let renderer = getOverlayRenderer()
         switch renderer {
@@ -87,6 +87,6 @@ class RegionOverlay: NSObject, MKOverlay {
         }
         
         context.closePath()
-        context.fillPath()
+        context.drawPath(using: .eoFillStroke)
     }
 }
