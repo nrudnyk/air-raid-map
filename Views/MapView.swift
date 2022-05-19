@@ -7,9 +7,6 @@
 
 import MapKit
 import SwiftUI
-#if os(iOS)
-import BottomSheet
-#endif
 
 struct MapView: View {
 #if os(iOS)
@@ -24,15 +21,13 @@ struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
     
     var body: some View {
-        Group {
+        GeometryReader { geometryProxy in
 #if os(iOS)
-            GeometryReader { geometryProxy in
-                ZStack(alignment: .topTrailing) {
-                    mapView(size: geometryProxy.size)
-                        .ignoresSafeArea()
-                    toolbar
-                    bottomSheet(geometryProxy: geometryProxy)
-                }
+            ZStack(alignment: .topTrailing) {
+                mapView(geometryProxy: geometryProxy)
+                    .ignoresSafeArea()
+                toolbar
+                bottomSheet(geometryProxy: geometryProxy)
             }
 #elseif os(macOS)
             NavigationView {
@@ -40,7 +35,7 @@ struct MapView: View {
                     .padding([.horizontal])
                     .toolbar { sidebarToolbar }
                     .frame(minWidth: 250)
-                mapView()
+                mapView(geometryProxy: geometryProxy)
                     .navigationTitle("")
                     .toolbar { toolbar }
             }
@@ -49,7 +44,7 @@ struct MapView: View {
                 HStack {
                     if (isSidebarVisible) { sidebar }
                     ZStack(alignment: .topTrailing) {
-                        mapView()
+                        mapView(geometryProxy: geometryProxy)
                             .focusable(false)
                             .ignoresSafeArea()
                         toolbar
@@ -81,11 +76,11 @@ struct MapView_Previews: PreviewProvider {
 }
 
 extension MapView {
-    fileprivate func mapView(size: CGSize = .zero) -> some View {
+    fileprivate func mapView(geometryProxy: GeometryProxy) -> some View {
         MapViewRepresentable(
             coordinateRegion: $currentCoordinateRegion,
             overlays: viewModel.overlays,
-            padding: getMapViewPadding(size)
+            padding: getMapViewPadding(geometryProxy)
         )
     }
     
@@ -156,12 +151,12 @@ extension MapView {
 #endif
     }
     
-    fileprivate func getMapViewPadding(_ size: CGSize) -> PlatformEdgeInsets {
+    fileprivate func getMapViewPadding(_ geometryProxy: GeometryProxy) -> PlatformEdgeInsets {
 #if os(iOS)
         if bottomSheetPosition == .top || bottomSheetPosition == .middle {
             return isLandscape
-                ? UIEdgeInsets(top: 0, left: size.width * MapView.landscapeSheetWidthFraction, bottom: 0, right: 0)
-                : UIEdgeInsets(top: 0, left: 0, bottom: size.height * BottomSheetPosition.middle.rawValue, right: 0)
+                ? UIEdgeInsets(top: 0, left: geometryProxy.size.width * MapView.landscapeSheetWidthFraction, bottom: 0, right: 0)
+                : UIEdgeInsets(top: 0, left: 0, bottom: geometryProxy.size.height * BottomSheetPosition.middle.rawValue, right: 0)
         }
 #endif
         
