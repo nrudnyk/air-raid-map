@@ -180,7 +180,7 @@ extension MapView {
             refreshButton
         }
         .fixedSize(horizontal: true, vertical: false)
-        .background(Color(.secondarySystemBackground))
+        .background(EffectView(effect: UIBlurEffect(style: .systemThinMaterial)))
         .foregroundColor(Color.secondary)
         .cornerRadius(8)
         .padding(.top, isLandscape ? 8 : -8)
