@@ -13,7 +13,6 @@
 		9C19E858281F04DC005A3A37 /* MapWidgetSnapshotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E856281F04DC005A3A37 /* MapWidgetSnapshotter.swift */; };
 		9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
 		9C278F97281071A700811961 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
-		9C393A34281474FF00A9CCA6 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 9C393A33281474FF00A9CCA6 /* BottomSheet */; };
 		9C393A3628147BC600A9CCA6 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */; };
 		9C393A3728147BC600A9CCA6 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */; };
 		9C393A3828147BC600A9CCA6 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */; };
@@ -59,6 +58,13 @@
 		9C5E601A2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */; };
 		9C5E601B2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */; };
 		9C5E601C2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */; };
+		9C7C9221283580B700EDE9F6 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C9220283580B700EDE9F6 /* BottomSheetView.swift */; };
+		9C7C9223283584A400EDE9F6 /* BottomSheetPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C9222283584A400EDE9F6 /* BottomSheetPosition.swift */; };
+		9C7C92252835850000EDE9F6 /* DragGestureExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C92242835850000EDE9F6 /* DragGestureExtensions.swift */; };
+		9C7C92272835852000EDE9F6 /* EffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C92262835852000EDE9F6 /* EffectView.swift */; };
+		9C7C92292835854100EDE9F6 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C92282835854100EDE9F6 /* RoundedCorner.swift */; };
+		9C7C922B283586AD00EDE9F6 /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C922A283586AD00EDE9F6 /* UIApplicationExtensions.swift */; };
+		9C7C923128358BCB00EDE9F6 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C923028358BCB00EDE9F6 /* BottomSheet.swift */; };
 		9C9E00012810807800410B75 /* RegionStatesDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* RegionStatesDecodable.swift */; };
 		9C9E00022810807800410B75 /* RegionStatesDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* RegionStatesDecodable.swift */; };
 		9C9E00032810807800410B75 /* RegionStatesDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* RegionStatesDecodable.swift */; };
@@ -191,6 +197,13 @@
 		9C5E600D2819446A00CEEBF1 /* AlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertState.swift; sourceTree = "<group>"; };
 		9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertsDataService.swift; sourceTree = "<group>"; };
 		9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackExtension.swift; sourceTree = "<group>"; };
+		9C7C9220283580B700EDE9F6 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		9C7C9222283584A400EDE9F6 /* BottomSheetPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPosition.swift; sourceTree = "<group>"; };
+		9C7C92242835850000EDE9F6 /* DragGestureExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureExtensions.swift; sourceTree = "<group>"; };
+		9C7C92262835852000EDE9F6 /* EffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectView.swift; sourceTree = "<group>"; };
+		9C7C92282835854100EDE9F6 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		9C7C922A283586AD00EDE9F6 /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
+		9C7C923028358BCB00EDE9F6 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		9C9E00002810807800410B75 /* RegionStatesDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStatesDecodable.swift; sourceTree = "<group>"; };
 		9C9EFFF8281077E600410B75 /* test-sirens.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-sirens.json"; sourceTree = "<group>"; wrapsLines = 1; };
 		9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStateModel.swift; sourceTree = "<group>"; };
@@ -244,7 +257,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C393A34281474FF00A9CCA6 /* BottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +334,20 @@
 				9CFEAE6C28329F9F00841EDB /* ImageActivityItemSource.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9C7C921F2835807200EDE9F6 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				9C7C923028358BCB00EDE9F6 /* BottomSheet.swift */,
+				9C7C9222283584A400EDE9F6 /* BottomSheetPosition.swift */,
+				9C7C9220283580B700EDE9F6 /* BottomSheetView.swift */,
+				9C7C92242835850000EDE9F6 /* DragGestureExtensions.swift */,
+				9C7C92262835852000EDE9F6 /* EffectView.swift */,
+				9C7C92282835854100EDE9F6 /* RoundedCorner.swift */,
+				9C7C922A283586AD00EDE9F6 /* UIApplicationExtensions.swift */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		9CA0FFE4282C300700545C02 /* Interactors */ = {
@@ -416,6 +442,7 @@
 		9CFEAE6728329A1A00841EDB /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				9C7C921F2835807200EDE9F6 /* BottomSheet */,
 				9CFEAE6828329B1000841EDB /* HapticFeedbackButton.swift */,
 			);
 			path = CustomViews;
@@ -476,7 +503,6 @@
 			);
 			name = "air-raid-map (iOS)";
 			packageProductDependencies = (
-				9C393A33281474FF00A9CCA6 /* BottomSheet */,
 			);
 			productName = "air-raid-map (iOS)";
 			productReference = 9CF79EC9280FD21B00FBAE90 /* air-raid-map.app */;
@@ -536,8 +562,6 @@
 			);
 			mainGroup = 9CF79EBC280FD21A00FBAE90;
 			packageReferences = (
-				9C393A32281474FF00A9CCA6 /* XCRemoteSwiftPackageReference "BottomSheet" */,
-				9C5E601D28199D4B00CEEBF1 /* XCRemoteSwiftPackageReference "swiftui-system-colors" */,
 			);
 			productRefGroup = 9CF79ECA280FD21B00FBAE90 /* Products */;
 			projectDirPath = "";
@@ -678,21 +702,28 @@
 				9CA0FFEB282C310600545C02 /* IAirAlertsDataService.swift in Sources */,
 				9C5E600E2819446A00CEEBF1 /* AlertState.swift in Sources */,
 				9C393A3A2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,
+				9C7C9221283580B700EDE9F6 /* BottomSheetView.swift in Sources */,
 				9CA0FFF5282FE12200545C02 /* MapKitExtensions.swift in Sources */,
 				9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */,
 				9CE05A2D28325802000383D5 /* MapWidgetSnapshotter.swift in Sources */,
+				9C7C92272835852000EDE9F6 /* EffectView.swift in Sources */,
 				9CD63A992811D28A00116F1E /* RegionOverlay.swift in Sources */,
 				9CF79ED4280FD21B00FBAE90 /* ContentView.swift in Sources */,
 				9CD63A7C2811A4F300116F1E /* PlaftormExtensions.swift in Sources */,
+				9C7C92252835850000EDE9F6 /* DragGestureExtensions.swift in Sources */,
 				9CE2A6DA2810539200241EB4 /* Region.swift in Sources */,
 				9C278F97281071A700811961 /* Extensions.swift in Sources */,
 				9C393A582816906800A9CCA6 /* MapContants.swift in Sources */,
 				9C393A502816860E00A9CCA6 /* Orientation.swift in Sources */,
+				9C7C923128358BCB00EDE9F6 /* BottomSheet.swift in Sources */,
 				9CA0FFE6282C307D00545C02 /* MapViewInteractor.swift in Sources */,
 				9CEBC01B2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
+				9C7C922B283586AD00EDE9F6 /* UIApplicationExtensions.swift in Sources */,
 				9CCD77A828144D930050584C /* NetworkManager.swift in Sources */,
 				9C5E601A2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */,
 				9CF79ED2280FD21B00FBAE90 /* AirRaidMapApp.swift in Sources */,
+				9C7C9223283584A400EDE9F6 /* BottomSheetPosition.swift in Sources */,
+				9C7C92292835854100EDE9F6 /* RoundedCorner.swift in Sources */,
 				9C0AD82E280FE4E20095ACCA /* MapViewModel.swift in Sources */,
 				9CEBC0232811777700C16CD0 /* GeoJSONError.swift in Sources */,
 				9C5E60152819839800CEEBF1 /* AirAlertsDataService.swift in Sources */,
@@ -770,7 +801,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Resources/Info-iOS-widget.plist";
@@ -800,7 +831,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Resources/Info-iOS-widget.plist";
@@ -830,7 +861,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -858,7 +889,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1004,7 +1035,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1040,7 +1071,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1180,33 +1211,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		9C393A32281474FF00A9CCA6 /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/lucaszischka/BottomSheet";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		9C5E601D28199D4B00CEEBF1 /* XCRemoteSwiftPackageReference "swiftui-system-colors" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/diniska/swiftui-system-colors";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9C393A33281474FF00A9CCA6 /* BottomSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9C393A32281474FF00A9CCA6 /* XCRemoteSwiftPackageReference "BottomSheet" */;
-			productName = BottomSheet;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9CF79EBD280FD21A00FBAE90 /* Project object */;
 }

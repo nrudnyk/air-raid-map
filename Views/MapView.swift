@@ -21,13 +21,13 @@ struct MapView: View {
     @StateObject private var viewModel = MapViewModel()
     
     var body: some View {
-        GeometryReader { geometryProxy in
+        GeometryReader { geometry in
 #if os(iOS)
             ZStack(alignment: .topTrailing) {
-                mapView(geometryProxy: geometryProxy)
+                mapView(geometry: geometry)
                     .ignoresSafeArea()
                 toolbar
-                bottomSheet(geometryProxy: geometryProxy)
+                bottomSheet(geometryProxy: geometry)
             }
             .onChange(of: bottomSheetPosition) { newValue in
                 viewModel.refreshCoordinateRegion()
@@ -38,7 +38,7 @@ struct MapView: View {
                     .padding([.horizontal])
                     .toolbar { sidebarToolbar }
                     .frame(minWidth: 250)
-                mapView(geometryProxy: geometryProxy)
+                mapView(geometryProxy: geometry)
                     .navigationTitle("")
                     .toolbar { toolbar }
             }
@@ -47,7 +47,7 @@ struct MapView: View {
                 HStack {
                     if (isSidebarVisible) { sidebar }
                     ZStack(alignment: .topTrailing) {
-                        mapView(geometryProxy: geometryProxy)
+                        mapView(geometryProxy: geometry)
                             .focusable(false)
                             .ignoresSafeArea()
                         toolbar
@@ -79,11 +79,11 @@ struct MapView_Previews: PreviewProvider {
 }
 
 extension MapView {
-    fileprivate func mapView(geometryProxy: GeometryProxy) -> some View {
+    fileprivate func mapView(geometry: GeometryProxy) -> some View {
         MapViewRepresentable(
             coordinateRegion: $mapRegion,
             overlays: viewModel.overlays,
-            padding: getMapViewPadding(geometryProxy)
+            padding: getMapViewPadding(geometry: geometry)
         )
     }
     
@@ -154,12 +154,12 @@ extension MapView {
 #endif
     }
     
-    fileprivate func getMapViewPadding(_ geometryProxy: GeometryProxy) -> PlatformEdgeInsets {
+    fileprivate func getMapViewPadding(geometry: GeometryProxy) -> PlatformEdgeInsets {
 #if os(iOS)
         if bottomSheetPosition == .top || bottomSheetPosition == .middle {
             return isLandscape
-                ? UIEdgeInsets(top: 0, left: geometryProxy.size.width * MapView.landscapeSheetWidthFraction, bottom: 0, right: 0)
-                : UIEdgeInsets(top: 0, left: 0, bottom: geometryProxy.size.height * BottomSheetPosition.middle.rawValue, right: 0)
+                ? UIEdgeInsets(top: 0, left: geometry.size.width * BottomSheet.widthFraction, bottom: 0, right: 0)
+                : UIEdgeInsets(top: 0, left: 0, bottom: geometry.size.height * BottomSheetPosition.middle.rawValue, right: 0)
         }
 #endif
         
@@ -188,29 +188,19 @@ extension MapView {
     }
     
     fileprivate func bottomSheet(geometryProxy: GeometryProxy) -> some View {
-        Color.clear
-            .bottomSheet(
-                bottomSheetPosition: $bottomSheetPosition,
-                headerContent: {
-                    regionListHeader.padding([.bottom])
-                },
-                mainContent: {
-                    regionListView.padding([.horizontal])
-                }
-            )
-            .padding(.trailing, getBottomSheetPadding(geometryProxy))
-            .offset(x: -geometryProxy.safeAreaInsets.leading / 2, y: 0)
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        BottomSheetView(
+            bottomSheetPosition: $bottomSheetPosition,
+            headerContent: {
+                regionListHeader.padding([.bottom])
+            },
+            mainContent: {
+                regionListView.padding([.horizontal])
+            }
+        )
     }
     
     fileprivate func getBottomSheetLandscapeWidth(_ geometryProxy: GeometryProxy) -> CGFloat {
         return geometryProxy.size.width * MapView.landscapeSheetWidthFraction
-    }
-    
-    fileprivate func getBottomSheetPadding(_ geometryProxy: GeometryProxy) -> CGFloat {
-        return isLandscape
-            ? geometryProxy.size.width * (1 - MapView.landscapeSheetWidthFraction)
-            : 0
     }
 }
 #endif
