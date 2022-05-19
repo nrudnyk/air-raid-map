@@ -14,7 +14,7 @@ class MapViewModel: ObservableObject {
     @Published var activeAlarmsTitle: String = ""
     @Published var activeAlarmsSubtitle: String = ""
     
-    @Published var ukraineCoordinateRegion = MapConstsants.boundsOfUkraine
+    @Published var currentMapRegion = MapConstsants.boundsOfUkraine
     @Published var alarmedRegions: [RegionStateModel] = []
     @Published var focusedRegion: RegionStateModel? = nil
     @Published var overlays = [MKOverlay]()
@@ -54,15 +54,17 @@ class MapViewModel: ObservableObject {
     }
     
     func focusOnRegion(_ region: RegionStateModel) {
-        ukraineCoordinateRegion = MKCoordinateRegion(region.boudingRegion)
+        currentMapRegion = MKCoordinateRegion(region.boudingRegion)
         focusedRegion = region
     }
     
     func fitUkraineBounds() {
-        DispatchQueue.main.async {
-            self.ukraineCoordinateRegion = MapConstsants.boundsOfUkraine
-        }
+        self.currentMapRegion = MapConstsants.boundsOfUkraine
         focusedRegion = nil
+    }
+    
+    func refreshCoordinateRegion() {
+        self.currentMapRegion = self.currentMapRegion
     }
     
     func reloadData() {

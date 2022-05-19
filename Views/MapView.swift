@@ -16,7 +16,7 @@ struct MapView: View {
     @State private var isSidebarVisible = false
 #endif
     
-    @State var currentCoordinateRegion: MKCoordinateRegion = MapConstsants.boundsOfUkraine
+    @State var mapRegion: MKCoordinateRegion = MapConstsants.boundsOfUkraine
     
     @StateObject private var viewModel = MapViewModel()
     
@@ -28,6 +28,9 @@ struct MapView: View {
                     .ignoresSafeArea()
                 toolbar
                 bottomSheet(geometryProxy: geometryProxy)
+            }
+            .onChange(of: bottomSheetPosition) { newValue in
+                viewModel.refreshCoordinateRegion()
             }
 #elseif os(macOS)
             NavigationView {
@@ -53,8 +56,8 @@ struct MapView: View {
             }
 #endif
         }
-        .onReceive(viewModel.$ukraineCoordinateRegion) {
-            currentCoordinateRegion = $0
+        .onReceive(viewModel.$currentMapRegion) {
+            mapRegion = $0
         }
     }
 }
@@ -78,7 +81,7 @@ struct MapView_Previews: PreviewProvider {
 extension MapView {
     fileprivate func mapView(geometryProxy: GeometryProxy) -> some View {
         MapViewRepresentable(
-            coordinateRegion: $currentCoordinateRegion,
+            coordinateRegion: $mapRegion,
             overlays: viewModel.overlays,
             padding: getMapViewPadding(geometryProxy)
         )
