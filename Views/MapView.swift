@@ -38,7 +38,7 @@ struct MapView: View {
                     .padding([.horizontal])
                     .toolbar { sidebarToolbar }
                     .frame(minWidth: 250)
-                mapView(geometryProxy: geometry)
+                mapView(geometry: geometry)
                     .navigationTitle("")
                     .toolbar { toolbar }
             }
@@ -47,7 +47,7 @@ struct MapView: View {
                 HStack {
                     if (isSidebarVisible) { sidebar }
                     ZStack(alignment: .topTrailing) {
-                        mapView(geometryProxy: geometry)
+                        mapView(geometry: geometry)
                             .focusable(false)
                             .ignoresSafeArea()
                         toolbar
