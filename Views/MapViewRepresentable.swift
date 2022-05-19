@@ -39,13 +39,13 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         return Coordinator(for: self)
     }
     
-#if os(iOS) || os (tvOS)
+#if os(iOS) || os(tvOS)
     public func makeUIView(context: Context) -> MKMapView {
         return createMapView(context)
     }
 
     public func updateUIView(_ mapView: MKMapView, context: Context) {
-        self.configureView(mapView, context: context)
+        self.updateMapView(mapView, context: context)
     }
 #elseif os(macOS)
     public func makeNSView(context: Context) -> MKMapView {
@@ -53,7 +53,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
     }
     
     public func updateNSView(_ mapView: MKMapView, context: Context) {
-        self.configureView(mapView, context: context)
+        self.updateMapView(mapView, context: context)
     }
 #endif
 
@@ -68,15 +68,6 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
     
     private func configureView(_ mapView: MKMapView, context: Context) {
         mapView.mapType = self.mapType
-                
-        if coordinateRegion.center.latitude != mapView.region.center.latitude ||
-            coordinateRegion.center.longitude != mapView.region.center.longitude ||
-            coordinateRegion.span.latitudeDelta != mapView.region.span.latitudeDelta ||
-            coordinateRegion.span.longitudeDelta != mapView.region.span.longitudeDelta {
-            DispatchQueue.main.async {
-                mapView.setCoordinateRegion(coordinateRegion, edgePadding: self.padding, animated: true)
-            }
-        }
 
 #if os(iOS) || os (tvOS)
         mapView.showsScale = true
@@ -98,6 +89,17 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         mapView.showsUserLocation = self.showsUserLocation
         mapView.userTrackingMode = self.userTrackingMode
         
+        mapView.setCoordinateRegion(coordinateRegion, edgePadding: self.padding, animated: true)
+        self.updateOverlays(in: mapView)
+    }
+    
+    private func updateMapView(_ mapView: MKMapView, context: Context) {
+        if coordinateRegion != mapView.region {
+            DispatchQueue.main.async {
+                mapView.setCoordinateRegion(coordinateRegion, edgePadding: self.padding, animated: true)
+            }
+        }
+
         self.updateOverlays(in: mapView)
     }
     
@@ -122,7 +124,7 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
             self.context = context
             super.init()
         }
-                
+        
         public func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
             self.context.coordinateRegion = mapView.region
         }

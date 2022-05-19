@@ -40,3 +40,23 @@ extension MKMapView {
         self.setVisibleMapRect(mapRect, edgePadding: edgePadding, animated: animated)
     }
 }
+
+extension MKCoordinateRegion: Equatable {
+    public static func == (lhs: MKCoordinateRegion, rhs: MKCoordinateRegion) -> Bool {
+        return
+            lhs.center.latitude == rhs.center.latitude &&
+            lhs.center.longitude == rhs.center.longitude &&
+            lhs.span.latitudeDelta == rhs.span.latitudeDelta &&
+            lhs.span.longitudeDelta == rhs.span.longitudeDelta
+    }
+}
+
+extension MKMapRect: Equatable {
+    public static func == (lhs: MKMapRect, rhs: MKMapRect) -> Bool {
+        return
+            lhs.origin.x == rhs.origin.x &&
+            lhs.origin.y == rhs.origin.y &&
+            lhs.size.width == rhs.size.width &&
+            lhs.size.height == rhs.size.height
+    }
+}
