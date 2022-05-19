@@ -40,10 +40,6 @@ struct HapticFeedbackButton<Label: View>: View {
 #endif
     
     var body: some View {
-        buttonView.padding(defaultPadding)
-    }
-    
-    fileprivate var buttonView: some View {
         Button(
             action: {
 #if os(iOS)
@@ -51,7 +47,22 @@ struct HapticFeedbackButton<Label: View>: View {
 #endif
                 action()
             },
-            label: label
+            label: {
+                label()
+                    .padding(defaultPadding)
+                    .contentShape(Rectangle())
+            }
         )
+    }
+}
+
+struct HapticFeedbackButton_Previews: PreviewProvider {
+    static var previews: some View {
+        HapticFeedbackButton(
+            action: { print("clicked") },
+            label: { Image(systemName: "square.and.arrow.up") }
+        )
+        .previewLayout(.sizeThatFits)
+        .environment(\.locale, .init(identifier: "uk"))
     }
 }
