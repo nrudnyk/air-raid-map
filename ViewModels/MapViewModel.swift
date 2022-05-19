@@ -11,7 +11,7 @@ import Combine
 
 class MapViewModel: ObservableObject {
     
-    @Published var activeAlarmsTitle: String = ""
+    @Published var activeAlarmsTitle: String = "active_sirens".localized
     @Published var activeAlarmsSubtitle: String = ""
     
     @Published var currentMapRegion = MapConstsants.boundsOfUkraine
@@ -43,10 +43,6 @@ class MapViewModel: ObservableObject {
         self.mapViewInteractor.$lastUpdate
             .receive(on: DispatchQueue.main)
             .assign(to: &$lastUpdate)
-        
-        $alarmedRegions
-            .map { "\("active_sirens".localized) - \($0.count)" }
-            .assign(to: &$activeAlarmsTitle)
         
         $lastUpdate
             .map { "\("as_of".localized) \(DateFormatter.localizedString(from: $0, dateStyle: .medium, timeStyle: .medium))" }
