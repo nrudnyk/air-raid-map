@@ -135,23 +135,26 @@ extension MapView {
     fileprivate var regionList: some View {
 #if os(tvOS)
         List(viewModel.alarmedRegions) { regionState in
-            RegionStateListItemView(regionState) {
-                viewModel.focusOnRegion(regionState)
-            }
+            regionListItem(regionState)
         }
 #else
         ScrollView() {
             VStack {
                 ForEach(viewModel.alarmedRegions) { regionState in
-                    RegionStateListItemView(regionState) {
-                        viewModel.focusOnRegion(regionState)
-                    }
+                    regionListItem(regionState)
                     Divider()
                 }
                 Spacer()
             }
         }
 #endif
+    }
+    
+    fileprivate func regionListItem(_ item: RegionStateModel) -> some View {
+        RegionStateListItemView(item) {
+            bottomSheetPosition = .middle
+            viewModel.focusOnRegion(item)
+        }
     }
     
     fileprivate func getMapViewPadding(geometry: GeometryProxy) -> PlatformEdgeInsets {
