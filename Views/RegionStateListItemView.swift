@@ -73,7 +73,7 @@ extension RegionStateListItemView {
                 Text(regionState.alertState.changedAt, style: .time)
             }
             .font(.footnote)
-            .foregroundColor(.yellow)
+            .foregroundColor(.orange)
         }
     }
 }
