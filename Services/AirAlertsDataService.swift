@@ -46,6 +46,10 @@ class AirAlertsDataService: IAirAlertsDataService {
             .eraseToAnyPublisher()
     }
     
+    func getHistoryData() -> AnyPublisher<[AirAlertStateProperties], Error> {
+        fatalError()
+    }
+    
     func updateAlertsData(completion: @escaping ([RegionStateModel]) -> Void) {
         guard let url = URL(string: alertsApiEndpoint) else { return }
         

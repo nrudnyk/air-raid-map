@@ -10,5 +10,8 @@ import Combine
 
 protocol IAirAlertsDataService {
     func getLastUpdate() -> AnyPublisher<Date, Never>
+    
     func getData() -> AnyPublisher<[RegionStateModel], Error>
+    
+    func getHistoryData() -> AnyPublisher<[AirAlertStateProperties], Error>
 }
