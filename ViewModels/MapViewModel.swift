@@ -21,10 +21,15 @@ class MapViewModel: ObservableObject {
     @Published var lastUpdate: Date = Date()
     
     private let mapViewInteractor: MapViewInteractor
+    private let airAlertStateInteractor: AirAlertStateInteractor
     private var cancellables = Set<AnyCancellable>()
 
-    init(mapViewInteractor: MapViewInteractor = MapViewInteractor()) {
+    init(
+        mapViewInteractor: MapViewInteractor = MapViewInteractor(),
+        airAlertStateInteractor: AirAlertStateInteractor = AirAlertStateInteractor()
+    ) {
         self.mapViewInteractor = mapViewInteractor
+        self.airAlertStateInteractor = airAlertStateInteractor
         
         fitUkraineBounds()
         setUpTimer()
