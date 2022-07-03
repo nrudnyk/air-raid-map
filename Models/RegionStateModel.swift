@@ -7,7 +7,7 @@
 
 import MapKit
 
-struct RegionStateModel: Identifiable {
+struct RegionStateModel: Identifiable, Equatable {
     var id: String {
         return nameKey
     }
@@ -35,5 +35,12 @@ struct RegionStateModel: Identifiable {
         
         let overlay = geometry as! MKOverlay
         self.boudingRegion = overlay.boundingMapRect
+    }
+
+    static func == (lhs: RegionStateModel, rhs: RegionStateModel) -> Bool {
+        return
+            lhs.id == rhs.id &&
+            lhs.geometry == rhs.geometry &&
+            lhs.alertState.type == rhs.alertState.type
     }
 }
