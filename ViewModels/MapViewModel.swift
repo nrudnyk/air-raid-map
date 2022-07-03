@@ -13,10 +13,8 @@ class MapViewModel: ObservableObject {
     
     @Published var activeAlarmsTitle: String = "active_sirens".localized
     @Published var activeAlarmsSubtitle: String = ""
-    
-    @Published var currentMapRegion = MapConstsants.boundsOfUkraine
+
     @Published var alarmedRegions: [RegionStateModel] = []
-    @Published var focusedRegion: RegionStateModel? = nil
     @Published var overlays = [MKOverlay]()
     @Published var lastUpdate: Date = Date()
     
@@ -31,7 +29,6 @@ class MapViewModel: ObservableObject {
         self.mapViewInteractor = mapViewInteractor
         self.airAlertStateInteractor = airAlertStateInteractor
         
-        fitUkraineBounds()
         setUpTimer()
 
         self.mapViewInteractor.$regionsData
@@ -52,20 +49,6 @@ class MapViewModel: ObservableObject {
         $lastUpdate
             .map { "\("as_of".localized) \(DateFormatter.localizedString(from: $0, dateStyle: .medium, timeStyle: .medium))" }
             .assign(to: &$activeAlarmsSubtitle)
-    }
-    
-    func focusOnRegion(_ region: RegionStateModel) {
-        currentMapRegion = MKCoordinateRegion(region.boudingRegion)
-        focusedRegion = region
-    }
-    
-    func fitUkraineBounds() {
-        self.currentMapRegion = MapConstsants.boundsOfUkraine
-        focusedRegion = nil
-    }
-    
-    func refreshCoordinateRegion() {
-        self.currentMapRegion = self.currentMapRegion
     }
     
     func reloadData() {

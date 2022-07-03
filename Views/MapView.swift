@@ -15,11 +15,14 @@ struct MapView: View {
 #elseif os(tvOS)
     @State private var isSidebarVisible = false
 #endif
-    
+    @State var focusedRegion: RegionStateModel? = nil
     @State var mapRegion: MKCoordinateRegion = MapConstsants.boundsOfUkraine
-    
     @StateObject private var viewModel = MapViewModel()
-    
+
+    init() {
+        mapRegion = regionWithPadding(MapConstsants.boundsOfUkraine)
+    }
+
     var body: some View {
         GeometryReader { geometry in
 #if os(iOS)
@@ -28,9 +31,6 @@ struct MapView: View {
                     .ignoresSafeArea()
                 toolbar
                 bottomSheet(geometryProxy: geometry)
-            }
-            .onChange(of: bottomSheetPosition) { newValue in
-                viewModel.refreshCoordinateRegion()
             }
 #elseif os(macOS)
             NavigationView {
@@ -56,9 +56,6 @@ struct MapView: View {
             }
 #endif
         }
-        .onReceive(viewModel.$currentMapRegion) {
-            mapRegion = $0
-        }
     }
 }
 
@@ -66,7 +63,7 @@ struct MapView_Previews: PreviewProvider {
     static var previews: some View {
 #if os(iOS)
         if #available(iOS 15.0, *) {
-            MapView(bottomSheetPosition: .middle)
+            MapView()
                 .previewInterfaceOrientation(.landscapeLeft)
                 .preferredColorScheme(.dark)
         } else {
@@ -82,8 +79,7 @@ extension MapView {
     fileprivate func mapView(geometry: GeometryProxy) -> some View {
         MapViewRepresentable(
             coordinateRegion: $mapRegion,
-            overlays: viewModel.overlays,
-            padding: getMapViewPadding(geometry: geometry)
+            overlays: viewModel.overlays
         )
     }
     
@@ -103,11 +99,13 @@ extension MapView {
     
     fileprivate var fitUkraineButton: some View {
         HapticFeedbackButton(
-            action: viewModel.fitUkraineBounds,
+            action: {
+                mapRegion = regionWithPadding(MapConstsants.boundsOfUkraine)
+            },
             label: { Image(systemName: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left") }
         )
     }
-    
+
     fileprivate var regionListHeader: some View {
         HStack {
 #if os(tvOS)
@@ -152,24 +150,26 @@ extension MapView {
     
     fileprivate func regionListItem(_ item: RegionStateModel) -> some View {
         RegionStateListItemView(item) {
+#if os(iOS)
             bottomSheetPosition = .middle
-            viewModel.focusOnRegion(item)
+#endif
+            focusOnRegion(item)
         }
     }
-    
-    fileprivate func getMapViewPadding(geometry: GeometryProxy) -> PlatformEdgeInsets {
-#if os(iOS)
-        if bottomSheetPosition == .top || bottomSheetPosition == .middle {
-            return isLandscape
-                ? UIEdgeInsets(top: 0, left: geometry.size.width * BottomSheet.widthFraction, bottom: 0, right: 0)
-                : UIEdgeInsets(top: 0, left: 0, bottom: geometry.size.height * BottomSheetPosition.middle.rawValue, right: 0)
-        }
-#endif
-        
-        return .zero
+
+    func focusOnRegion(_ region: RegionStateModel) {
+        focusedRegion = region
+        mapRegion = regionWithPadding(MKCoordinateRegion(region.boudingRegion))
+    }
+
+    func regionWithPadding(_ region: MKCoordinateRegion) -> MKCoordinateRegion {
+        return isLandscape
+            ? region.withHorizontalPadding(BottomSheet.widthFraction)
+            : region.withVerticalPadding(bottomSheetPosition.rawValue)
     }
 }
 
+// MARK: iOS
 #if os(iOS)
 extension MapView {
     static let landscapeSheetWidthFraction = 1.0 / 7 * 3
@@ -208,11 +208,12 @@ extension MapView {
 }
 #endif
 
+// MARK: macOS
 #if os(macOS)
 extension MapView {
     @ToolbarContentBuilder
     fileprivate var sidebarToolbar: some ToolbarContent {
-        ToolbarItem(placement: .status) {
+        ToolbarItem() {
             Button(action: toggleSidebar, label: {
                 Image(systemName: "sidebar.leading")
             })
@@ -224,10 +225,10 @@ extension MapView {
         ToolbarItemGroup(placement: .navigation) {
             regionListHeader
         }
-        ToolbarItem(placement: .confirmationAction) {
+        ToolbarItem() {
             fitUkraineButton
         }
-        ToolbarItem(placement: .confirmationAction) {
+        ToolbarItem() {
             refreshButton
         }
     }
@@ -238,6 +239,7 @@ private func toggleSidebar() {
 }
 #endif
 
+// MARK: tvOS
 #if os(tvOS)
 extension MapView {
     fileprivate var sidebar: some View {

@@ -42,6 +42,49 @@ extension MKMapView {
 }
 
 extension MKCoordinateRegion: Equatable {
+    func withVerticalPadding(_ coef: CGFloat) -> MKCoordinateRegion {
+#if os(iOS)
+        let verticalSpan = self.span.latitudeDelta
+        let additionalSpan = verticalSpan * coef
+        let newRegion = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(
+                latitude: self.center.latitude - additionalSpan,
+                longitude: self.center.longitude
+            ),
+            span: MKCoordinateSpan(
+                latitudeDelta: verticalSpan + additionalSpan,
+                longitudeDelta: self.span.longitudeDelta
+            )
+        )
+
+        return newRegion
+#elseif os(macOS) || os(tvOS)
+        return MapConstsants.boundsOfUkraine
+#endif
+    }
+
+    func withHorizontalPadding(_ coef: CGFloat) -> MKCoordinateRegion {
+#if os(iOS)
+        let horizontalSpan = self.span.longitudeDelta
+        let additionalSpan = horizontalSpan * coef
+        let newRegion = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(
+                latitude: self.center.latitude,
+                longitude: self.center.longitude - additionalSpan
+            ),
+            span: MKCoordinateSpan(
+                latitudeDelta: self.span.latitudeDelta,
+                longitudeDelta: horizontalSpan + additionalSpan * 2
+            )
+        )
+
+        return newRegion
+#elseif os(macOS) || os(tvOS)
+        return MapConstsants.boundsOfUkraine
+#endif
+    }
+
+
     public static func == (lhs: MKCoordinateRegion, rhs: MKCoordinateRegion) -> Bool {
         return
             lhs.center.latitude == rhs.center.latitude &&

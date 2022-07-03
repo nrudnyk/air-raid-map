@@ -17,22 +17,18 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
     @Binding var coordinateRegion: MKCoordinateRegion
     let overlays: [MKOverlay]
     
-    let padding: PlatformEdgeInsets
-    
     public init(
         mapType: MKMapType = .standard,
         coordinateRegion: Binding<MKCoordinateRegion>,
         showsUserLocation: Bool = false,
         userTrackingMode: MKUserTrackingMode = .none,
-        overlays: [MKOverlay] = [],
-        padding: PlatformEdgeInsets = .zero
+        overlays: [MKOverlay] = []
     ) {
         self.mapType = mapType
         self._coordinateRegion = coordinateRegion
         self.showsUserLocation = showsUserLocation
         self.userTrackingMode = userTrackingMode
         self.overlays = overlays
-        self.padding = padding
     }
 
     public func makeCoordinator() -> MapViewRepresentable.Coordinator {
@@ -88,15 +84,15 @@ public struct MapViewRepresentable: PlatformViewRepresentable {
         
         mapView.showsUserLocation = self.showsUserLocation
         mapView.userTrackingMode = self.userTrackingMode
-        
-        mapView.setCoordinateRegion(coordinateRegion, edgePadding: self.padding, animated: true)
+
+        mapView.setRegion(coordinateRegion, animated: true)
         self.updateOverlays(in: mapView)
     }
     
     private func updateMapView(_ mapView: MKMapView, context: Context) {
         if coordinateRegion != mapView.region {
             DispatchQueue.main.async {
-                mapView.setCoordinateRegion(coordinateRegion, edgePadding: self.padding, animated: true)
+                mapView.setRegion(coordinateRegion, animated: true)
             }
         }
 
