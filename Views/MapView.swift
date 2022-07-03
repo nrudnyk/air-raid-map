@@ -99,9 +99,7 @@ extension MapView {
     
     fileprivate var fitUkraineButton: some View {
         HapticFeedbackButton(
-            action: {
-                mapRegion = regionWithPadding(MapConstsants.boundsOfUkraine)
-            },
+            action: { mapRegion = regionWithPadding(MapConstsants.boundsOfUkraine) },
             label: { Image(systemName: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left") }
         )
     }
@@ -136,13 +134,22 @@ extension MapView {
             regionListItem(regionState)
         }
 #else
-        ScrollView() {
-            VStack {
-                ForEach(viewModel.alarmedRegions) { regionState in
-                    regionListItem(regionState)
-                    Divider()
+        VStack {
+            Picker("", selection: $viewModel.selectedAlertType) {
+                ForEach(AlertType.allCases, id: \.self) { type in
+                    Image(systemName: type.systemImage)
                 }
-                Spacer()
+            }
+            .pickerStyle(.segmented)
+
+            ScrollView() {
+                VStack {
+                    ForEach(viewModel.regions) { regionState in
+                        regionListItem(regionState)
+                        Divider()
+                    }
+                    Spacer()
+                }
             }
         }
 #endif
@@ -163,9 +170,13 @@ extension MapView {
     }
 
     func regionWithPadding(_ region: MKCoordinateRegion) -> MKCoordinateRegion {
+#if os(iOS)
         return isLandscape
             ? region.withHorizontalPadding(BottomSheet.widthFraction)
             : region.withVerticalPadding(bottomSheetPosition.rawValue)
+#elseif os(macOS) || os(tvOS)
+        return region
+#endif
     }
 }
 

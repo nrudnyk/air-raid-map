@@ -5,9 +5,10 @@
   Created by Nazar Rudnyk on 16.05.2022.
 */
 
-"active_sirens" = "Активні тривоги";
+"active_sirens" = "Регіони";// "Активні тривоги";
 "as_of" = "станом на";
 "last" = "триває";
+"silence" = "тиша протягом";
 "announced" = "оголошено";
 
 // MARK: Regions

@@ -5,9 +5,10 @@
   Created by Nazar Rudnyk on 16.05.2022.
 */
 
-"active_sirens" = "Active sirens";
+"active_sirens" = "Regions"; //"Active sirens";
 "as_of" = "as of";
 "last" = "last";
+"silence" = "silence for";
 "announced" = "announced";
 
 // MARK: Regions

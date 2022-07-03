@@ -56,24 +56,30 @@ extension RegionStateListItemView {
             HStack(spacing: 0) {
                 Image(systemName: "clock.arrow.circlepath")
                 Text(" ")
-                Text("last").italic()
+                switch regionState.alertState.type {
+                case .airAlarm: Text("last").italic()
+                case .allClear: Text("silence").italic()
+                default: EmptyView()
+                }
                 Text(" ")
                 Text(regionState.alertState.changedAt, style: .relative).italic()
             }
             .font(.footnote)
-            .foregroundColor(.red)
+            .foregroundColor(regionState.alertState.type.color)
             
-            HStack(spacing: 0) {
-                Image(systemName: "megaphone")
-                Text(" ")
-                Text("announced")
-                Text(" ")
-                Text(DateFormatter.timePreposition(for: regionState.alertState.changedAt))
-                Text(" ")
-                Text(regionState.alertState.changedAt, style: .time)
+            if regionState.alertState.type == .airAlarm {
+                HStack(spacing: 0) {
+                    Image(systemName: "megaphone")
+                    Text(" ")
+                    Text("announced")
+                    Text(" ")
+                    Text(DateFormatter.timePreposition(for: regionState.alertState.changedAt))
+                    Text(" ")
+                    Text(regionState.alertState.changedAt, style: .time)
+                }
+                .font(.footnote)
+                .foregroundColor(.orange)
             }
-            .font(.footnote)
-            .foregroundColor(.orange)
         }
     }
 }

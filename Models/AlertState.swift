@@ -7,11 +7,28 @@
 
 import Foundation
 import CoreGraphics
+import SwiftUI
 
-public enum AlertType {
-    case airAlarm
-    case allClear
-    case noInfo
+public enum AlertType: String, CaseIterable {
+    case airAlarm = "Air-Alarm"
+    case allClear = "All-Clear"
+    case noInfo = "No-Info"
+
+    var systemImage: String {
+        switch self {
+        case .airAlarm: return "bell"
+        case .allClear: return "bell.slash"
+        case .noInfo: return "line.3.horizontal"
+        }
+    }
+
+    var color: Color {
+        switch self {
+        case .airAlarm: return .red
+        case .allClear: return Color(.systemGreen)// Color(cgColor: UIColor.systemGreen.cgColor)
+        case .noInfo: return .gray
+        }
+    }
 }
 
 public struct AlertState {

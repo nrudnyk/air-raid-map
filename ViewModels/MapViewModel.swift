@@ -14,7 +14,8 @@ class MapViewModel: ObservableObject {
     @Published var activeAlarmsTitle: String = "active_sirens".localized
     @Published var activeAlarmsSubtitle: String = ""
 
-    @Published var alarmedRegions: [RegionStateModel] = []
+    @Published var selectedAlertType: AlertType = .airAlarm
+    @Published var regions: [RegionStateModel] = []
     @Published var overlays = [MKOverlay]()
     @Published var lastUpdate: Date = Date()
     
@@ -32,10 +33,19 @@ class MapViewModel: ObservableObject {
         setUpTimer()
 
         self.mapViewInteractor.$regionsData
-            .map { regions in regions.filter { $0.alertState.type == .airAlarm }}
-            .map { regions in regions.sorted(by: { $0.alertState.changedAt > $1.alertState.changedAt} )}
+            .combineLatest($selectedAlertType)
+            .map { regionsData, selectedType in
+                regionsData.filter { region in
+                    switch selectedType {
+                    case .airAlarm: return region.alertState.type == .airAlarm
+                    case .allClear: return region.alertState.type == .allClear
+                    case .noInfo: return region.alertState.type != .noInfo
+                    }
+                }
+                .sorted(by: { $0.alertState.changedAt > $1.alertState.changedAt} )
+            }
             .receive(on: DispatchQueue.main)
-            .assign(to: &$alarmedRegions)
+            .assign(to: &$regions)
         
         self.mapViewInteractor.$regionsData
             .map { $0.map(RegionOverlay.init) }
