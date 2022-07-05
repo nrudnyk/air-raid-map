@@ -110,8 +110,15 @@ extension MapView {
             sidebarButton
 #endif
             VStack(alignment: .leading) {
-                Text(viewModel.activeAlarmsTitle)
-                    .font(.title3).bold()
+                HStack {
+                    Text(viewModel.activeAlarmsTitle)
+                        .font(.title3).bold()
+                    Spacer()
+                    if !viewModel.isNetworkReachable {
+                        Label("offline", systemImage: "antenna.radiowaves.left.and.right.slash")
+                            .font(.footnote)
+                    }
+                }
                 Text(viewModel.activeAlarmsSubtitle)
                     .italic()
                     .font(.subheadline)

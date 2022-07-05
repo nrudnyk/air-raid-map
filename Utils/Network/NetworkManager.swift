@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Hyperconnectivity
 
 class NetworkManager {
     
@@ -21,7 +22,13 @@ class NetworkManager {
             }
         }
     }
-    
+
+    static func getNetworkState() -> AnyPublisher<Bool, Never> {
+        Hyperconnectivity.Publisher()
+            .map { $0.isConnected }
+            .eraseToAnyPublisher()
+    }
+
     static func download(request: URLRequest) -> AnyPublisher<Data, Error> {
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap({ try handleURLResponse(output: $0, url: request.url!) })

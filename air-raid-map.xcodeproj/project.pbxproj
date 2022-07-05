@@ -122,6 +122,9 @@
 		9CAB4DD22810A79400812938 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
 		9CAB4DD32810A7AE00812938 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
 		9CAB4DD42810A7AF00812938 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
+		9CBC8B2A2872F66500770912 /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 9CBC8B292872F66500770912 /* Hyperconnectivity */; };
+		9CBC8B3C28731EB100770912 /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 9CBC8B3B28731EB100770912 /* Hyperconnectivity */; };
+		9CBC8B3E28731EF500770912 /* NotificationCenter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC8B3D28731EF500770912 /* NotificationCenter+Extensions.swift */; };
 		9CC0BE52286B4002009AA770 /* AirAlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE51286B4002009AA770 /* AirAlertState.swift */; };
 		9CC0BE53286B4002009AA770 /* AirAlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE51286B4002009AA770 /* AirAlertState.swift */; };
 		9CC0BE54286B4002009AA770 /* AirAlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE51286B4002009AA770 /* AirAlertState.swift */; };
@@ -143,7 +146,9 @@
 		9CD63A992811D28A00116F1E /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
 		9CD63A9A2811D28A00116F1E /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
 		9CD63A9B2811D28A00116F1E /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
+		9CDD8366287321FA008EFB53 /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 9CDD8365287321FA008EFB53 /* Hyperconnectivity */; };
 		9CE05A2D28325802000383D5 /* MapWidgetSnapshotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E856281F04DC005A3A37 /* MapWidgetSnapshotter.swift */; };
+		9CE07E7F28745922001946FC /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 9CE07E7E28745922001946FC /* Hyperconnectivity */; };
 		9CE2A6C52810042900241EB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC3280FD21A00FBAE90 /* ContentView.swift */; };
 		9CE2A6C8281004E000241EB4 /* AirRaidMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC2280FD21A00FBAE90 /* AirRaidMapApp.swift */; };
 		9CE2A6CA2810054E00241EB4 /* regions.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9CE2A6C92810054E00241EB4 /* regions.geojson */; };
@@ -255,6 +260,7 @@
 		9CA94D542838CAC400EF665B /* AirRaidAlerts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AirRaidAlerts.xcdatamodel; sourceTree = "<group>"; };
 		9CA94D642838CCCC00EF665B /* test-history.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-history.json"; sourceTree = "<group>"; };
 		9CA94D682838D10800EF665B /* AirAlertStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertStateModel.swift; sourceTree = "<group>"; };
+		9CBC8B3D28731EF500770912 /* NotificationCenter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extensions.swift"; sourceTree = "<group>"; };
 		9CC0BE51286B4002009AA770 /* AirAlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertState.swift; sourceTree = "<group>"; };
 		9CC0BE55286B4864009AA770 /* AirAlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertError.swift; sourceTree = "<group>"; };
 		9CC0BE5D286B737F009AA770 /* AirAlertStatesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertStatesProvider.swift; sourceTree = "<group>"; };
@@ -289,6 +295,7 @@
 			files = (
 				9C459582281E673600DD561D /* SwiftUI.framework in Frameworks */,
 				9C459580281E673600DD561D /* WidgetKit.framework in Frameworks */,
+				9CE07E7F28745922001946FC /* Hyperconnectivity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CDD8366287321FA008EFB53 /* Hyperconnectivity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +311,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBC8B2A2872F66500770912 /* Hyperconnectivity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +319,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBC8B3C28731EB100770912 /* Hyperconnectivity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +359,7 @@
 				9CA0FFF4282FE12200545C02 /* MapKitExtensions.swift */,
 				9C6B19C1286C9BFA0038FEAC /* LoggerExtensions.swift */,
 				9C6B19C6286CA1460038FEAC /* NSManagedObjectContextExtensions.swift */,
+				9CBC8B3D28731EF500770912 /* NotificationCenter+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -407,6 +418,14 @@
 			path = Interactors;
 			sourceTree = "<group>";
 		};
+		9CBC8B2B28731DDD00770912 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9CCD77A728144D930050584C /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		9CC0BE50286B3FF0009AA770 /* AirAlertState */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,8 +469,8 @@
 		9CE2A6CF28103EEE00241EB4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9CBC8B2B28731DDD00770912 /* Network */,
 				9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */,
-				9CCD77A728144D930050584C /* NetworkManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -528,6 +547,9 @@
 			dependencies = (
 			);
 			name = "air-raid-map-iOS-widget";
+			packageProductDependencies = (
+				9CE07E7E28745922001946FC /* Hyperconnectivity */,
+			);
 			productName = "air-raid-map-widgetExtension";
 			productReference = 9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -546,6 +568,7 @@
 			);
 			name = "air-raid-map (tvOS)";
 			packageProductDependencies = (
+				9CDD8365287321FA008EFB53 /* Hyperconnectivity */,
 			);
 			productName = "air-raid-map (tvOS)";
 			productReference = 9CE2A6B72810041000241EB4 /* УКРМАПА.app */;
@@ -567,6 +590,7 @@
 			);
 			name = "air-raid-map (iOS)";
 			packageProductDependencies = (
+				9CBC8B292872F66500770912 /* Hyperconnectivity */,
 			);
 			productName = "air-raid-map (iOS)";
 			productReference = 9CF79EC9280FD21B00FBAE90 /* air-raid-map.app */;
@@ -586,6 +610,7 @@
 			);
 			name = "air-raid-map (macOS)";
 			packageProductDependencies = (
+				9CBC8B3B28731EB100770912 /* Hyperconnectivity */,
 			);
 			productName = "air-raid-map (macOS)";
 			productReference = 9CF79ECF280FD21B00FBAE90 /* air-raid-map.app */;
@@ -626,6 +651,7 @@
 			);
 			mainGroup = 9CF79EBC280FD21A00FBAE90;
 			packageReferences = (
+				9CBC8B282872F66500770912 /* XCRemoteSwiftPackageReference "Hyperconnectivity" */,
 			);
 			productRefGroup = 9CF79ECA280FD21B00FBAE90 /* Products */;
 			projectDirPath = "";
@@ -783,6 +809,7 @@
 				9C6B19C2286C9BFA0038FEAC /* LoggerExtensions.swift in Sources */,
 				9C9EFFFD28107F0000410B75 /* RegionStateModel.swift in Sources */,
 				9CFEAE712832A8C400841EDB /* MapView.swift in Sources */,
+				9CBC8B3E28731EF500770912 /* NotificationCenter+Extensions.swift in Sources */,
 				9CA0FFEB282C310600545C02 /* IAirAlertsDataService.swift in Sources */,
 				9C5E600E2819446A00CEEBF1 /* AlertState.swift in Sources */,
 				9C393A3A2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,
@@ -1311,6 +1338,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9CBC8B282872F66500770912 /* XCRemoteSwiftPackageReference "Hyperconnectivity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rwbutler/Hyperconnectivity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9CBC8B292872F66500770912 /* Hyperconnectivity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9CBC8B282872F66500770912 /* XCRemoteSwiftPackageReference "Hyperconnectivity" */;
+			productName = Hyperconnectivity;
+		};
+		9CBC8B3B28731EB100770912 /* Hyperconnectivity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9CBC8B282872F66500770912 /* XCRemoteSwiftPackageReference "Hyperconnectivity" */;
+			productName = Hyperconnectivity;
+		};
+		9CDD8365287321FA008EFB53 /* Hyperconnectivity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9CBC8B282872F66500770912 /* XCRemoteSwiftPackageReference "Hyperconnectivity" */;
+			productName = Hyperconnectivity;
+		};
+		9CE07E7E28745922001946FC /* Hyperconnectivity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9CBC8B282872F66500770912 /* XCRemoteSwiftPackageReference "Hyperconnectivity" */;
+			productName = Hyperconnectivity;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9CA94D532838CAC400EF665B /* AirRaidAlerts.xcdatamodeld */ = {

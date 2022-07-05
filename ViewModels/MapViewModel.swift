@@ -18,6 +18,7 @@ class MapViewModel: ObservableObject {
     @Published var regions: [RegionStateModel] = []
     @Published var overlays = [MKOverlay]()
     @Published var lastUpdate: Date = Date()
+    @Published var isNetworkReachable: Bool = true
     
     private let mapViewInteractor: MapViewInteractor
     private let airAlertStateInteractor: AirAlertStateInteractor
@@ -59,6 +60,9 @@ class MapViewModel: ObservableObject {
         $lastUpdate
             .map { "\("as_of".localized) \(DateFormatter.localizedString(from: $0, dateStyle: .medium, timeStyle: .medium))" }
             .assign(to: &$activeAlarmsSubtitle)
+
+        NetworkManager.getNetworkState()
+            .assign(to: &$isNetworkReachable)
     }
     
     func reloadData() {
