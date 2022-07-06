@@ -13,16 +13,8 @@ struct RegionStatesDecodable: Decodable {
         case states = "states"
     }
     
-    private struct RegionDecodable: Decodable {
-        let id: Int
-        let name: String
-        let name_en: String
-        let alert: Bool
-        let changed: String
-    }
-    
     let lastUpdate: Date
-    private let regionStates: [RegionDecodable]
+    let regionStates: [RegionStateProperties]
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -38,17 +30,31 @@ struct RegionStatesDecodable: Decodable {
         }
         lastUpdate = date
         
-        regionStates = try container.decode([RegionDecodable].self, forKey: .states)
+        regionStates = try container.decode([RegionStateProperties].self, forKey: .states)
     }
-    
+
+    // TODO: Get rid of this, think about proper organization
     func alertState(for regionName: String) -> AlertState {
         if let regionState = regionStates.first(where: { regionName.contains($0.name) }) {
             return AlertState(
                 type: regionState.alert ? .airAlarm : .allClear,
-                changedAt: DateFormatter.iso8601Full.date(from: regionState.changed)!
+                changedAt: regionState.changed
             )
         }
         
+        return AlertState()
+    }
+}
+
+extension Array where Element == RegionState {
+    func alertState(for regionName: String) -> AlertState {
+        if let regionState = self.first(where: { regionName.contains($0.name) }) {
+            return AlertState(
+                type: regionState.alert ? .airAlarm : .allClear,
+                changedAt: regionState.changed
+            )
+        }
+
         return AlertState()
     }
 }

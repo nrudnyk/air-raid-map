@@ -13,15 +13,9 @@ class AirAlertsDataService: IAirAlertsDataService {
     private let apiKey = "X-API-Key"
     private let apiKeyValue = "df0ad7ea014f74e2bc741960c6d2f681c9cf34fd"
 
-    @Published var lastUpdate: Date = Date()
-
     private let regionsRepository = RegionsRepository()
-    
-    func getLastUpdate() -> AnyPublisher<Date, Never> {
-        return $lastUpdate.eraseToAnyPublisher()
-    }
-    
-    func getData() -> AnyPublisher<[RegionStateModel], Error> {
+
+    func getData() -> AnyPublisher<[RegionStateProperties], Error> {
         guard let url = URL(string: alertsApiEndpoint) else {
             return Fail(error: NSError(domain: "Missing Air-Raid Alarms URL", code: -10001, userInfo: nil))
                 .eraseToAnyPublisher()
@@ -33,15 +27,13 @@ class AirAlertsDataService: IAirAlertsDataService {
  
         return NetworkManager.download(request: request)
             .decode(type: RegionStatesDecodable.self, decoder: JSONDecoder())
-            .map { [weak self] regionsDecodable in
-                guard let self = self else { return [] }
-                
-                self.lastUpdate = regionsDecodable.lastUpdate
-                
-                return self.regionsRepository.regions.map { region in
-                    let alertState = regionsDecodable.alertState(for: region.properties.NAME_1)
-                    return RegionStateModel(region: region, alertState: alertState)
-                }
+            .map { regionsDecodable in
+                print(regionsDecodable.lastUpdate)
+                UserDefaults.standard.set(
+                    DateFormatter.localizedString(from: regionsDecodable.lastUpdate, dateStyle: .medium, timeStyle: .medium),
+                    forKey: UserDefaults.Keys.lastUpdate
+                )
+                return regionsDecodable.regionStates
             }
             .eraseToAnyPublisher()
     }

@@ -6,11 +6,9 @@
 //
 
 import Foundation
-import SwiftUI
-import WidgetKit
 
-extension WidgetCenter {
-    public enum Kind {
-        static let mainMap = "mainMap"
+extension UserDefaults {
+    public enum Keys {
+        static let lastUpdate = "lastUpdate"
     }
 }

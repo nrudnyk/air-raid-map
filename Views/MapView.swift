@@ -9,9 +9,12 @@ import MapKit
 import SwiftUI
 
 struct MapView: View {
+    @AppStorage(wrappedValue: "", UserDefaults.Keys.lastUpdate, store: .standard)
+    private var lastUpdate: String
+
 #if os(iOS)
     @LandscapeOrientation var isLandscape
-    @State var bottomSheetPosition: BottomSheetPosition = .bottom
+    @State var bottomSheetPosition: BottomSheetPosition = .middle
 #elseif os(tvOS)
     @State private var isSidebarVisible = false
 #endif
@@ -38,9 +41,14 @@ struct MapView: View {
                     .padding([.horizontal])
                     .toolbar { sidebarToolbar }
                     .frame(minWidth: 250)
-                mapView(geometry: geometry)
-                    .navigationTitle("")
-                    .toolbar { toolbar }
+                ZStack(alignment: .topTrailing) {
+                    mapView(geometry: geometry)
+                        .navigationTitle("")
+                        .toolbar { toolbar }
+                    reachabilityLabel
+                        .shadow(radius: 10)
+                        .padding()
+                }.animation(.linear(duration: 0.4), value: viewModel.isNetworkReachable)
             }
 #elseif os(tvOS)
             ZStack(alignment: .topTrailing) {
@@ -82,7 +90,17 @@ extension MapView {
             overlays: viewModel.overlays
         )
     }
-    
+
+    @ViewBuilder
+    fileprivate var reachabilityLabel: some View {
+        if !viewModel.isNetworkReachable {
+            Label("offline", systemImage: "antenna.radiowaves.left.and.right.slash")
+                .transition(.scale(scale: 1.1).combined(with: .opacity))
+        } else {
+            EmptyView()
+        }
+    }
+
     fileprivate var shareButton: some View {
         HapticFeedbackButton(
             action: viewModel.shareMapSnapshot,
@@ -114,15 +132,25 @@ extension MapView {
                     Text(viewModel.activeAlarmsTitle)
                         .font(.title3).bold()
                     Spacer()
-                    if !viewModel.isNetworkReachable {
-                        Label("offline", systemImage: "antenna.radiowaves.left.and.right.slash")
-                            .font(.footnote)
-                    }
+#if os(iOS)
+                    reachabilityLabel
+                        .font(.footnote)
+#endif
                 }
-                Text(viewModel.activeAlarmsSubtitle)
-                    .italic()
-                    .font(.subheadline)
-                    .frame(alignment: .trailing)
+                .animation(.linear(duration: 0.4), value: viewModel.isNetworkReachable)
+                
+                HStack(spacing: 0) {
+                    Text("as_of")
+                        .italic()
+                        .font(.subheadline)
+                    Text(" ")
+                    Text(lastUpdate)
+                        .italic()
+                        .font(.subheadline)
+                        .transition(.scale(scale: 1.1).combined(with: .opacity))
+                        .id(lastUpdate)
+                }
+                .animation(.linear(duration: 0.4), value: lastUpdate)
             }
             Spacer()
         }
@@ -137,7 +165,7 @@ extension MapView {
     
     fileprivate var regionList: some View {
 #if os(tvOS)
-        List(viewModel.alarmedRegions) { regionState in
+        List(viewModel.regions) { regionState in
             regionListItem(regionState)
         }
 #else

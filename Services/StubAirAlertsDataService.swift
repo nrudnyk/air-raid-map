@@ -10,16 +10,8 @@ import Combine
 import OSLog
 
 class StubAirAlertsDataService: IAirAlertsDataService {
-    
-    @Published var lastUpdate: Date = Date()
-    
-    private let regionsRepository = RegionsRepository()
-    
-    func getLastUpdate() -> AnyPublisher<Date, Never> {
-        return $lastUpdate.eraseToAnyPublisher()
-    }
-    
-    func getData() -> AnyPublisher<[RegionStateModel], Error> {
+
+    func getData() -> AnyPublisher<[RegionStateProperties], Error> {
         guard let url = Bundle.main.url(forResource: "test-sirens", withExtension: "json"),
               let jsonData = try? Data(contentsOf: url)
         else {
@@ -29,15 +21,12 @@ class StubAirAlertsDataService: IAirAlertsDataService {
         
         return Just(jsonData)
             .decode(type: RegionStatesDecodable.self, decoder: JSONDecoder())
-            .map { [weak self] regionsDecodable in
-                guard let self = self else { return [] }
-    
-                self.lastUpdate = regionsDecodable.lastUpdate
-                
-                return self.regionsRepository.regions.map { region in
-                    let alertState = regionsDecodable.alertState(for: region.properties.NAME_1)
-                    return RegionStateModel(region: region, alertState: alertState)
-                }
+            .map { regionsDecodable in
+                UserDefaults.standard.set(
+                    DateFormatter.localizedString(from: regionsDecodable.lastUpdate, dateStyle: .medium, timeStyle: .medium),
+                    forKey: UserDefaults.Keys.lastUpdate
+                )
+                return regionsDecodable.regionStates
             }
             .eraseToAnyPublisher()
     }

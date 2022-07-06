@@ -25,8 +25,11 @@ struct AirRaidMapApp: App {
             if phase == .background {
                 print("went to background")
                 WidgetCenter.shared.reloadTimelines(ofKind: WidgetCenter.Kind.mainMap)
+
+                AirAlertStatesProvider.shared.save()
             }
         }
+
 #endif
     }
 }

@@ -10,20 +10,15 @@ import SwiftUI
 import OSLog
 
 // MARK: - Core Data
-
-/// Managed object subclass for the AirAlertState entity.
 class AirAlertState: NSManagedObject {
-
     // A unique identifier used to avoid duplicates in the persistent store.
-    // Constrain the Quake entity on this attribute in the data model editor.
     @NSManaged var id: Int
-
     // The characteristics of a AirAlert State.
     @NSManaged var date: Date
     @NSManaged var region_id: Int16
     @NSManaged var state: Bool
 
-    func update(from alertStateProperties: AirAlertStateProperties) throws {
+    func update(from alertStateProperties: AirAlertStateProperties) {
         id = alertStateProperties.id
         date = alertStateProperties.date
         region_id = alertStateProperties.regionId
@@ -32,7 +27,6 @@ class AirAlertState: NSManagedObject {
 }
 
 // MARK: - SwiftUI
-
 extension AirAlertState {
 
     static var preview = AirAlertState.makePreviews(count: 1)[0]
@@ -54,10 +48,7 @@ extension AirAlertState {
     }
 }
 
-/// A struct encapsulating the properties of a AirAlertState.
 struct AirAlertStateProperties: Decodable {
-
-    // MARK: Codable
     private enum CodingKeys: String, CodingKey {
         case id = "id"
         case date = "date"
