@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct BottomSheetView<hContent: View, mContent: View>: View {
-    @LandscapeOrientation var isLandscape
+    let widthFraction = UIDevice.current.userInterfaceIdiom == .pad
+        ? 1.0 / 3 * 2
+        : 1.0 / 7 * 4
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.verticalSizeClass) var verticalSizeClass
 
     @Binding fileprivate var bottomSheetPosition: BottomSheetPosition
     @State fileprivate var translation: CGFloat = .zero
@@ -101,7 +105,7 @@ struct BottomSheetView<hContent: View, mContent: View>: View {
                             }
                     )
             )
-            .padding(.trailing, isLandscape ? landscapePadding(geometry: geometry) : 0)
+            .padding(padding(with: geometry))
             .frame(width: geometry.size.width, height: self.frameHeightValue(geometry: geometry), alignment: .top)
             .offset(y: self.offsetYValue(geometry: geometry))
             .transition(.move(edge: .bottom))
@@ -118,9 +122,21 @@ struct BottomSheetView<hContent: View, mContent: View>: View {
     fileprivate func frameHeightValue(geometry: GeometryProxy) -> Double {
         return min(max((geometry.size.height * self.bottomSheetPosition.rawValue) - self.translation, 0), geometry.size.height * 1.05)
     }
-    
-    fileprivate func landscapePadding(geometry: GeometryProxy) -> CGFloat {
-        return geometry.size.width * (1 - BottomSheet.widthFraction)
+
+    fileprivate func padding(with geometry: GeometryProxy) -> EdgeInsets {
+        let result: EdgeInsets
+        if horizontalSizeClass == .compact && verticalSizeClass == .regular {
+            result = .zero
+        } else {
+            result = EdgeInsets(
+                top: 0,
+                leading: UIDevice.current.userInterfaceIdiom == .pad ? geometry.safeAreaInsets.bottom : 0,
+                bottom: 0,
+                trailing: geometry.size.width * widthFraction
+            )
+        }
+
+        return result
     }
     
     fileprivate func offsetYValue(geometry: GeometryProxy) -> Double {
@@ -171,5 +187,38 @@ struct BottomSheetView<hContent: View, mContent: View>: View {
         self.options = options
         self.headerContent = headerContent()
         self.mainContent = mainContent()
+    }
+}
+
+struct BottomSheetView_Previews: PreviewProvider {
+    static var bottomSheetView: some View {
+        BottomSheetView(
+            bottomSheetPosition: .constant(.middle),
+            headerContent: {
+                VStack {
+                    Text("Header Text")
+                        .font(.headline)
+                    Text("Subtitle")
+                        .font(.subheadline)
+                }
+            },
+            mainContent: {
+                Color.red.ignoresSafeArea()
+            }
+        )
+    }
+
+    static var previews: some View {
+        ZStack(alignment: .topTrailing) {
+            if #available(iOS 15.0, *) {
+                bottomSheetView
+                    .previewInterfaceOrientation(.landscapeRight)
+            } else {
+                bottomSheetView
+            }
+        }
+        .preferredColorScheme(.dark)
+        .environment(\.sizeCategory, .accessibilityExtraExtraLarge)
+        .environment(\.locale, .init(identifier: "uk"))
     }
 }

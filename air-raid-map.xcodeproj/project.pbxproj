@@ -209,6 +209,7 @@
 		9CFEAE762832AFBE00841EDB /* HapticFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6828329B1000841EDB /* HapticFeedbackButton.swift */; };
 		9CFEAE772832B14800841EDB /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
 		9CFEAE782832B14900841EDB /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
+		9CFF53A32877591800F69DE8 /* EdgeInsetsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF53A22877591800F69DE8 /* EdgeInsetsExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,6 +315,7 @@
 		9CFEAE6828329B1000841EDB /* HapticFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackButton.swift; sourceTree = "<group>"; };
 		9CFEAE6C28329F9F00841EDB /* ImageActivityItemSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageActivityItemSource.swift; sourceTree = "<group>"; };
 		9CFEAE702832A8C400841EDB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		9CFF53A22877591800F69DE8 /* EdgeInsetsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsetsExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,6 +390,7 @@
 				9C6B19C1286C9BFA0038FEAC /* LoggerExtensions.swift */,
 				9C6B19C6286CA1460038FEAC /* NSManagedObjectContextExtensions.swift */,
 				9CBC8B3D28731EF500770912 /* NotificationCenter+Extensions.swift */,
+				9CFF53A22877591800F69DE8 /* EdgeInsetsExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 				9CE07E8228746602001946FC /* RegionState.swift in Sources */,
 				9CA0FFF0282C330000545C02 /* StubAirAlertsDataService.swift in Sources */,
 				9C94CCCD2869A16F00044AA2 /* AirAlertStateInteractor.swift in Sources */,
+				9CFF53A32877591800F69DE8 /* EdgeInsetsExtensions.swift in Sources */,
 				9C6B19C2286C9BFA0038FEAC /* LoggerExtensions.swift in Sources */,
 				9C9EFFFD28107F0000410B75 /* RegionStateModel.swift in Sources */,
 				9CE07E8C287475FC001946FC /* RegionStateDAO.swift in Sources */,
