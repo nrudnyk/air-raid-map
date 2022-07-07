@@ -9,6 +9,8 @@ import MapKit
 import SwiftUI
 
 struct MapView: View {
+    @Environment(\.sizeCategory) var sizeCategory
+
     @AppStorage(wrappedValue: "", UserDefaults.Keys.lastUpdate, store: .standard)
     private var lastUpdate: String
 
@@ -65,22 +67,6 @@ struct MapView: View {
             }
 #endif
         }
-    }
-}
-
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-#if os(iOS)
-        if #available(iOS 15.0, *) {
-            MapView()
-                .previewInterfaceOrientation(.landscapeLeft)
-                .preferredColorScheme(.dark)
-        } else {
-            MapView()
-        }
-#else
-        MapView()
-#endif
     }
 }
 
@@ -148,11 +134,13 @@ extension MapView {
                 }
                 .animation(.linear(duration: 0.4), value: viewModel.isNetworkReachable)
                 
-                HStack(spacing: 0) {
-                    Text("as_of")
-                        .italic()
-                        .font(.subheadline)
-                    Text(" ")
+                HStack(alignment: .top, spacing: 0) {
+                    if sizeCategory < .accessibilityExtraLarge {
+                        Text("as_of")
+                            .italic()
+                            .font(.subheadline)
+                        Text(" ")
+                    }
                     Text(lastUpdate)
                         .italic()
                         .font(.subheadline)
@@ -328,3 +316,18 @@ extension MapView {
     }
 }
 #endif
+
+struct MapView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            if #available(iOS 15.0, *) {
+                MapView().previewInterfaceOrientation(.landscapeLeft)
+            } else {
+                MapView()
+            }
+        }
+        .preferredColorScheme(.dark)
+        .environment(\.sizeCategory, .accessibilityExtraExtraLarge)
+        .environment(\.locale, .init(identifier: "uk"))
+    }
+}
