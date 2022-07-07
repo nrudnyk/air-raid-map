@@ -32,7 +32,7 @@
 		9C3E64742877166A005BBAD5 /* RegionStateListItemViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3E646F28771407005BBAD5 /* RegionStateListItemViewContent.swift */; };
 		9C459580281E673600DD561D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C45957F281E673600DD561D /* WidgetKit.framework */; platformFilter = maccatalyst; };
 		9C459582281E673600DD561D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C459581281E673600DD561D /* SwiftUI.framework */; platformFilter = maccatalyst; };
-		9C45958B281E673700DD561D /* air-raid-map-iOS-widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9C45958B281E673700DD561D /* air-raid-map-iOS-widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9C459595281E83E200DD561D /* WidgetMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C459594281E83E200DD561D /* WidgetMapView.swift */; };
 		9C459596281E84C100DD561D /* MapStatusTimelinePovider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C459590281E6E8B00DD561D /* MapStatusTimelinePovider.swift */; };
 		9C459597281E84C300DD561D /* MapStatusEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C459592281E6F0A00DD561D /* MapStatusEntry.swift */; };
@@ -222,15 +222,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9C45958F281E673700DD561D /* Embed App Extensions */ = {
+		9C45958F281E673700DD561D /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				9C45958B281E673700DD561D /* air-raid-map-iOS-widget.appex in Embed App Extensions */,
+				9C45958B281E673700DD561D /* air-raid-map-iOS-widget.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -623,7 +623,7 @@
 				9CF79EC5280FD21B00FBAE90 /* Sources */,
 				9CF79EC6280FD21B00FBAE90 /* Frameworks */,
 				9CF79EC7280FD21B00FBAE90 /* Resources */,
-				9C45958F281E673700DD561D /* Embed App Extensions */,
+				9C45958F281E673700DD561D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -666,7 +666,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					9C45957D281E673600DD561D = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -1107,6 +1107,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1137,6 +1138,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1168,6 +1170,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1198,6 +1201,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1301,6 +1305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1332,6 +1337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
