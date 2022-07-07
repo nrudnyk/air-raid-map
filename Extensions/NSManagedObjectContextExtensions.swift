@@ -8,8 +8,6 @@
 import Foundation
 import CoreData
 
-@available(iOS, deprecated: 15.0, message: "Use the built-in API instead")
-@available(macOS, deprecated: 12.0, message: "Use the built-in API instead")
 extension NSManagedObjectContext {
     func performBlock(_ block: @escaping () throws -> Void) async throws {
         if #available(macOS 12.0, iOS 15.0, *) {
