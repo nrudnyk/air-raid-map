@@ -24,7 +24,6 @@
 		9C393A3C2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */; };
 		9C393A3E2815790A00A9CCA6 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */; };
 		9C393A502816860E00A9CCA6 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A4F2816860E00A9CCA6 /* Orientation.swift */; };
-		9C393A5428168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */; };
 		9C393A582816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
 		9C393A592816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
 		9C393A5A2816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
@@ -249,7 +248,6 @@
 		9C393A4A28157E5400A9CCA6 /* air-raid-map--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "air-raid-map--iOS--Info.plist"; sourceTree = "<group>"; };
 		9C393A4C28157E5400A9CCA6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.4.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		9C393A4F2816860E00A9CCA6 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
-		9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeOrientation.swift; sourceTree = "<group>"; };
 		9C393A572816906800A9CCA6 /* MapContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContants.swift; sourceTree = "<group>"; };
 		9C3E646F28771407005BBAD5 /* RegionStateListItemViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStateListItemViewContent.swift; sourceTree = "<group>"; };
 		9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "air-raid-map-iOS-widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -384,7 +382,6 @@
 				9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */,
 				9C278F96281071A700811961 /* Extensions.swift */,
 				9C393A4F2816860E00A9CCA6 /* Orientation.swift */,
-				9C393A5328168DC400A9CCA6 /* LandscapeOrientation.swift */,
 				9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */,
 				9CA0FFF4282FE12200545C02 /* MapKitExtensions.swift */,
 				9C6B19C1286C9BFA0038FEAC /* LoggerExtensions.swift */,
@@ -857,7 +854,6 @@
 				9CEBC01F281176BD00C16CD0 /* Feature.swift in Sources */,
 				9CFEAE6928329B1000841EDB /* HapticFeedbackButton.swift in Sources */,
 				9C393A3628147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
-				9C393A5428168DC400A9CCA6 /* LandscapeOrientation.swift in Sources */,
 				9CFEAE6D28329F9F00841EDB /* ImageActivityItemSource.swift in Sources */,
 				9CE07E8228746602001946FC /* RegionState.swift in Sources */,
 				9CA0FFF0282C330000545C02 /* StubAirAlertsDataService.swift in Sources */,

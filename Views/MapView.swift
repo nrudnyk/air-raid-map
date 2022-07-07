@@ -17,7 +17,6 @@ struct MapView: View {
     private var lastUpdate: String
 
 #if os(iOS)
-    @LandscapeOrientation var isLandscape
     @State var bottomSheetPosition: BottomSheetPosition = .middle
     @State private var imageActivityItemSource: ImageActivityItemSource? = nil
 #elseif os(tvOS)
