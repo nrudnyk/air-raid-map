@@ -15,6 +15,7 @@ struct MapView: View {
 #if os(iOS)
     @LandscapeOrientation var isLandscape
     @State var bottomSheetPosition: BottomSheetPosition = .middle
+    @State private var imageActivityItemSource: ImageActivityItemSource? = nil
 #elseif os(tvOS)
     @State private var isSidebarVisible = false
 #endif
@@ -103,7 +104,15 @@ extension MapView {
 
     fileprivate var shareButton: some View {
         HapticFeedbackButton(
-            action: viewModel.shareMapSnapshot,
+            action: {
+                MapWidgetSnapshotter.makeMapSnapshot(for: viewModel.overlays, size: CGSize(width: 800, height: 600)) { snapshot in
+                    imageActivityItemSource = ImageActivityItemSource(
+                        title: viewModel.activeAlarmsTitle,
+                        text: "\("as_of".localized) \(lastUpdate)",
+                        image: snapshot
+                    )
+                }
+            },
             label: { Image(systemName: "square.and.arrow.up") }
         )
     }
@@ -223,6 +232,9 @@ extension MapView {
     fileprivate var toolbar: some View {
         VStack(spacing: 0) {
             shareButton
+                .popover(item: $imageActivityItemSource, attachmentAnchor: .rect(.bounds), arrowEdge: .leading, content: { item in
+                    ShareSheet(activityItems: [item])
+                })
             Divider()
             fitUkraineButton
             Divider()

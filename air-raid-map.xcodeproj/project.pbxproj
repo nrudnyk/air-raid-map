@@ -10,6 +10,9 @@
 		9C026AF0282254A500E0324B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C026AEF282254A500E0324B /* Constants.swift */; };
 		9C026AF3282254A500E0324B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C026AEF282254A500E0324B /* Constants.swift */; };
 		9C0AD82E280FE4E20095ACCA /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
+		9C0B9E252876FA9200C75E12 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B9E242876FA9200C75E12 /* ShareSheet.swift */; };
+		9C0B9E282877105000C75E12 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B9E242876FA9200C75E12 /* ShareSheet.swift */; };
+		9C0B9E292877105000C75E12 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B9E242876FA9200C75E12 /* ShareSheet.swift */; };
 		9C19E858281F04DC005A3A37 /* MapWidgetSnapshotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E856281F04DC005A3A37 /* MapWidgetSnapshotter.swift */; };
 		9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
 		9C278F97281071A700811961 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
@@ -232,6 +235,7 @@
 /* Begin PBXFileReference section */
 		9C026AEF282254A500E0324B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		9C0B9E242876FA9200C75E12 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		9C19E856281F04DC005A3A37 /* MapWidgetSnapshotter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWidgetSnapshotter.swift; sourceTree = "<group>"; };
 		9C278F94281061E500811961 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		9C278F96281071A700811961 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -349,7 +353,6 @@
 		9C278F93281061CE00811961 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9C278F94281061E500811961 /* MapViewRepresentable.swift */,
 				9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */,
 				9CFEAE702832A8C400841EDB /* MapView.swift */,
 			);
@@ -559,6 +562,8 @@
 			children = (
 				9C7C921F2835807200EDE9F6 /* BottomSheet */,
 				9CFEAE6828329B1000841EDB /* HapticFeedbackButton.swift */,
+				9C278F94281061E500811961 /* MapViewRepresentable.swift */,
+				9C0B9E242876FA9200C75E12 /* ShareSheet.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -804,6 +809,7 @@
 				9C5E601C2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */,
 				9CE07E9A2874D787001946FC /* Constants.swift in Sources */,
 				9C9EFFFF28107F0000410B75 /* RegionStateModel.swift in Sources */,
+				9C0B9E292877105000C75E12 /* ShareSheet.swift in Sources */,
 				9CC0BE54286B4002009AA770 /* AirAlertState.swift in Sources */,
 				9CA94D6B2838D10800EF665B /* AirAlertStateModel.swift in Sources */,
 				9C9E00032810807800410B75 /* RegionStatesDecodable.swift in Sources */,
@@ -894,6 +900,7 @@
 				9CE2A6D62810414000241EB4 /* RegionsRepository.swift in Sources */,
 				9CC0BE56286B4864009AA770 /* AirAlertError.swift in Sources */,
 				9C026AF0282254A500E0324B /* Constants.swift in Sources */,
+				9C0B9E252876FA9200C75E12 /* ShareSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -912,6 +919,7 @@
 				9CE07E9B2874D788001946FC /* Constants.swift in Sources */,
 				9CD63A9A2811D28A00116F1E /* RegionOverlay.swift in Sources */,
 				9CAB4DD12810A79400812938 /* Extensions.swift in Sources */,
+				9C0B9E282877105000C75E12 /* ShareSheet.swift in Sources */,
 				9CD63A7D2811A4F300116F1E /* PlaftormExtensions.swift in Sources */,
 				9CE07E8D287475FC001946FC /* RegionStateDAO.swift in Sources */,
 				9C5E601B2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */,

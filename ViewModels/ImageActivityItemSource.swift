@@ -40,3 +40,7 @@ class ImageActivityItemSource: NSObject, UIActivityItemSource {
         return metadata
     }
 }
+
+extension ImageActivityItemSource: Identifiable {
+    var id: String { return title }
+}

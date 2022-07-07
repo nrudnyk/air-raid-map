@@ -16,7 +16,7 @@ class MapViewModel: ObservableObject {
 
     @Published var selectedAlertType: AlertType = .airAlarm
     @Published var regions: [RegionStateModel] = []
-    @Published var overlays = [MKOverlay]()
+    @Published var overlays = [RegionOverlay]()
     @Published var isNetworkReachable: Bool = true
     
     private let mapViewInteractor: MapViewInteractor
@@ -59,27 +59,6 @@ class MapViewModel: ObservableObject {
     
     func reloadData() {
         mapViewInteractor.reloadData()
-    }
-    
-    func shareMapSnapshot() {
-#if os(iOS)
-        let overlays = mapViewInteractor.regionsData.map(RegionOverlay.init)
-        MapWidgetSnapshotter.makeMapSnapshot(for: overlays, size: CGSize(width: 800, height: 600)) { [weak self] snapshot in
-            guard let self = self else { return }
-            
-            let imageActivityItemSource = ImageActivityItemSource(
-                title: self.activeAlarmsTitle,
-                text: self.activeAlarmsSubtitle,
-                image: snapshot
-            )
-            
-            let activityController = UIActivityViewController(activityItems: [imageActivityItemSource], applicationActivities: nil)
-            UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: {
-                let hapticFeedbacGenerator = UINotificationFeedbackGenerator()
-                hapticFeedbacGenerator.notificationOccurred(.success)
-            })
-        }
-#endif
     }
     
     private func setUpTimer() {
