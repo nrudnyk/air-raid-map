@@ -206,10 +206,22 @@ extension MapView {
 
     func regionWithPadding(_ region: MKCoordinateRegion) -> MKCoordinateRegion {
 #if os(iOS)
-        return isLandscape
-            ? region.withHorizontalPadding(BottomSheet.widthFraction)
-            : region.withVerticalPadding(bottomSheetPosition.rawValue)
-#elseif os(macOS) || os(tvOS)
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            if horizontalSizeClass == .compact && verticalSizeClass == .regular {
+                return region.withVerticalPadding(bottomSheetPosition.rawValue)
+            } else {
+                return region.withHorizontalPadding(1 - BottomSheet.widthFraction)
+            }
+        case .pad:
+            if bottomSheetPosition == .top {
+                return region.withHorizontalPadding(1 - BottomSheet.widthFraction)
+            }
+        default:
+            return region
+        }
+#endif
+#if os(iOS) || os(macOS) || os(tvOS)
         return region
 #endif
     }
