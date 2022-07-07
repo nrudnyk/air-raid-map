@@ -222,6 +222,7 @@ extension MapView {
             shareButton
                 .popover(item: $imageActivityItemSource, attachmentAnchor: .rect(.bounds), arrowEdge: .leading, content: { item in
                     ShareSheet(activityItems: [item])
+                        .ignoresSafeArea()
                 })
             Divider()
             fitUkraineButton
