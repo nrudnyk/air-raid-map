@@ -22,6 +22,7 @@ struct MapView: View {
 #elseif os(tvOS)
     @State private var isSidebarVisible = false
 #endif
+    @State var isPreparingSnapshot: Bool = false
     @State var focusedRegion: RegionStateModel? = nil
     @State var mapRegion: MKCoordinateRegion = MapConstsants.boundsOfUkraine
     @StateObject private var viewModel = MapViewModel()
@@ -93,16 +94,19 @@ extension MapView {
     fileprivate var shareButton: some View {
         HapticFeedbackButton(
             action: {
+                isPreparingSnapshot = true
                 MapWidgetSnapshotter.makeMapSnapshot(for: viewModel.overlays, size: CGSize(width: 800, height: 600)) { snapshot in
                     imageActivityItemSource = ImageActivityItemSource(
                         title: viewModel.activeAlarmsTitle,
                         text: "\("as_of".localized) \(lastUpdate)",
                         image: snapshot
                     )
+                    isPreparingSnapshot = false
                 }
             },
             label: { Image(systemName: "square.and.arrow.up") }
         )
+        .disabled(isPreparingSnapshot)
     }
     
     fileprivate var refreshButton: some View {
