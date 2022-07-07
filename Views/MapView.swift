@@ -10,6 +10,8 @@ import SwiftUI
 
 struct MapView: View {
     @Environment(\.sizeCategory) var sizeCategory
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.verticalSizeClass) var verticalSizeClass
 
     @AppStorage(wrappedValue: "", UserDefaults.Keys.lastUpdate, store: .standard)
     private var lastUpdate: String
@@ -36,6 +38,7 @@ struct MapView: View {
                 mapView(geometry: geometry)
                     .ignoresSafeArea()
                 toolbar
+                    .padding(toolbarPadding(with: geometry))
                 bottomSheet(geometryProxy: geometry)
             }
 #elseif os(macOS)
@@ -215,8 +218,6 @@ extension MapView {
 // MARK: iOS
 #if os(iOS)
 extension MapView {
-    static let landscapeSheetWidthFraction = 1.0 / 7 * 3
-    
     fileprivate var toolbar: some View {
         VStack(spacing: 0) {
             shareButton
@@ -233,8 +234,21 @@ extension MapView {
         .background(EffectView(effect: UIBlurEffect(style: .systemThinMaterial)))
         .foregroundColor(Color.secondary)
         .cornerRadius(8)
-        .padding(.top, isLandscape ? 8 : -8)
-        .padding(.trailing, isLandscape ? -8 : 8)
+    }
+
+    fileprivate func toolbarPadding(with geometry: GeometryProxy) -> EdgeInsets {
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            if horizontalSizeClass == .compact && verticalSizeClass == .regular {
+                return EdgeInsets(top: -8, leading: 0, bottom: 0, trailing: 8)
+            } else {
+                return EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: -8)
+            }
+        case .pad:
+            return EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 8)
+        default:
+            return .zero
+        }
     }
     
     fileprivate func bottomSheet(geometryProxy: GeometryProxy) -> some View {
@@ -247,10 +261,6 @@ extension MapView {
                 regionListView.padding([.horizontal])
             }
         )
-    }
-    
-    fileprivate func getBottomSheetLandscapeWidth(_ geometryProxy: GeometryProxy) -> CGFloat {
-        return geometryProxy.size.width * MapView.landscapeSheetWidthFraction
     }
 }
 #endif
@@ -322,7 +332,8 @@ struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             if #available(iOS 15.0, *) {
-                MapView().previewInterfaceOrientation(.landscapeLeft)
+                MapView()
+                    .previewInterfaceOrientation(.landscapeLeft)
             } else {
                 MapView()
             }

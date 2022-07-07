@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct BottomSheetView<hContent: View, mContent: View>: View {
-    let widthFraction = UIDevice.current.userInterfaceIdiom == .pad
-        ? 1.0 / 3 * 2
-        : 1.0 / 7 * 4
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
 
@@ -124,19 +121,14 @@ struct BottomSheetView<hContent: View, mContent: View>: View {
     }
 
     fileprivate func padding(with geometry: GeometryProxy) -> EdgeInsets {
-        let result: EdgeInsets
-        if horizontalSizeClass == .compact && verticalSizeClass == .regular {
-            result = .zero
-        } else {
-            result = EdgeInsets(
-                top: 0,
-                leading: UIDevice.current.userInterfaceIdiom == .pad ? geometry.safeAreaInsets.bottom : 0,
-                bottom: 0,
-                trailing: geometry.size.width * widthFraction
-            )
-        }
+        if horizontalSizeClass == .compact && verticalSizeClass == .regular { return .zero }
 
-        return result
+        return EdgeInsets(
+            top: 0,
+            leading: UIDevice.current.userInterfaceIdiom == .pad ? geometry.safeAreaInsets.bottom : 0,
+            bottom: 0,
+            trailing: geometry.size.width * BottomSheet.widthFraction
+        )
     }
     
     fileprivate func offsetYValue(geometry: GeometryProxy) -> Double {

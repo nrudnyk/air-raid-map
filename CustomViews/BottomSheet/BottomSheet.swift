@@ -8,9 +8,10 @@
 import SwiftUI
 
 public struct BottomSheet {
-    static var widthFraction: CGFloat {
-        return OrientationManager.shared.isLandscape ? 1.0 / 7 * 3 : 1
-    }
+    static let widthFraction = UIDevice.current.userInterfaceIdiom == .pad
+        ? 1.0 / 3 * 2
+        : 1.0 / 7 * 4
+    
     ///The options to adjust the behavior and the settings of the BottomSheet.
     public enum Options: Equatable {
         public static func == (lhs: BottomSheet.Options, rhs: BottomSheet.Options) -> Bool {
