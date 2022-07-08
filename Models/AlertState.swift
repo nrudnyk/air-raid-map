@@ -38,6 +38,8 @@ public struct AlertState {
     init(type: AlertType = .noInfo, changedAt: Date = Date()) {
         self.type = type
         self.changedAt = changedAt
+//        let date = Calendar.current.date(byAdding: .hour, value: (28*24+23), to: changedAt)!
+//        self.changedAt = Calendar.current.date(byAdding: .minute, value: 24, to: date)!
     }
     
     var color: PlatformColor {

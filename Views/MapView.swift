@@ -27,10 +27,6 @@ struct MapView: View {
     @State var mapRegion: MKCoordinateRegion = MapConstsants.boundsOfUkraine
     @StateObject private var viewModel = MapViewModel()
 
-    init() {
-        mapRegion = regionWithPadding(MapConstsants.boundsOfUkraine)
-    }
-
     var body: some View {
         GeometryReader { geometry in
 #if os(iOS)
@@ -69,6 +65,11 @@ struct MapView: View {
                 }
             }
 #endif
+        }
+        .onAppear {
+            DispatchQueue.main.async {
+                mapRegion = regionWithPadding(MapConstsants.boundsOfUkraine)
+            }
         }
     }
 }
