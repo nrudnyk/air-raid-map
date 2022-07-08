@@ -19,3 +19,7 @@ extension NotificationCenter {
     }
 }
 
+
+extension UIImage: Identifiable {
+    public var id: Int { return self.hash }
+}

@@ -10,21 +10,22 @@ import SwiftUI
 
 struct MapView: View {
     @Environment(\.sizeCategory) var sizeCategory
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    @Environment(\.verticalSizeClass) var verticalSizeClass
 
     @AppStorage(wrappedValue: "", UserDefaults.Keys.lastUpdate, store: .standard)
     private var lastUpdate: String
 
 #if os(iOS)
-    @State var bottomSheetPosition: BottomSheetPosition = .middle
-    @State private var imageActivityItemSource: ImageActivityItemSource? = nil
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+    @State var bottomSheetPosition: BottomSheetPosition = .bottom
 #elseif os(tvOS)
     @State private var isSidebarVisible = false
 #endif
+    @State var imageToShare: PlatformImage? = nil
     @State var isPreparingSnapshot: Bool = false
     @State var focusedRegion: RegionStateModel? = nil
     @State var mapRegion: MKCoordinateRegion = MapConstsants.boundsOfUkraine
+    @State var mapSize: CGSize = .zero
     @StateObject private var viewModel = MapViewModel()
 
     var body: some View {
@@ -79,7 +80,7 @@ extension MapView {
         MapViewRepresentable(
             coordinateRegion: $mapRegion,
             overlays: viewModel.overlays
-        )
+        ).takeSize($mapSize)
     }
 
     @ViewBuilder
@@ -95,14 +96,10 @@ extension MapView {
     fileprivate var shareButton: some View {
         HapticFeedbackButton(
             action: {
-                isPreparingSnapshot = true
-                MapWidgetSnapshotter.makeMapSnapshot(for: viewModel.overlays, size: CGSize(width: 800, height: 600)) { snapshot in
-                    imageActivityItemSource = ImageActivityItemSource(
-                        title: viewModel.activeAlarmsTitle,
-                        text: "\("as_of".localized) \(lastUpdate)",
-                        image: snapshot
-                    )
-                    isPreparingSnapshot = false
+                isPreparingSnapshot.toggle()
+                MapWidgetSnapshotter.makeMapSnapshot(for: viewModel.overlays, size: mapSize) {
+                    imageToShare = $0
+                    isPreparingSnapshot.toggle()
                 }
             },
             label: { Image(systemName: "square.and.arrow.up") }
@@ -237,9 +234,15 @@ extension MapView {
     fileprivate var toolbar: some View {
         VStack(spacing: 0) {
             shareButton
-                .popover(item: $imageActivityItemSource, attachmentAnchor: .rect(.bounds), arrowEdge: .leading, content: { item in
-                    ShareSheet(activityItems: [item])
-                        .ignoresSafeArea()
+                .popover(item: $imageToShare, attachmentAnchor: .rect(.bounds), arrowEdge: .leading, content: { image in
+                    ShareActivityView(activityItems: [
+                        ImageActivityItemSource(
+                            title: viewModel.activeAlarmsTitle,
+                            text: "\("as_of".localized) \(lastUpdate)",
+                            image: image
+                        )
+                    ])
+                    .ignoresSafeArea()
                 })
             Divider()
             fitUkraineButton
@@ -304,6 +307,25 @@ extension MapView {
         ToolbarItem() {
             refreshButton
         }
+
+        ToolbarItem() {
+            Menu {
+                ForEach(NSSharingService.items, id: \.title) { item in
+                    Button {
+                        MapWidgetSnapshotter.makeMapSnapshot(
+                            for: viewModel.overlays,
+                            size: mapSize,
+                            completion: { snapshot in item.perform(withItems: [snapshot]) }
+                        )
+                    } label: {
+                        Image(nsImage: item.image)
+                        Text(item.title)
+                    }
+                }
+            } label: {
+                Image(systemName: "square.and.arrow.up")
+            }
+        }
     }
 }
 
@@ -347,7 +369,7 @@ extension MapView {
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            if #available(iOS 15.0, *) {
+            if #available(iOS 15.0, macOS 12.0, *) {
                 MapView()
                     .previewInterfaceOrientation(.landscapeLeft)
             } else {

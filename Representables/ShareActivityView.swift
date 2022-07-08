@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ShareSheet: UIViewControllerRepresentable {
+struct ShareActivityView: UIViewControllerRepresentable {
     typealias Callback = (
         _ activityType: UIActivity.ActivityType?,
         _ completed: Bool,
@@ -45,11 +45,6 @@ struct ShareSheet: UIViewControllerRepresentable {
             callback?(activityType, completed, returnedItems, error)
         }
         activityController.completionWithItemsHandler = callback
-
-//        if UIDevice.current.userInterfaceIdiom == .pad {
-//            activityController.popoverPresentationController?.sourceView = rootViewController.view
-//            activityController.popoverPresentationController?.sourceRect = .zero
-//        }
 
         return activityController
     }
