@@ -16,7 +16,7 @@ struct SizeModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content.background(GeometryReader { proxy in
-            Color.red
+            Color.clear
                 .preference(key: SizePreferenceKey.self, value: proxy.size)
                 .onPreferenceChange(SizePreferenceKey.self) { self.size = $0 }
         })

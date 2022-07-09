@@ -13,7 +13,8 @@ struct BottomSheetView<hContent: View, mContent: View>: View {
 
     @Binding fileprivate var bottomSheetPosition: BottomSheetPosition
     @State fileprivate var translation: CGFloat = .zero
-    
+    @State fileprivate var headerContentSize: CGSize = .zero
+
     fileprivate let options: [BottomSheet.Options]
     fileprivate let headerContent: hContent?
     fileprivate let mainContent: mContent
@@ -51,7 +52,7 @@ struct BottomSheetView<hContent: View, mContent: View>: View {
                 if self.headerContent != nil {
                     HStack(alignment: .top, spacing: 0) {
                         if let headerContent = self.headerContent {
-                            headerContent
+                            headerContent.takeSize($headerContentSize)
                         }
                         Spacer()
                     }
@@ -117,7 +118,11 @@ struct BottomSheetView<hContent: View, mContent: View>: View {
     }
     
     fileprivate func frameHeightValue(geometry: GeometryProxy) -> Double {
-        return min(max((geometry.size.height * self.bottomSheetPosition.rawValue) - self.translation, 0), geometry.size.height * 1.05)
+        let initialFrameHeight = isBottomPosition
+            ? headerContentSize.height + geometry.safeAreaInsets.bottom / 2
+            : geometry.size.height * self.bottomSheetPosition.rawValue
+
+        return min(max(initialFrameHeight - self.translation, 0), geometry.size.height * 1.05)
     }
 
     fileprivate func padding(with geometry: GeometryProxy) -> EdgeInsets {
@@ -140,11 +145,11 @@ struct BottomSheetView<hContent: View, mContent: View>: View {
     }
     
     fileprivate func offsetYValue(geometry: GeometryProxy) -> Double {
-        if self.isBottomPosition {
-            return max(geometry.size.height - (geometry.size.height * self.bottomSheetPosition.rawValue) + self.translation + geometry.safeAreaInsets.bottom, geometry.size.height * -0.05)
-        } else {
-            return max(geometry.size.height - (geometry.size.height * self.bottomSheetPosition.rawValue) + self.translation, geometry.size.height * -0.05)
-        }
+        let initialFrameHeight = isBottomPosition
+            ? headerContentSize.height + geometry.safeAreaInsets.bottom / 2
+            : geometry.size.height * self.bottomSheetPosition.rawValue
+
+        return max(geometry.size.height - initialFrameHeight + self.translation, geometry.size.height * -0.05)
     }
     
     fileprivate func switchPositionIndicator() -> Void {
