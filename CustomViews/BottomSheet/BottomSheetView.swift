@@ -123,12 +123,20 @@ struct BottomSheetView<hContent: View, mContent: View>: View {
     fileprivate func padding(with geometry: GeometryProxy) -> EdgeInsets {
         if horizontalSizeClass == .compact && verticalSizeClass == .regular { return .zero }
 
-        return EdgeInsets(
-            top: 0,
-            leading: UIDevice.current.userInterfaceIdiom == .pad ? geometry.safeAreaInsets.bottom : 0,
-            bottom: 0,
-            trailing: geometry.size.width * BottomSheet.widthFraction
-        )
+        let leadingInset: CGFloat
+        let trailingInset = geometry.size.width * BottomSheet.widthFraction
+
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            leadingInset = geometry.safeAreaInsets.leading != 0 ? 0 : 8
+        case .pad:
+            let bottomInset = geometry.safeAreaInsets.bottom
+            leadingInset = bottomInset != 0 ? bottomInset : 8
+        default:
+            leadingInset = 0
+        }
+
+        return EdgeInsets(top: 0, leading: leadingInset, bottom: 0, trailing: trailingInset)
     }
     
     fileprivate func offsetYValue(geometry: GeometryProxy) -> Double {
