@@ -167,6 +167,11 @@
 		9CB7E2B12879877B00FD4553 /* ColorSchemeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E3B9628783317000B48AB /* ColorSchemeExtensions.swift */; };
 		9CB7E2B32879886E00FD4553 /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 9CB7E2B22879886E00FD4553 /* Hyperconnectivity */; };
 		9CB7E2B428798AD800FD4553 /* regions.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9CE2A6C92810054E00241EB4 /* regions.geojson */; };
+		9CB7E2BD2879B26500FD4553 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */; };
+		9CB7E2BE2879B26500FD4553 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */; };
+		9CB7E2BF2879B26500FD4553 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */; };
+		9CB7E2C02879B26500FD4553 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */; };
+		9CB7E2C12879B26500FD4553 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */; };
 		9CBC8B2A2872F66500770912 /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 9CBC8B292872F66500770912 /* Hyperconnectivity */; };
 		9CBC8B3C28731EB100770912 /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 9CBC8B3B28731EB100770912 /* Hyperconnectivity */; };
 		9CBC8B3E28731EF500770912 /* NotificationCenter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC8B3D28731EF500770912 /* NotificationCenter+Extensions.swift */; };
@@ -344,6 +349,7 @@
 		9CA94D642838CCCC00EF665B /* test-history.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-history.json"; sourceTree = "<group>"; };
 		9CA94D682838D10800EF665B /* AirAlertStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertStateModel.swift; sourceTree = "<group>"; };
 		9CB7E2822879841500FD4553 /* air-raid-map-macOS-widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "air-raid-map-macOS-widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configuration.xcconfig; sourceTree = "<group>"; };
 		9CBC8B3D28731EF500770912 /* NotificationCenter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extensions.swift"; sourceTree = "<group>"; };
 		9CC0BE51286B4002009AA770 /* AirAlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertState.swift; sourceTree = "<group>"; };
 		9CC0BE55286B4864009AA770 /* AirAlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertError.swift; sourceTree = "<group>"; };
@@ -529,6 +535,14 @@
 			path = Interactors;
 			sourceTree = "<group>";
 		};
+		9CB7E2BB2879B24D00FD4553 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		9CBC8B2B28731DDD00770912 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +630,7 @@
 		9CF79EBC280FD21A00FBAE90 = {
 			isa = PBXGroup;
 			children = (
+				9CB7E2BB2879B24D00FD4553 /* Configuration */,
 				9CFEAE6728329A1A00841EDB /* CustomViews */,
 				9C393A4E2816860200A9CCA6 /* Extensions */,
 				9CE2A6D42810414000241EB4 /* Models */,
@@ -821,6 +836,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C4595BA281ECF7900DD561D /* regions.geojson in Resources */,
+				9CB7E2C02879B26500FD4553 /* Configuration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,6 +845,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CB7E2B428798AD800FD4553 /* regions.geojson in Resources */,
+				9CB7E2C12879B26500FD4553 /* Configuration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,6 +858,7 @@
 				9C50475E281C477F00AA817A /* Assets.xcassets in Resources */,
 				9CE2A6CC2810054E00241EB4 /* regions.geojson in Resources */,
 				9CA94D672838CCCC00EF665B /* test-history.json in Resources */,
+				9CB7E2BF2879B26500FD4553 /* Configuration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -853,6 +871,7 @@
 				9CF79ED6280FD21B00FBAE90 /* Assets.xcassets in Resources */,
 				9CE2A6CA2810054E00241EB4 /* regions.geojson in Resources */,
 				9CA94D652838CCCC00EF665B /* test-history.json in Resources */,
+				9CB7E2BD2879B26500FD4553 /* Configuration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,6 +884,7 @@
 				9CF79ED7280FD21B00FBAE90 /* Assets.xcassets in Resources */,
 				9CE2A6CB2810054E00241EB4 /* regions.geojson in Resources */,
 				9CA94D662838CCCC00EF665B /* test-history.json in Resources */,
+				9CB7E2BE2879B26500FD4553 /* Configuration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1155,19 +1175,16 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Resources/Widget-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "air-raid-map-widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1185,19 +1202,16 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Resources/Widget-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "air-raid-map-widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1217,7 +1231,6 @@
 				CODE_SIGN_ENTITLEMENTS = Resources/macOS.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1229,8 +1242,6 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1248,7 +1259,6 @@
 				CODE_SIGN_ENTITLEMENTS = Resources/macOS.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1260,8 +1270,6 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1277,7 +1285,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1289,14 +1296,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap;
 				PRODUCT_NAME = "УКРМАПА";
 				SDKROOT = appletvos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 15.2;
 			};
 			name = Debug;
 		};
@@ -1306,7 +1311,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1318,20 +1322,19 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap;
 				PRODUCT_NAME = "УКРМАПА";
 				SDKROOT = appletvos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 15.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		9CF79ED8280FD21B00FBAE90 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1395,6 +1398,7 @@
 		};
 		9CF79ED9280FD21B00FBAE90 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1457,7 +1461,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1469,12 +1472,10 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap;
 				PRODUCT_NAME = "air-raid-map";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1493,7 +1494,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1505,12 +1505,10 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap;
 				PRODUCT_NAME = "air-raid-map";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1532,7 +1530,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 15;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1546,8 +1543,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap;
 				PRODUCT_NAME = "air-raid-map";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1567,7 +1562,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 15;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1581,8 +1575,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap;
 				PRODUCT_NAME = "air-raid-map";
 				PROVISIONING_PROFILE_SPECIFIER = "";
