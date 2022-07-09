@@ -259,9 +259,11 @@ extension MapView {
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:
             if horizontalSizeClass == .compact && verticalSizeClass == .regular {
-                return EdgeInsets(top: -8, leading: 0, bottom: 0, trailing: 8)
+                // Portrait; if safeArea == 20 - it's phone with home button and rect screen
+                return EdgeInsets(top: geometry.safeAreaInsets.top > 20 ? -8 : 0, leading: 0, bottom: 0, trailing: 8)
             } else {
-                return EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: -8)
+                // Landscape; if safeArea == 0 - it's phone with home button and rect screen
+                return EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: geometry.safeAreaInsets.trailing > 0 ? -8 : 8)
             }
         case .pad:
             return EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 8)
