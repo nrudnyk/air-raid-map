@@ -12,5 +12,5 @@ import MapKit
 
 struct MapStatusEntry: TimelineEntry {
     let date: Date
-    let mapSnapshots: [ColorScheme: UIImage]
+    let mapSnapshots: [ColorScheme: PlatformImage]
 }
