@@ -305,7 +305,7 @@
 		9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineExtensions.swift; sourceTree = "<group>"; };
 		9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStateListItemView.swift; sourceTree = "<group>"; };
 		9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationManager.swift; sourceTree = "<group>"; };
-		9C393A4A28157E5400A9CCA6 /* air-raid-map--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "air-raid-map--iOS--Info.plist"; sourceTree = "<group>"; };
+		9C393A4A28157E5400A9CCA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C393A4C28157E5400A9CCA6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.4.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		9C393A4F2816860E00A9CCA6 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		9C393A572816906800A9CCA6 /* MapContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContants.swift; sourceTree = "<group>"; };
@@ -313,7 +313,7 @@
 		9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "air-raid-map-iOS-widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C45957F281E673600DD561D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		9C459581281E673600DD561D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		9C459588281E673700DD561D /* Info-iOS-widget.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS-widget.plist"; sourceTree = "<group>"; };
+		9C459588281E673700DD561D /* Widget-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Widget-Info.plist"; sourceTree = "<group>"; };
 		9C459590281E6E8B00DD561D /* MapStatusTimelinePovider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStatusTimelinePovider.swift; sourceTree = "<group>"; };
 		9C459592281E6F0A00DD561D /* MapStatusEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStatusEntry.swift; sourceTree = "<group>"; };
 		9C459594281E83E200DD561D /* WidgetMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetMapView.swift; sourceTree = "<group>"; };
@@ -574,8 +574,8 @@
 			isa = PBXGroup;
 			children = (
 				9CA94D532838CAC400EF665B /* AirRaidAlerts.xcdatamodeld */,
-				9C459588281E673700DD561D /* Info-iOS-widget.plist */,
-				9C393A4A28157E5400A9CCA6 /* air-raid-map--iOS--Info.plist */,
+				9C459588281E673700DD561D /* Widget-Info.plist */,
+				9C393A4A28157E5400A9CCA6 /* Info.plist */,
 				9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */,
 				9CEBC01328115D6300C16CD0 /* macOS.entitlements */,
 				9CE2A6C92810054E00241EB4 /* regions.geojson */,
@@ -1158,7 +1158,7 @@
 				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Resources/Info-iOS-widget.plist";
+				INFOPLIST_FILE = "Resources/Widget-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "air-raid-map-widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1188,7 +1188,7 @@
 				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Resources/Info-iOS-widget.plist";
+				INFOPLIST_FILE = "Resources/Widget-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "air-raid-map-widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1221,7 +1221,7 @@
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Resources/Info-iOS-widget.plist";
+				INFOPLIST_FILE = "Resources/Widget-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "air-raid-map-macOS-widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1252,7 +1252,7 @@
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Resources/Info-iOS-widget.plist";
+				INFOPLIST_FILE = "Resources/Widget-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "air-raid-map-macOS-widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1461,7 +1461,7 @@
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Resources/air-raid-map--iOS--Info.plist";
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "УКРМАПА";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2022 Nazar Rudnyk";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1497,7 +1497,7 @@
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Resources/air-raid-map--iOS--Info.plist";
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "УКРМАПА";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2022 Nazar Rudnyk";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1538,6 +1538,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "УКРМАПА";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -1572,6 +1573,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "УКРМАПА";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
