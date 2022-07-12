@@ -374,7 +374,7 @@
 		9CF79EC3280FD21A00FBAE90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9CF79EC4280FD21B00FBAE90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CF79EC9280FD21B00FBAE90 /* air-raid-map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "air-raid-map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CF79ECF280FD21B00FBAE90 /* air-raid-map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "air-raid-map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF79ECF280FD21B00FBAE90 /* УКРМАПА.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "УКРМАПА.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CFEAE6328327F2600841EDB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CFEAE6528327F2800841EDB /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CFEAE6828329B1000841EDB /* HapticFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackButton.swift; sourceTree = "<group>"; };
@@ -653,7 +653,7 @@
 			isa = PBXGroup;
 			children = (
 				9CF79EC9280FD21B00FBAE90 /* air-raid-map.app */,
-				9CF79ECF280FD21B00FBAE90 /* air-raid-map.app */,
+				9CF79ECF280FD21B00FBAE90 /* УКРМАПА.app */,
 				9CE2A6B72810041000241EB4 /* УКРМАПА.app */,
 				9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */,
 				9CB7E2822879841500FD4553 /* air-raid-map-macOS-widget.appex */,
@@ -774,7 +774,7 @@
 				9CBC8B3B28731EB100770912 /* Hyperconnectivity */,
 			);
 			productName = "air-raid-map (macOS)";
-			productReference = 9CF79ECF280FD21B00FBAE90 /* air-raid-map.app */;
+			productReference = 9CF79ECF280FD21B00FBAE90 /* УКРМАПА.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1535,16 +1535,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "УКРМАПА";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap;
-				PRODUCT_NAME = "air-raid-map";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1567,16 +1565,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "УКРМАПА";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap;
-				PRODUCT_NAME = "air-raid-map";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;

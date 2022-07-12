@@ -5,6 +5,9 @@
 //  Created by Nazar Rudnyk on 09.07.2022.
 //
 
+PRODUCT_NAME = УКРМАПА
+PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap
+
 MARKETING_VERSION = 1.1
 CURRENT_PROJECT_VERSION = 18
 
