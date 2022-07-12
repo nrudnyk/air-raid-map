@@ -63,7 +63,7 @@ class AirAlertStatesProvider {
         // This sample refreshes UI by consuming store changes via persistent history tracking.
         container.viewContext.automaticallyMergesChangesFromParent = false
         container.viewContext.name = "viewContext"
-        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        container.viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         container.viewContext.undoManager = nil
         container.viewContext.shouldDeleteInaccessibleFaults = true
 
