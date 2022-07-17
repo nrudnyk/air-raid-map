@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		9C026AF0282254A500E0324B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C026AEF282254A500E0324B /* Constants.swift */; };
 		9C026AF3282254A500E0324B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C026AEF282254A500E0324B /* Constants.swift */; };
+		9C08051B2883089500A77233 /* SizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E3B9A28784F4E000B48AB /* SizeModifier.swift */; };
+		9C08051D288309D400A77233 /* TabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08051C288309D400A77233 /* TabType.swift */; };
+		9C08051E288309D400A77233 /* TabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08051C288309D400A77233 /* TabType.swift */; };
+		9C08051F288309D400A77233 /* TabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08051C288309D400A77233 /* TabType.swift */; };
+		9C0805202883244600A77233 /* EffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C92262835852000EDE9F6 /* EffectView.swift */; };
+		9C0805232884007000A77233 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6428327F2600841EDB /* Localizable.strings */; };
+		9C0805242884007100A77233 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6428327F2600841EDB /* Localizable.strings */; };
 		9C0AD82E280FE4E20095ACCA /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
 		9C14241428786E02008B8C9B /* ShareActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B9E242876FA9200C75E12 /* ShareActivityView.swift */; };
 		9C19E858281F04DC005A3A37 /* MapWidgetSnapshotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E856281F04DC005A3A37 /* MapWidgetSnapshotter.swift */; };
@@ -300,6 +307,7 @@
 
 /* Begin PBXFileReference section */
 		9C026AEF282254A500E0324B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9C08051C288309D400A77233 /* TabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabType.swift; sourceTree = "<group>"; };
 		9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		9C0B9E242876FA9200C75E12 /* ShareActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareActivityView.swift; sourceTree = "<group>"; };
 		9C19E856281F04DC005A3A37 /* MapWidgetSnapshotter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWidgetSnapshotter.swift; sourceTree = "<group>"; };
@@ -443,9 +451,10 @@
 		9C278F93281061CE00811961 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */,
 				9CFEAE702832A8C400841EDB /* MapView.swift */,
+				9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */,
 				9C3E646F28771407005BBAD5 /* RegionStateListItemViewContent.swift */,
+				9C08051C288309D400A77233 /* TabType.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -836,6 +845,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C4595BA281ECF7900DD561D /* regions.geojson in Resources */,
+				9C0805242884007100A77233 /* Localizable.strings in Resources */,
 				9CB7E2C02879B26500FD4553 /* Configuration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -845,6 +855,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CB7E2B428798AD800FD4553 /* regions.geojson in Resources */,
+				9C0805232884007000A77233 /* Localizable.strings in Resources */,
 				9CB7E2C12879B26500FD4553 /* Configuration.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -997,11 +1008,13 @@
 				9C5E60102819446A00CEEBF1 /* AlertState.swift in Sources */,
 				9C6B19C9286CA1460038FEAC /* NSManagedObjectContextExtensions.swift in Sources */,
 				9C393A5A2816906800A9CCA6 /* MapContants.swift in Sources */,
+				9C08051F288309D400A77233 /* TabType.swift in Sources */,
 				9CE2A6DC2810539200241EB4 /* Region.swift in Sources */,
 				9CA94D572838CAC400EF665B /* AirRaidAlerts.xcdatamodeld in Sources */,
 				9CFEAE762832AFBE00841EDB /* HapticFeedbackButton.swift in Sources */,
 				9CEBC01D2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
 				9CFEAE772832B14800841EDB /* MapViewModel.swift in Sources */,
+				9C0805202883244600A77233 /* EffectView.swift in Sources */,
 				9CE07E8E287475FC001946FC /* RegionStateDAO.swift in Sources */,
 				9CA0FFED282C310600545C02 /* IAirAlertsDataService.swift in Sources */,
 				9CC0BE58286B4864009AA770 /* AirAlertError.swift in Sources */,
@@ -1010,6 +1023,7 @@
 				9CEBC0252811777700C16CD0 /* GeoJSONError.swift in Sources */,
 				9CE07E8428746602001946FC /* RegionState.swift in Sources */,
 				9CFEAE732832A8C400841EDB /* MapView.swift in Sources */,
+				9C08051B2883089500A77233 /* SizeModifier.swift in Sources */,
 				9CD63A932811D1AF00116F1E /* Country.swift in Sources */,
 				9CE07E89287469E1001946FC /* FetchedResultsPublisher.swift in Sources */,
 				9CA0FFF2282C330000545C02 /* StubAirAlertsDataService.swift in Sources */,
@@ -1042,6 +1056,7 @@
 				9CA0FFEB282C310600545C02 /* IAirAlertsDataService.swift in Sources */,
 				9C1E3B9728783317000B48AB /* ColorSchemeExtensions.swift in Sources */,
 				9C5E600E2819446A00CEEBF1 /* AlertState.swift in Sources */,
+				9C08051D288309D400A77233 /* TabType.swift in Sources */,
 				9C393A3A2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,
 				9C7C9221283580B700EDE9F6 /* BottomSheetView.swift in Sources */,
 				9CE07E87287469E1001946FC /* FetchedResultsPublisher.swift in Sources */,
@@ -1103,6 +1118,7 @@
 				9CF79ED5280FD21B00FBAE90 /* ContentView.swift in Sources */,
 				9CE07E9B2874D788001946FC /* Constants.swift in Sources */,
 				9CD63A9A2811D28A00116F1E /* RegionOverlay.swift in Sources */,
+				9C08051E288309D400A77233 /* TabType.swift in Sources */,
 				9C1E3B9828783317000B48AB /* ColorSchemeExtensions.swift in Sources */,
 				9CAB4DD12810A79400812938 /* Extensions.swift in Sources */,
 				9CD63A7D2811A4F300116F1E /* PlaftormExtensions.swift in Sources */,

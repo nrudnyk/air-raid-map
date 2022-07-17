@@ -10,12 +10,9 @@ import SwiftUI
 import Combine
 
 class MapViewModel: ObservableObject {
-    
-    @Published var activeAlarmsTitle: String = "active_sirens".localized
-    @Published var activeAlarmsSubtitle: String = ""
-
     @Published var selectedAlertType: AlertType = .airAlarm
     @Published var regions: [RegionStateModel] = []
+    @Published var selectedRegion: RegionStateModel? = nil
     @Published var overlays = [RegionOverlay]()
     @Published var isNetworkReachable: Bool = true
     
@@ -33,22 +30,19 @@ class MapViewModel: ObservableObject {
         setUpTimer()
 
         self.mapViewInteractor.$regionsData
-            .combineLatest($selectedAlertType)
-            .map { regionsData, selectedType in
-                regionsData.filter { region in
-                    switch selectedType {
-                    case .airAlarm: return region.alertState.type == .airAlarm
-                    case .allClear: return region.alertState.type == .allClear
-                    case .noInfo: return region.alertState.type != .noInfo
-                    }
-                }
-                .sorted(by: { $0.alertState.changedAt > $1.alertState.changedAt} )
-            }
+            .map { $0.sorted(by: { $0.alertState.changedAt > $1.alertState.changedAt} ) }
             .receive(on: DispatchQueue.main)
             .assign(to: &$regions)
-        
+
         self.mapViewInteractor.$regionsData
-            .map { $0.map(RegionOverlay.init) }
+            .combineLatest($selectedRegion)
+            .map { regions, selectedRegion in
+                if let region = selectedRegion {
+                    return [RegionOverlay(regionStateModel: region)]
+                } else {
+                    return regions.map(RegionOverlay.init)
+                }
+            }
             .receive(on: DispatchQueue.main)
             .assign(to: &$overlays)
 
@@ -56,7 +50,7 @@ class MapViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: &$isNetworkReachable)
     }
-    
+
     func reloadData() {
         mapViewInteractor.reloadData()
     }
@@ -67,5 +61,17 @@ class MapViewModel: ObservableObject {
             .subscribe(on: DispatchQueue.global(qos: .background))
             .sink { [weak self] _ in self?.mapViewInteractor.reloadData() }
             .store(in: &cancellables)
+    }
+}
+
+extension Array where Element == RegionStateModel {
+    func filtered(by alertType: AlertType) -> [RegionStateModel] {
+        self.filter {
+            switch alertType {
+            case .airAlarm: return $0.alertState.type == .airAlarm
+            case .allClear: return $0.alertState.type == .allClear
+            case .noInfo: return $0.alertState.type != .noInfo
+            }
+        }
     }
 }

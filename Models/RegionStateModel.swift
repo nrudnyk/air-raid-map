@@ -7,7 +7,7 @@
 
 import MapKit
 
-struct RegionStateModel: Identifiable, Equatable {
+struct RegionStateModel: Identifiable, Equatable, Hashable {
     var id: String {
         return nameKey
     }
@@ -42,5 +42,12 @@ struct RegionStateModel: Identifiable, Equatable {
             lhs.id == rhs.id &&
             lhs.geometry == rhs.geometry &&
             lhs.alertState.type == rhs.alertState.type
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(nameKey)
+        hasher.combine(geometry)
+        hasher.combine(alertState.type)
     }
 }

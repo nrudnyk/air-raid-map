@@ -18,11 +18,10 @@ struct MapView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @State var bottomSheetPosition: BottomSheetPosition = .bottom
-#elseif os(tvOS)
-    @State private var isSidebarVisible = false
 #endif
     @State var imageToShare: PlatformImage? = nil
     @State var isPreparingSnapshot: Bool = false
+    // TODO: should be replaced with viewModel's selected Region
     @State var focusedRegion: RegionStateModel? = nil
     @State var mapRegion: MKCoordinateRegion = MapConstsants.boundsOfUkraine
     @State var mapSize: CGSize = .zero
@@ -54,16 +53,31 @@ struct MapView: View {
                 }.animation(.linear(duration: 0.4), value: viewModel.isNetworkReachable)
             }
 #elseif os(tvOS)
-            ZStack(alignment: .topTrailing) {
-                HStack {
-                    if (isSidebarVisible) { sidebar }
-                    ZStack(alignment: .topTrailing) {
-                        mapView(geometry: geometry)
-                            .focusable(false)
-                            .ignoresSafeArea()
-                        toolbar
-                    }.focusSection()
+            TabView {
+                ZStack(alignment: .bottomTrailing) {
+                    mapView(geometry: geometry)
+                        .focusable(false)
+                        .ignoresSafeArea()
+                    refreshButton
                 }
+                .tabItem { Label(TabType.map.localizedTitle, systemImage: TabType.map.iconName) }
+                .tag(TabType.map)
+
+                HStack(spacing: 60) {
+                    regionList
+
+                    VStack {
+                        regionListHeader
+                        MapViewRepresentable(
+                            coordinateRegion: .constant(getSelectedCoordinateRegion()),
+                            overlays: viewModel.overlays
+                        )
+                        .focusable(false)
+                        .clipShape(RoundedRectangle(cornerRadius: 40))
+                    }
+                }
+                .tabItem { Label(TabType.regions.localizedTitle, systemImage: TabType.regions.iconName) }
+                .tag(TabType.regions)
             }
 #endif
         }
@@ -93,6 +107,7 @@ extension MapView {
         }
     }
 
+#if os(iOS) || os(macOS)
     fileprivate var shareButton: some View {
         HapticFeedbackButton(
             action: {
@@ -106,6 +121,7 @@ extension MapView {
         )
         .disabled(isPreparingSnapshot)
     }
+#endif
     
     fileprivate var refreshButton: some View {
         HapticFeedbackButton(
@@ -123,12 +139,9 @@ extension MapView {
 
     fileprivate var regionListHeader: some View {
         HStack {
-#if os(tvOS)
-            sidebarButton
-#endif
             VStack(alignment: .leading) {
                 HStack {
-                    Text(viewModel.activeAlarmsTitle)
+                    regionListHeaderTitle
                         .font(.title3).bold()
                     Spacer()
 #if os(iOS)
@@ -166,8 +179,20 @@ extension MapView {
     
     fileprivate var regionList: some View {
 #if os(tvOS)
-        List(viewModel.regions) { regionState in
-            regionListItem(regionState)
+        VStack {
+            List {
+                ForEach([AlertType.airAlarm, AlertType.allClear], id: \.self) { type in
+                    Section {
+                        ForEach(viewModel.regions.filtered(by: type)) { regionState in
+                            regionListItem(regionState)
+                                .focusable() { viewModel.selectedRegion = $0 ? regionState : nil }
+                        }
+                    } header: {
+                        Label(type.rawValue.localized, systemImage: type.systemImage)
+                    }
+                    .headerProminence(.increased)
+                }
+            }
         }
 #else
         VStack {
@@ -180,7 +205,7 @@ extension MapView {
 
             ScrollView() {
                 VStack {
-                    ForEach(viewModel.regions) { regionState in
+                    ForEach(viewModel.regions.filtered(by: viewModel.selectedAlertType)) { regionState in
                         regionListItem(regionState)
                         Divider()
                     }
@@ -196,7 +221,9 @@ extension MapView {
 #if os(iOS)
             bottomSheetPosition = .middle
 #endif
+#if !os(tvOS)
             focusOnRegion(item)
+#endif
         }
     }
 
@@ -226,6 +253,22 @@ extension MapView {
         return region
 #endif
     }
+
+    fileprivate var regionListHeaderTitle: Text {
+        if let region = viewModel.selectedRegion {
+            return Text(LocalizedStringKey(region.nameKey))
+        } else {
+            return Text("active_sirens")
+        }
+    }
+
+    fileprivate func getSelectedCoordinateRegion() -> MKCoordinateRegion {
+        if let region = viewModel.selectedRegion {
+            return regionWithPadding(MKCoordinateRegion(region.boudingRegion))
+        } else {
+            return regionWithPadding(MapConstsants.boundsOfUkraine)
+        }
+    }
 }
 
 // MARK: iOS
@@ -237,7 +280,7 @@ extension MapView {
                 .popover(item: $imageToShare, attachmentAnchor: .rect(.bounds), arrowEdge: .leading, content: { image in
                     ShareActivityView(activityItems: [
                         ImageActivityItemSource(
-                            title: viewModel.activeAlarmsTitle,
+                            title: "active_sirens".localized,
                             text: "\("as_of".localized) \(lastUpdate)",
                             image: image
                         )
@@ -337,36 +380,6 @@ private func toggleSidebar() {
 #endif
 
 // MARK: tvOS
-#if os(tvOS)
-extension MapView {
-    fileprivate var sidebar: some View {
-        VStack {
-            regionListHeader
-            regionListView
-                .frame(maxWidth: 750)
-                .focusSection()
-        }
-    }
-    
-    fileprivate var sidebarButton: some View {
-        Button(
-            action: { withAnimation { isSidebarVisible.toggle() }},
-            label: { Image(systemName: "sidebar.leading") }
-        )
-    }
-    
-    fileprivate var toolbar: some View {
-        HStack(alignment: .top) {
-            if (!isSidebarVisible) { sidebarButton }
-            Spacer()
-            VStack() {
-                fitUkraineButton
-                refreshButton
-            }
-        }
-    }
-}
-#endif
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
