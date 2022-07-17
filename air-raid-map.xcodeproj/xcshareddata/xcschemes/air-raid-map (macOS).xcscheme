@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9CF79ECE280FD21B00FBAE90"
-               BuildableName = "air-raid-map.app"
+               BuildableName = "&#x423;&#x41a;&#x420;&#x41c;&#x410;&#x41f;&#x410;.app"
                BlueprintName = "air-raid-map (macOS)"
                ReferencedContainer = "container:air-raid-map.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CF79ECE280FD21B00FBAE90"
-            BuildableName = "air-raid-map.app"
+            BuildableName = "&#x423;&#x41a;&#x420;&#x41c;&#x410;&#x41f;&#x410;.app"
             BlueprintName = "air-raid-map (macOS)"
             ReferencedContainer = "container:air-raid-map.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CF79ECE280FD21B00FBAE90"
-            BuildableName = "air-raid-map.app"
+            BuildableName = "&#x423;&#x41a;&#x420;&#x41c;&#x410;&#x41f;&#x410;.app"
             BlueprintName = "air-raid-map (macOS)"
             ReferencedContainer = "container:air-raid-map.xcodeproj">
          </BuildableReference>
