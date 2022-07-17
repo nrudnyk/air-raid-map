@@ -76,6 +76,7 @@ struct MapView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 40))
                     }
                 }
+                .background(EffectView(effect: UIBlurEffect(style: .prominent)).ignoresSafeArea())
                 .tabItem { Label(TabType.regions.localizedTitle, systemImage: TabType.regions.iconName) }
                 .tag(TabType.regions)
             }
