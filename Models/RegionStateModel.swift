@@ -46,8 +46,6 @@ struct RegionStateModel: Identifiable, Equatable, Hashable {
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
-        hasher.combine(nameKey)
-        hasher.combine(geometry)
         hasher.combine(alertState.type)
     }
 }
