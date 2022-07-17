@@ -12,6 +12,11 @@
 "announced" = "оголошено";
 "offline" = "офлайн";
 
+// MARK: Alert Types
+"air_alarm" = "Повітряна тривога";
+"all_clear" = "Відбій";
+"no_info" = "Немає інформаці";
+
 // MARK: tvOS Tabs
 "map" = "Карта";
 "regions" = "Регіони";

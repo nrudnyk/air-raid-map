@@ -12,6 +12,11 @@
 "announced" = "announced";
 "offline" = "offline";
 
+// MARK: Alert Types
+"air_alarm" = "Air Alarm";
+"all_clear" = "All Clear";
+"no_info" = "No Info";
+
 // MARK: tvOS Tabs
 "map" = "Map";
 "regions" = "Regions";

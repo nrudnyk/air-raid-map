@@ -10,9 +10,9 @@ import CoreGraphics
 import SwiftUI
 
 public enum AlertType: String, CaseIterable {
-    case airAlarm = "Air-Alarm"
-    case allClear = "All-Clear"
-    case noInfo = "No-Info"
+    case airAlarm = "air_alarm"
+    case allClear = "all_clear"
+    case noInfo = "no_info"
 
     var systemImage: String {
         switch self {
