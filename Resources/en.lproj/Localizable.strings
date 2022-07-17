@@ -12,6 +12,10 @@
 "announced" = "announced";
 "offline" = "offline";
 
+// MARK: tvOS Tabs
+"map" = "Map";
+"regions" = "Regions";
+
 // MARK: Regions
 "Vinnytsia oblast" = "Vinnytsia oblast";
 "Volyn oblast" = "Volyn oblast";
@@ -38,3 +42,7 @@
 "Chernivtsi oblast" = "Chernivtsi oblast";
 "Chernihiv oblast" = "Chernihiv oblast";
 "Kyiv" = "Kyiv";
+
+// MARK: Widget
+"widget_configuration_name" = "Air-raid alerts in Ukraine";
+"widget_description" = "Shows a map with information about air-raid alerts in Ukraine";

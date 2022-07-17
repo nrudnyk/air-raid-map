@@ -12,6 +12,10 @@
 "announced" = "оголошено";
 "offline" = "офлайн";
 
+// MARK: tvOS Tabs
+"map" = "Карта";
+"regions" = "Регіони";
+
 // MARK: Regions
 "Vinnytsia oblast" = "Вінницька область";
 "Volyn oblast" = "Волинська область";
@@ -38,3 +42,7 @@
 "Chernivtsi oblast" = "Чернівецька область";
 "Chernihiv oblast" = "Чернігівська область";
 "Kyiv" = "м. Київ";
+
+// MARK: Widget
+"widget_configuration_name" = "Карта повітряних тривог в Україні";
+"widget_description" = "Відображає карту з актуальною інформацією про повітряні тривоги в Україні";

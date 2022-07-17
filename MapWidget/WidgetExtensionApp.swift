@@ -14,9 +14,7 @@ struct air_raid_map_widget: Widget {
         StaticConfiguration(kind: WidgetCenter.Kind.mainMap, provider: MapStatusTimelinePovider()) { entry in
             WidgetMapView(entry: entry)
         }
-        .configurationDisplayName("Air-raid alerts in Ukraine")
-        .configurationDisplayName("Карта повітряних тривог в Україні")
-        .description("Shows a map with information about air-raid alerts in Ukraine")
-        .description("Відображає карту з актуальною інформацією про повітряні тривоги в Україні")
+        .configurationDisplayName("widget_configuration_name".localized)
+        .description("widget_description".localized)
     }
 }
