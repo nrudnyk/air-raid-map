@@ -191,6 +191,8 @@
 		9CC0BE5E286B737F009AA770 /* AirAlertStatesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE5D286B737F009AA770 /* AirAlertStatesProvider.swift */; };
 		9CC0BE5F286B737F009AA770 /* AirAlertStatesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE5D286B737F009AA770 /* AirAlertStatesProvider.swift */; };
 		9CC0BE60286B737F009AA770 /* AirAlertStatesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE5D286B737F009AA770 /* AirAlertStatesProvider.swift */; };
+		9CC67DC128842740004468C8 /* Configuration-Widget.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9CC67DC028842740004468C8 /* Configuration-Widget.xcconfig */; };
+		9CC67DC228842740004468C8 /* Configuration-Widget.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9CC67DC028842740004468C8 /* Configuration-Widget.xcconfig */; };
 		9CCD77A828144D930050584C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD77A728144D930050584C /* NetworkManager.swift */; };
 		9CCD77A928144D930050584C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD77A728144D930050584C /* NetworkManager.swift */; };
 		9CCD77AA28144D930050584C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD77A728144D930050584C /* NetworkManager.swift */; };
@@ -362,6 +364,7 @@
 		9CC0BE51286B4002009AA770 /* AirAlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertState.swift; sourceTree = "<group>"; };
 		9CC0BE55286B4864009AA770 /* AirAlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertError.swift; sourceTree = "<group>"; };
 		9CC0BE5D286B737F009AA770 /* AirAlertStatesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertStatesProvider.swift; sourceTree = "<group>"; };
+		9CC67DC028842740004468C8 /* Configuration-Widget.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Configuration-Widget.xcconfig"; sourceTree = "<group>"; };
 		9CCD77A728144D930050584C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaftormExtensions.swift; sourceTree = "<group>"; };
 		9CD63A902811D1AF00116F1E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -548,6 +551,7 @@
 			isa = PBXGroup;
 			children = (
 				9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */,
+				9CC67DC028842740004468C8 /* Configuration-Widget.xcconfig */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -845,6 +849,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C4595BA281ECF7900DD561D /* regions.geojson in Resources */,
+				9CC67DC128842740004468C8 /* Configuration-Widget.xcconfig in Resources */,
 				9C0805242884007100A77233 /* Localizable.strings in Resources */,
 				9CB7E2C02879B26500FD4553 /* Configuration.xcconfig in Resources */,
 			);
@@ -855,6 +860,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CB7E2B428798AD800FD4553 /* regions.geojson in Resources */,
+				9CC67DC228842740004468C8 /* Configuration-Widget.xcconfig in Resources */,
 				9C0805232884007000A77233 /* Localizable.strings in Resources */,
 				9CB7E2C12879B26500FD4553 /* Configuration.xcconfig in Resources */,
 			);
@@ -1186,6 +1192,7 @@
 /* Begin XCBuildConfiguration section */
 		9C45958D281E673700DD561D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CC67DC028842740004468C8 /* Configuration-Widget.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -1193,9 +1200,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Resources/Widget-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "air-raid-map-widget";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1213,6 +1218,7 @@
 		};
 		9C45958E281E673700DD561D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CC67DC028842740004468C8 /* Configuration-Widget.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -1220,9 +1226,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Resources/Widget-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "air-raid-map-widget";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1241,6 +1245,7 @@
 		};
 		9CB7E2902879841600FD4553 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CC67DC028842740004468C8 /* Configuration-Widget.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -1252,7 +1257,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Resources/Widget-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "air-raid-map-macOS-widget";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1269,6 +1273,7 @@
 		};
 		9CB7E2912879841600FD4553 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CC67DC028842740004468C8 /* Configuration-Widget.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -1280,7 +1285,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Resources/Widget-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "air-raid-map-macOS-widget";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1305,15 +1309,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "УКРМАПА";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2022 Nazar Rudnyk";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap;
-				PRODUCT_NAME = "УКРМАПА";
 				SDKROOT = appletvos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1331,15 +1332,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "УКРМАПА";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2022 Nazar Rudnyk";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nrudnyk.airraidmap;
-				PRODUCT_NAME = "УКРМАПА";
 				SDKROOT = appletvos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1402,6 +1400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Nazar Rudnyk. All rights reserved.";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1460,6 +1459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Nazar Rudnyk. All rights reserved.";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1480,7 +1480,6 @@
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "УКРМАПА";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2022 Nazar Rudnyk";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1513,7 +1512,6 @@
 				DEVELOPMENT_TEAM = FV78YE336Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "УКРМАПА";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2022 Nazar Rudnyk";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1551,7 +1549,6 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "УКРМАПА";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1581,7 +1578,6 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "УКРМАПА";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (

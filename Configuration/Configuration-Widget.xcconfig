@@ -1,0 +1,10 @@
+//
+//  Configuration.xcconfig
+//  air-raid-map
+//
+//  Created by Nazar Rudnyk on 09.07.2022.
+//
+
+#include "Configuration.xcconfig"
+
+INFOPLIST_FILE = Resources/Widget-Info.plist
