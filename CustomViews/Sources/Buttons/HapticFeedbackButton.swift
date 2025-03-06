@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HapticFeedbackButton<Label: View>: View {
+public struct HapticFeedbackButton<Label: View>: View {
 #if os(iOS)
     private let defaultPadding = 12.0
 #else
@@ -23,7 +23,7 @@ struct HapticFeedbackButton<Label: View>: View {
     let label: () -> Label
     
 #if os(iOS)
-    init(
+    public init(
         action: @escaping () -> Void,
         label: @escaping () -> Label,
         feedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle = .light
@@ -33,13 +33,13 @@ struct HapticFeedbackButton<Label: View>: View {
         self.label = label
     }
 #else
-    init(action: @escaping () -> Void, label: @escaping () -> Label) {
+    public init(action: @escaping () -> Void, label: @escaping () -> Label) {
         self.action = action
         self.label = label
     }
 #endif
     
-    var body: some View {
+    public var body: some View {
         Button(
             action: {
 #if os(iOS)

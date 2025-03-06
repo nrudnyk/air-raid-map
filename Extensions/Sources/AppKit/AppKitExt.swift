@@ -9,11 +9,11 @@
 
 import AppKit
 
-extension NSEdgeInsets {
-    public static let zero = NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+public extension NSEdgeInsets {
+    static let zero = NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 }
 
-extension NSSharingService {
+public extension NSSharingService {
     static let items = NSSharingService.sharingServices(forItems: [""])
 }
 

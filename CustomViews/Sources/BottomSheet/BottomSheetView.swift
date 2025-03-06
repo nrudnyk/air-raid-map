@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import Extensions
 
-struct BottomSheetView<hContent: View, mContent: View>: View {
+#if os(iOS)
+
+public struct BottomSheetView<hContent: View, mContent: View>: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
 
@@ -25,7 +28,7 @@ struct BottomSheetView<hContent: View, mContent: View>: View {
         return self.bottomSheetPosition == .bottom
     }
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 0) {
                 // Drag indicator
@@ -182,7 +185,7 @@ struct BottomSheetView<hContent: View, mContent: View>: View {
         UIApplication.shared.endEditing()
     }
     
-    init(
+    public init(
         bottomSheetPosition: Binding<BottomSheetPosition>,
         options: [BottomSheet.Options] = [],
         @ViewBuilder headerContent: () -> hContent?,
@@ -227,3 +230,5 @@ struct BottomSheetView_Previews: PreviewProvider {
         .environment(\.locale, .init(identifier: "uk"))
     }
 }
+
+#endif

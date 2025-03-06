@@ -1,3 +1,3 @@
 # Extensions
 
-AppKit, UIKit and other cross-platform extensions for AirRaid Map application
+Contains AppKit, UIKit and other cross-platform extensions for AirRaid Map application

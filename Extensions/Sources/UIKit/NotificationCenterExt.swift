@@ -20,8 +20,8 @@ public extension NotificationCenter {
     }
 }
 
-public extension UIImage: Identifiable {
-    var id: Int { return self.hash }
+extension UIImage: Identifiable {
+    public var id: Int { return self.hash }
 }
 
 #endif

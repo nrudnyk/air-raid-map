@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+#if os(iOS)
+
 public struct BottomSheet {
-    static let widthFraction = UIDevice.current.userInterfaceIdiom == .pad
+    public static let widthFraction = UIDevice.current.userInterfaceIdiom == .pad
         ? 1.0 / 3 * 2
         : 1.0 / 7 * 4
     
@@ -131,3 +133,5 @@ internal extension Array where Element == BottomSheet.Options {
         return shadowY
     }
 }
+
+#endif

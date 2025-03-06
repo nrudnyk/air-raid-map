@@ -12,19 +12,10 @@ let package = Package(
         .watchOS(.v7)
     ],
     products: [
-        .library(
-            name: "Extensions",
-            targets: ["Extensions"]
-        )
+        .library(name: "Extensions", targets: ["Extensions"]),
     ],
     targets: [
-        .target(
-            name: "Extensions",
-            path: "Sources"
-        ),
-        .testTarget(
-            name: "ExtensionsTests",
-            dependencies: ["Extensions"]
-        ),
+        .target(name: "Extensions", path: "Sources"),
+        .testTarget(name: "ExtensionsTests", dependencies: ["Extensions"]),
     ]
 )

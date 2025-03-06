@@ -8,7 +8,7 @@
 import MapKit
 
 extension MKCoordinateRegion: Equatable {
-    func withVerticalPadding(_ coef: CGFloat) -> MKCoordinateRegion {
+    public func withVerticalPadding(_ coef: CGFloat) -> MKCoordinateRegion {
         let verticalSpan = self.span.latitudeDelta
         let additionalSpan = verticalSpan * coef
         let newRegion = MKCoordinateRegion(
@@ -25,7 +25,7 @@ extension MKCoordinateRegion: Equatable {
         return newRegion
     }
 
-    func withHorizontalPadding(_ coef: CGFloat) -> MKCoordinateRegion {
+    public func withHorizontalPadding(_ coef: CGFloat) -> MKCoordinateRegion {
         let horizontalSpan = self.span.longitudeDelta
         let additionalSpan = horizontalSpan * coef
         let newRegion = MKCoordinateRegion(

@@ -7,14 +7,20 @@
 
 import SwiftUI
 
-internal struct EffectView: UIViewRepresentable {
+#if os(iOS)
+
+public struct EffectView: UIViewRepresentable {
     var effect: UIVisualEffect
+
+    public init(effect: UIVisualEffect) {
+        self.effect = effect
+    }
     
-    func makeUIView(context: Context) -> UIVisualEffectView {
+    public func makeUIView(context: Context) -> UIVisualEffectView {
         return UIVisualEffectView(effect: self.effect)
     }
     
-    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+    public func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
         uiView.effect = self.effect
     }
 }
@@ -25,3 +31,4 @@ struct EffectView_Previews: PreviewProvider {
     }
 }
 
+#endif
