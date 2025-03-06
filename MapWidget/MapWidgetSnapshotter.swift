@@ -9,6 +9,7 @@ import Foundation
 import WidgetKit
 import SwiftUI
 import MapKit
+import Extensions
 
 class MapWidgetSnapshotter {
 

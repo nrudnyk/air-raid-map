@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9C026AF0282254A500E0324B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C026AEF282254A500E0324B /* Constants.swift */; };
 		9C026AF3282254A500E0324B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C026AEF282254A500E0324B /* Constants.swift */; };
-		9C08051B2883089500A77233 /* SizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E3B9A28784F4E000B48AB /* SizeModifier.swift */; };
 		9C08051D288309D400A77233 /* TabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08051C288309D400A77233 /* TabType.swift */; };
 		9C08051E288309D400A77233 /* TabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08051C288309D400A77233 /* TabType.swift */; };
 		9C08051F288309D400A77233 /* TabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C08051C288309D400A77233 /* TabType.swift */; };
@@ -19,22 +18,10 @@
 		9C0AD82E280FE4E20095ACCA /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
 		9C14241428786E02008B8C9B /* ShareActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B9E242876FA9200C75E12 /* ShareActivityView.swift */; };
 		9C19E858281F04DC005A3A37 /* MapWidgetSnapshotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E856281F04DC005A3A37 /* MapWidgetSnapshotter.swift */; };
-		9C1E3B9728783317000B48AB /* ColorSchemeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E3B9628783317000B48AB /* ColorSchemeExtensions.swift */; };
-		9C1E3B9828783317000B48AB /* ColorSchemeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E3B9628783317000B48AB /* ColorSchemeExtensions.swift */; };
-		9C1E3B9928783317000B48AB /* ColorSchemeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E3B9628783317000B48AB /* ColorSchemeExtensions.swift */; };
-		9C1E3B9B28784F4E000B48AB /* SizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E3B9A28784F4E000B48AB /* SizeModifier.swift */; };
-		9C1E3B9C28784F4E000B48AB /* SizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E3B9A28784F4E000B48AB /* SizeModifier.swift */; };
-		9C1E3B9D28784F4E000B48AB /* SizeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E3B9A28784F4E000B48AB /* SizeModifier.swift */; };
 		9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
-		9C278F97281071A700811961 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
-		9C393A3628147BC600A9CCA6 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */; };
-		9C393A3728147BC600A9CCA6 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */; };
-		9C393A3828147BC600A9CCA6 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */; };
 		9C393A3A2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */; };
 		9C393A3B2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */; };
 		9C393A3C2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */; };
-		9C393A3E2815790A00A9CCA6 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */; };
-		9C393A502816860E00A9CCA6 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A4F2816860E00A9CCA6 /* Orientation.swift */; };
 		9C393A582816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
 		9C393A592816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
 		9C393A5A2816906800A9CCA6 /* MapContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C393A572816906800A9CCA6 /* MapContants.swift */; };
@@ -57,8 +44,6 @@
 		9C4595AE281ECC7600DD561D /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2A6D92810539200241EB4 /* Region.swift */; };
 		9C4595AF281ECC7600DD561D /* IDecodableGeoJSONFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEBC01A2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift */; };
 		9C4595B1281ECC7600DD561D /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
-		9C4595B2281ECC8600DD561D /* PlaftormExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */; };
-		9C4595B3281ECC8600DD561D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
 		9C4595B4281ECCAD00DD561D /* AirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */; };
 		9C4595B5281ECCB400DD561D /* RegionStatesDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9E00002810807800410B75 /* RegionStatesDecodable.swift */; };
 		9C4595B8281ECD7600DD561D /* WidgetExtensionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4595B7281ECD7600DD561D /* WidgetExtensionApp.swift */; };
@@ -71,19 +56,8 @@
 		9C5E60152819839800CEEBF1 /* AirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */; };
 		9C5E60162819839800CEEBF1 /* AirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */; };
 		9C5E60172819839800CEEBF1 /* AirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */; };
-		9C5E601A2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */; };
-		9C5E601B2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */; };
-		9C5E601C2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */; };
 		9C64DD4B28777C62009FB992 /* MapWidgetSnapshotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E856281F04DC005A3A37 /* MapWidgetSnapshotter.swift */; };
 		9C6B19C0286C6DBC0038FEAC /* AirAlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE55286B4864009AA770 /* AirAlertError.swift */; };
-		9C6B19C2286C9BFA0038FEAC /* LoggerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B19C1286C9BFA0038FEAC /* LoggerExtensions.swift */; };
-		9C6B19C3286C9BFA0038FEAC /* LoggerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B19C1286C9BFA0038FEAC /* LoggerExtensions.swift */; };
-		9C6B19C4286C9BFA0038FEAC /* LoggerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B19C1286C9BFA0038FEAC /* LoggerExtensions.swift */; };
-		9C6B19C5286C9BFA0038FEAC /* LoggerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B19C1286C9BFA0038FEAC /* LoggerExtensions.swift */; };
-		9C6B19C7286CA1460038FEAC /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B19C6286CA1460038FEAC /* NSManagedObjectContextExtensions.swift */; };
-		9C6B19C8286CA1460038FEAC /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B19C6286CA1460038FEAC /* NSManagedObjectContextExtensions.swift */; };
-		9C6B19C9286CA1460038FEAC /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B19C6286CA1460038FEAC /* NSManagedObjectContextExtensions.swift */; };
-		9C6B19CA286CA1460038FEAC /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B19C6286CA1460038FEAC /* NSManagedObjectContextExtensions.swift */; };
 		9C6B19CB286CA5090038FEAC /* AirAlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE51286B4002009AA770 /* AirAlertState.swift */; };
 		9C7C9221283580B700EDE9F6 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C9220283580B700EDE9F6 /* BottomSheetView.swift */; };
 		9C7C9223283584A400EDE9F6 /* BottomSheetPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7C9222283584A400EDE9F6 /* BottomSheetPosition.swift */; };
@@ -107,7 +81,6 @@
 		9C9EFFFD28107F0000410B75 /* RegionStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */; };
 		9C9EFFFE28107F0000410B75 /* RegionStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */; };
 		9C9EFFFF28107F0000410B75 /* RegionStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */; };
-		9CA00000283004F100545C02 /* AppKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0FFFF283004F100545C02 /* AppKitExtensions.swift */; };
 		9CA0FFE6282C307D00545C02 /* MapViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0FFE5282C307D00545C02 /* MapViewInteractor.swift */; };
 		9CA0FFE7282C307D00545C02 /* MapViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0FFE5282C307D00545C02 /* MapViewInteractor.swift */; };
 		9CA0FFE8282C307D00545C02 /* MapViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0FFE5282C307D00545C02 /* MapViewInteractor.swift */; };
@@ -134,8 +107,6 @@
 		9CA94D6A2838D10800EF665B /* AirAlertStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA94D682838D10800EF665B /* AirAlertStateModel.swift */; };
 		9CA94D6B2838D10800EF665B /* AirAlertStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA94D682838D10800EF665B /* AirAlertStateModel.swift */; };
 		9CA94D6C2838D24F00EF665B /* AirAlertStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA94D682838D10800EF665B /* AirAlertStateModel.swift */; };
-		9CAB4DD12810A79400812938 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
-		9CAB4DD22810A79400812938 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
 		9CAB4DD32810A7AE00812938 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
 		9CAB4DD42810A7AF00812938 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F94281061E500811961 /* MapViewRepresentable.swift */; };
 		9CB7E2832879841500FD4553 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C45957F281E673600DD561D /* WidgetKit.framework */; };
@@ -148,7 +119,6 @@
 		9CB7E2962879866400FD4553 /* MapStatusEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C459592281E6F0A00DD561D /* MapStatusEntry.swift */; };
 		9CB7E2972879866700FD4553 /* MapStatusTimelinePovider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C459590281E6E8B00DD561D /* MapStatusTimelinePovider.swift */; };
 		9CB7E298287986CE00FD4553 /* RegionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A982811D28A00116F1E /* RegionOverlay.swift */; };
-		9CB7E299287986F000FD4553 /* PlaftormExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */; };
 		9CB7E29A287986F600FD4553 /* RegionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE2A6D52810414000241EB4 /* RegionsRepository.swift */; };
 		9CB7E29B287986FA00FD4553 /* RegionStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9EFFFC28107F0000410B75 /* RegionStateModel.swift */; };
 		9CB7E29C287986FE00FD4553 /* AirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */; };
@@ -162,16 +132,12 @@
 		9CB7E2A42879872A00FD4553 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C026AEF282254A500E0324B /* Constants.swift */; };
 		9CB7E2A52879873900FD4553 /* RegionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE07E8128746602001946FC /* RegionState.swift */; };
 		9CB7E2A62879873B00FD4553 /* RegionStateDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE07E8B287475FC001946FC /* RegionStateDAO.swift */; };
-		9CB7E2A72879874100FD4553 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C278F96281071A700811961 /* Extensions.swift */; };
 		9CB7E2A92879874700FD4553 /* AirAlertStatesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE5D286B737F009AA770 /* AirAlertStatesProvider.swift */; };
 		9CB7E2AA2879874800FD4553 /* AirAlertStatesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE5D286B737F009AA770 /* AirAlertStatesProvider.swift */; };
 		9CB7E2AB2879874C00FD4553 /* AirAlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE55286B4864009AA770 /* AirAlertError.swift */; };
 		9CB7E2AC2879875700FD4553 /* IAirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0FFEA282C310600545C02 /* IAirAlertsDataService.swift */; };
 		9CB7E2AD2879875B00FD4553 /* AirAlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE51286B4002009AA770 /* AirAlertState.swift */; };
 		9CB7E2AE2879876100FD4553 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD77A728144D930050584C /* NetworkManager.swift */; };
-		9CB7E2AF2879876C00FD4553 /* LoggerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B19C1286C9BFA0038FEAC /* LoggerExtensions.swift */; };
-		9CB7E2B02879877400FD4553 /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B19C6286CA1460038FEAC /* NSManagedObjectContextExtensions.swift */; };
-		9CB7E2B12879877B00FD4553 /* ColorSchemeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E3B9628783317000B48AB /* ColorSchemeExtensions.swift */; };
 		9CB7E2B32879886E00FD4553 /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 9CB7E2B22879886E00FD4553 /* Hyperconnectivity */; };
 		9CB7E2B428798AD800FD4553 /* regions.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9CE2A6C92810054E00241EB4 /* regions.geojson */; };
 		9CB7E2BD2879B26500FD4553 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */; };
@@ -181,7 +147,6 @@
 		9CB7E2C12879B26500FD4553 /* Configuration.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */; };
 		9CBC8B2A2872F66500770912 /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 9CBC8B292872F66500770912 /* Hyperconnectivity */; };
 		9CBC8B3C28731EB100770912 /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 9CBC8B3B28731EB100770912 /* Hyperconnectivity */; };
-		9CBC8B3E28731EF500770912 /* NotificationCenter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBC8B3D28731EF500770912 /* NotificationCenter+Extensions.swift */; };
 		9CC0BE52286B4002009AA770 /* AirAlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE51286B4002009AA770 /* AirAlertState.swift */; };
 		9CC0BE53286B4002009AA770 /* AirAlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE51286B4002009AA770 /* AirAlertState.swift */; };
 		9CC0BE54286B4002009AA770 /* AirAlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0BE51286B4002009AA770 /* AirAlertState.swift */; };
@@ -196,9 +161,6 @@
 		9CCD77A828144D930050584C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD77A728144D930050584C /* NetworkManager.swift */; };
 		9CCD77A928144D930050584C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD77A728144D930050584C /* NetworkManager.swift */; };
 		9CCD77AA28144D930050584C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD77A728144D930050584C /* NetworkManager.swift */; };
-		9CD63A7C2811A4F300116F1E /* PlaftormExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */; };
-		9CD63A7D2811A4F300116F1E /* PlaftormExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */; };
-		9CD63A7E2811A4F300116F1E /* PlaftormExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */; };
 		9CD63A912811D1AF00116F1E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A902811D1AF00116F1E /* Country.swift */; };
 		9CD63A922811D1AF00116F1E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A902811D1AF00116F1E /* Country.swift */; };
 		9CD63A932811D1AF00116F1E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD63A902811D1AF00116F1E /* Country.swift */; };
@@ -224,6 +186,11 @@
 		9CE07E992874D76D001946FC /* WidgedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE07E952874D76D001946FC /* WidgedConstants.swift */; };
 		9CE07E9A2874D787001946FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C026AEF282254A500E0324B /* Constants.swift */; };
 		9CE07E9B2874D788001946FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C026AEF282254A500E0324B /* Constants.swift */; };
+		9CE19CE32887236800E252FC /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 9CE19CE22887236800E252FC /* Extensions */; };
+		9CE19CE52887247C00E252FC /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 9CE19CE42887247C00E252FC /* Extensions */; };
+		9CE19CE72887247F00E252FC /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 9CE19CE62887247F00E252FC /* Extensions */; };
+		9CE19CE92887248400E252FC /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 9CE19CE82887248400E252FC /* Extensions */; };
+		9CE19CEB2887248D00E252FC /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 9CE19CEA2887248D00E252FC /* Extensions */; };
 		9CE2A6C52810042900241EB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC3280FD21A00FBAE90 /* ContentView.swift */; };
 		9CE2A6C8281004E000241EB4 /* AirRaidMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF79EC2280FD21A00FBAE90 /* AirRaidMapApp.swift */; };
 		9CE2A6CA2810054E00241EB4 /* regions.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9CE2A6C92810054E00241EB4 /* regions.geojson */; };
@@ -262,7 +229,6 @@
 		9CFEAE762832AFBE00841EDB /* HapticFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEAE6828329B1000841EDB /* HapticFeedbackButton.swift */; };
 		9CFEAE772832B14800841EDB /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
 		9CFEAE782832B14900841EDB /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */; };
-		9CFF53A32877591800F69DE8 /* EdgeInsetsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFF53A22877591800F69DE8 /* EdgeInsetsExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -310,19 +276,14 @@
 /* Begin PBXFileReference section */
 		9C026AEF282254A500E0324B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9C08051C288309D400A77233 /* TabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabType.swift; sourceTree = "<group>"; };
+		9C08053028871F0800A77233 /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Extensions; sourceTree = "<group>"; };
 		9C0AD82D280FE4E20095ACCA /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		9C0B9E242876FA9200C75E12 /* ShareActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareActivityView.swift; sourceTree = "<group>"; };
 		9C19E856281F04DC005A3A37 /* MapWidgetSnapshotter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWidgetSnapshotter.swift; sourceTree = "<group>"; };
-		9C1E3B9628783317000B48AB /* ColorSchemeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeExtensions.swift; sourceTree = "<group>"; };
-		9C1E3B9A28784F4E000B48AB /* SizeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeModifier.swift; sourceTree = "<group>"; };
 		9C278F94281061E500811961 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
-		9C278F96281071A700811961 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineExtensions.swift; sourceTree = "<group>"; };
 		9C393A392814817300A9CCA6 /* RegionStateListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStateListItemView.swift; sourceTree = "<group>"; };
-		9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationManager.swift; sourceTree = "<group>"; };
 		9C393A4A28157E5400A9CCA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C393A4C28157E5400A9CCA6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.4.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
-		9C393A4F2816860E00A9CCA6 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		9C393A572816906800A9CCA6 /* MapContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContants.swift; sourceTree = "<group>"; };
 		9C3E646F28771407005BBAD5 /* RegionStateListItemViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionStateListItemViewContent.swift; sourceTree = "<group>"; };
 		9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "air-raid-map-iOS-widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -335,9 +296,6 @@
 		9C4595B7281ECD7600DD561D /* WidgetExtensionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetExtensionApp.swift; sourceTree = "<group>"; };
 		9C5E600D2819446A00CEEBF1 /* AlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertState.swift; sourceTree = "<group>"; };
 		9C5E60142819839800CEEBF1 /* AirAlertsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertsDataService.swift; sourceTree = "<group>"; };
-		9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackExtension.swift; sourceTree = "<group>"; };
-		9C6B19C1286C9BFA0038FEAC /* LoggerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerExtensions.swift; sourceTree = "<group>"; };
-		9C6B19C6286CA1460038FEAC /* NSManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
 		9C7C9220283580B700EDE9F6 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		9C7C9222283584A400EDE9F6 /* BottomSheetPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPosition.swift; sourceTree = "<group>"; };
 		9C7C92242835850000EDE9F6 /* DragGestureExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragGestureExtensions.swift; sourceTree = "<group>"; };
@@ -354,19 +312,16 @@
 		9CA0FFEA282C310600545C02 /* IAirAlertsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAirAlertsDataService.swift; sourceTree = "<group>"; };
 		9CA0FFEF282C330000545C02 /* StubAirAlertsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAirAlertsDataService.swift; sourceTree = "<group>"; };
 		9CA0FFF4282FE12200545C02 /* MapKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitExtensions.swift; sourceTree = "<group>"; };
-		9CA0FFFF283004F100545C02 /* AppKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKitExtensions.swift; sourceTree = "<group>"; };
 		9CA94D542838CAC400EF665B /* AirRaidAlerts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AirRaidAlerts.xcdatamodel; sourceTree = "<group>"; };
 		9CA94D642838CCCC00EF665B /* test-history.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-history.json"; sourceTree = "<group>"; };
 		9CA94D682838D10800EF665B /* AirAlertStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertStateModel.swift; sourceTree = "<group>"; };
 		9CB7E2822879841500FD4553 /* air-raid-map-macOS-widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "air-raid-map-macOS-widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB7E2BC2879B26500FD4553 /* Configuration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configuration.xcconfig; sourceTree = "<group>"; };
-		9CBC8B3D28731EF500770912 /* NotificationCenter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extensions.swift"; sourceTree = "<group>"; };
 		9CC0BE51286B4002009AA770 /* AirAlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertState.swift; sourceTree = "<group>"; };
 		9CC0BE55286B4864009AA770 /* AirAlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertError.swift; sourceTree = "<group>"; };
 		9CC0BE5D286B737F009AA770 /* AirAlertStatesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertStatesProvider.swift; sourceTree = "<group>"; };
 		9CC67DC028842740004468C8 /* Configuration-Widget.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Configuration-Widget.xcconfig"; sourceTree = "<group>"; };
 		9CCD77A728144D930050584C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaftormExtensions.swift; sourceTree = "<group>"; };
 		9CD63A902811D1AF00116F1E /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		9CD63A982811D28A00116F1E /* RegionOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionOverlay.swift; sourceTree = "<group>"; };
 		9CE07E8128746602001946FC /* RegionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionState.swift; sourceTree = "<group>"; };
@@ -391,7 +346,6 @@
 		9CFEAE6828329B1000841EDB /* HapticFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackButton.swift; sourceTree = "<group>"; };
 		9CFEAE6C28329F9F00841EDB /* ImageActivityItemSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageActivityItemSource.swift; sourceTree = "<group>"; };
 		9CFEAE702832A8C400841EDB /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		9CFF53A22877591800F69DE8 /* EdgeInsetsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsetsExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +355,7 @@
 			files = (
 				9C459582281E673600DD561D /* SwiftUI.framework in Frameworks */,
 				9C459580281E673600DD561D /* WidgetKit.framework in Frameworks */,
+				9CE19CE72887247F00E252FC /* Extensions in Frameworks */,
 				9CE07E7F28745922001946FC /* Hyperconnectivity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +366,7 @@
 			files = (
 				9CB7E2842879841500FD4553 /* SwiftUI.framework in Frameworks */,
 				9CB7E2832879841500FD4553 /* WidgetKit.framework in Frameworks */,
+				9CE19CE52887247C00E252FC /* Extensions in Frameworks */,
 				9CB7E2B32879886E00FD4553 /* Hyperconnectivity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +375,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE19CE92887248400E252FC /* Extensions in Frameworks */,
 				9CDD8366287321FA008EFB53 /* Hyperconnectivity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +384,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE19CEB2887248D00E252FC /* Extensions in Frameworks */,
 				9CBC8B2A2872F66500770912 /* Hyperconnectivity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +393,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE19CE32887236800E252FC /* Extensions in Frameworks */,
 				9CBC8B3C28731EB100770912 /* Hyperconnectivity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,24 +431,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9C393A4E2816860200A9CCA6 /* Extensions */ = {
+		9C393A4E2816860200A9CCA6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9CA0FFFF283004F100545C02 /* AppKitExtensions.swift */,
-				9C393A3528147BC600A9CCA6 /* CombineExtensions.swift */,
-				9CD63A7B2811A4F300116F1E /* PlaftormExtensions.swift */,
-				9C278F96281071A700811961 /* Extensions.swift */,
-				9C393A4F2816860E00A9CCA6 /* Orientation.swift */,
-				9C5E60192819944600CEEBF1 /* HapticFeedbackExtension.swift */,
 				9CA0FFF4282FE12200545C02 /* MapKitExtensions.swift */,
-				9C6B19C1286C9BFA0038FEAC /* LoggerExtensions.swift */,
-				9C6B19C6286CA1460038FEAC /* NSManagedObjectContextExtensions.swift */,
-				9CBC8B3D28731EF500770912 /* NotificationCenter+Extensions.swift */,
-				9CFF53A22877591800F69DE8 /* EdgeInsetsExtensions.swift */,
-				9C1E3B9628783317000B48AB /* ColorSchemeExtensions.swift */,
-				9C1E3B9A28784F4E000B48AB /* SizeModifier.swift */,
 			);
-			path = Extensions;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		9C459583281E673600DD561D /* MapWidget */ = {
@@ -617,7 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				9CBC8B2B28731DDD00770912 /* Network */,
-				9C393A3D2815790A00A9CCA6 /* OrientationManager.swift */,
 				9CE07E86287469E1001946FC /* FetchedResultsPublisher.swift */,
 			);
 			path = Utils;
@@ -643,9 +589,10 @@
 		9CF79EBC280FD21A00FBAE90 = {
 			isa = PBXGroup;
 			children = (
+				9C08053028871F0800A77233 /* Extensions */,
 				9CB7E2BB2879B24D00FD4553 /* Configuration */,
 				9CFEAE6728329A1A00841EDB /* CustomViews */,
-				9C393A4E2816860200A9CCA6 /* Extensions */,
+				9C393A4E2816860200A9CCA6 /* Extension */,
 				9CE2A6D42810414000241EB4 /* Models */,
 				9CA0FFE4282C300700545C02 /* Interactors */,
 				9C459583281E673600DD561D /* MapWidget */,
@@ -701,6 +648,7 @@
 			name = "air-raid-map-iOS-widget";
 			packageProductDependencies = (
 				9CE07E7E28745922001946FC /* Hyperconnectivity */,
+				9CE19CE62887247F00E252FC /* Extensions */,
 			);
 			productName = "air-raid-map-widgetExtension";
 			productReference = 9C45957E281E673600DD561D /* air-raid-map-iOS-widget.appex */;
@@ -721,6 +669,7 @@
 			name = "air-raid-map-macOS-widget";
 			packageProductDependencies = (
 				9CB7E2B22879886E00FD4553 /* Hyperconnectivity */,
+				9CE19CE42887247C00E252FC /* Extensions */,
 			);
 			productName = "air-raid-map-macOS-widgetExtension";
 			productReference = 9CB7E2822879841500FD4553 /* air-raid-map-macOS-widget.appex */;
@@ -741,6 +690,7 @@
 			name = "air-raid-map (tvOS)";
 			packageProductDependencies = (
 				9CDD8365287321FA008EFB53 /* Hyperconnectivity */,
+				9CE19CE82887248400E252FC /* Extensions */,
 			);
 			productName = "air-raid-map (tvOS)";
 			productReference = 9CE2A6B72810041000241EB4 /* УКРМАПА.app */;
@@ -763,6 +713,7 @@
 			name = "air-raid-map (iOS)";
 			packageProductDependencies = (
 				9CBC8B292872F66500770912 /* Hyperconnectivity */,
+				9CE19CEA2887248D00E252FC /* Extensions */,
 			);
 			productName = "air-raid-map (iOS)";
 			productReference = 9CF79EC9280FD21B00FBAE90 /* air-raid-map.app */;
@@ -785,6 +736,7 @@
 			name = "air-raid-map (macOS)";
 			packageProductDependencies = (
 				9CBC8B3B28731EB100770912 /* Hyperconnectivity */,
+				9CE19CE22887236800E252FC /* Extensions */,
 			);
 			productName = "air-raid-map (macOS)";
 			productReference = 9CF79ECF280FD21B00FBAE90 /* УКРМАПА.app */;
@@ -913,7 +865,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C4595AB281ECC6E00DD561D /* RegionStateModel.swift in Sources */,
-				9C6B19C5286C9BFA0038FEAC /* LoggerExtensions.swift in Sources */,
 				9CA94D6C2838D24F00EF665B /* AirAlertStateModel.swift in Sources */,
 				9C4595B8281ECD7600DD561D /* WidgetExtensionApp.swift in Sources */,
 				9C19E858281F04DC005A3A37 /* MapWidgetSnapshotter.swift in Sources */,
@@ -921,7 +872,6 @@
 				9C4595B5281ECCB400DD561D /* RegionStatesDecodable.swift in Sources */,
 				9C4595B4281ECCAD00DD561D /* AirAlertsDataService.swift in Sources */,
 				9CB7E2A92879874700FD4553 /* AirAlertStatesProvider.swift in Sources */,
-				9C6B19CA286CA1460038FEAC /* NSManagedObjectContextExtensions.swift in Sources */,
 				9C459595281E83E200DD561D /* WidgetMapView.swift in Sources */,
 				9C4595B1281ECC7600DD561D /* RegionOverlay.swift in Sources */,
 				9CA0FFF8282FE12200545C02 /* MapKitExtensions.swift in Sources */,
@@ -929,7 +879,6 @@
 				9CA0FFF3282C330000545C02 /* StubAirAlertsDataService.swift in Sources */,
 				9CA0FFE9282C307D00545C02 /* MapViewInteractor.swift in Sources */,
 				9C4595A1281E854300DD561D /* NetworkManager.swift in Sources */,
-				9C4595B2281ECC8600DD561D /* PlaftormExtensions.swift in Sources */,
 				9CE07E8528746602001946FC /* RegionState.swift in Sources */,
 				9C4595B9281ECE2B00DD561D /* MapViewRepresentable.swift in Sources */,
 				9C026AF3282254A500E0324B /* Constants.swift in Sources */,
@@ -938,11 +887,8 @@
 				9CE07E8A287469E1001946FC /* FetchedResultsPublisher.swift in Sources */,
 				9C6B19C0286C6DBC0038FEAC /* AirAlertError.swift in Sources */,
 				9CE07E992874D76D001946FC /* WidgedConstants.swift in Sources */,
-				9C1E3B9928783317000B48AB /* ColorSchemeExtensions.swift in Sources */,
 				9C4595A9281ECC6E00DD561D /* RegionsRepository.swift in Sources */,
-				9C1E3B9D28784F4E000B48AB /* SizeModifier.swift in Sources */,
 				9C4595AA281ECC6E00DD561D /* AlertState.swift in Sources */,
-				9C4595B3281ECC8600DD561D /* Extensions.swift in Sources */,
 				9C6B19CB286CA5090038FEAC /* AirAlertState.swift in Sources */,
 				9C459596281E84C100DD561D /* MapStatusTimelinePovider.swift in Sources */,
 				9C4595A8281ECC6E00DD561D /* GeoJSONError.swift in Sources */,
@@ -957,20 +903,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CB7E2AE2879876100FD4553 /* NetworkManager.swift in Sources */,
-				9CB7E299287986F000FD4553 /* PlaftormExtensions.swift in Sources */,
 				9CB7E2A42879872A00FD4553 /* Constants.swift in Sources */,
 				9CB7E2A32879872300FD4553 /* RegionStatesDecodable.swift in Sources */,
 				9CB7E29C287986FE00FD4553 /* AirAlertsDataService.swift in Sources */,
 				9CB7E2AB2879874C00FD4553 /* AirAlertError.swift in Sources */,
 				9CB7E29B287986FA00FD4553 /* RegionStateModel.swift in Sources */,
 				9CB7E29D2879871000FD4553 /* Region.swift in Sources */,
-				9CB7E2B12879877B00FD4553 /* ColorSchemeExtensions.swift in Sources */,
 				9CB7E29F2879871600FD4553 /* IDecodableGeoJSONFeature.swift in Sources */,
 				9CB7E2AA2879874800FD4553 /* AirAlertStatesProvider.swift in Sources */,
 				9CB7E2922879864D00FD4553 /* WidgedConstants.swift in Sources */,
 				9CB7E29A287986F600FD4553 /* RegionsRepository.swift in Sources */,
-				9CB7E2A72879874100FD4553 /* Extensions.swift in Sources */,
-				9CB7E2AF2879876C00FD4553 /* LoggerExtensions.swift in Sources */,
 				9CB7E2A52879873900FD4553 /* RegionState.swift in Sources */,
 				9CB7E2AD2879875B00FD4553 /* AirAlertState.swift in Sources */,
 				9CB7E2A62879873B00FD4553 /* RegionStateDAO.swift in Sources */,
@@ -982,7 +924,6 @@
 				9CB7E2932879865A00FD4553 /* WidgetMapView.swift in Sources */,
 				9CB7E2A12879871C00FD4553 /* GeoJSONError.swift in Sources */,
 				9CB7E29E2879871300FD4553 /* Feature.swift in Sources */,
-				9CB7E2B02879877400FD4553 /* NSManagedObjectContextExtensions.swift in Sources */,
 				9CB7E2A02879871A00FD4553 /* AlertState.swift in Sources */,
 				9CB7E2972879866700FD4553 /* MapStatusTimelinePovider.swift in Sources */,
 				9CB7E2A22879871E00FD4553 /* MapContants.swift in Sources */,
@@ -995,15 +936,10 @@
 			files = (
 				9CEBC021281176BD00C16CD0 /* Feature.swift in Sources */,
 				9C5E60172819839800CEEBF1 /* AirAlertsDataService.swift in Sources */,
-				9C393A3828147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
 				9CAB4DD42810A7AF00812938 /* MapViewRepresentable.swift in Sources */,
 				9C393A3C2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,
 				9CE2A6C52810042900241EB4 /* ContentView.swift in Sources */,
 				9CD63A9B2811D28A00116F1E /* RegionOverlay.swift in Sources */,
-				9CAB4DD22810A79400812938 /* Extensions.swift in Sources */,
-				9CD63A7E2811A4F300116F1E /* PlaftormExtensions.swift in Sources */,
-				9C6B19C4286C9BFA0038FEAC /* LoggerExtensions.swift in Sources */,
-				9C5E601C2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */,
 				9CE07E9A2874D787001946FC /* Constants.swift in Sources */,
 				9C9EFFFF28107F0000410B75 /* RegionStateModel.swift in Sources */,
 				9CC0BE54286B4002009AA770 /* AirAlertState.swift in Sources */,
@@ -1012,7 +948,6 @@
 				9C9E00032810807800410B75 /* RegionStatesDecodable.swift in Sources */,
 				9CC0BE60286B737F009AA770 /* AirAlertStatesProvider.swift in Sources */,
 				9C5E60102819446A00CEEBF1 /* AlertState.swift in Sources */,
-				9C6B19C9286CA1460038FEAC /* NSManagedObjectContextExtensions.swift in Sources */,
 				9C393A5A2816906800A9CCA6 /* MapContants.swift in Sources */,
 				9C08051F288309D400A77233 /* TabType.swift in Sources */,
 				9CE2A6DC2810539200241EB4 /* Region.swift in Sources */,
@@ -1029,7 +964,6 @@
 				9CEBC0252811777700C16CD0 /* GeoJSONError.swift in Sources */,
 				9CE07E8428746602001946FC /* RegionState.swift in Sources */,
 				9CFEAE732832A8C400841EDB /* MapView.swift in Sources */,
-				9C08051B2883089500A77233 /* SizeModifier.swift in Sources */,
 				9CD63A932811D1AF00116F1E /* Country.swift in Sources */,
 				9CE07E89287469E1001946FC /* FetchedResultsPublisher.swift in Sources */,
 				9CA0FFF2282C330000545C02 /* StubAirAlertsDataService.swift in Sources */,
@@ -1047,20 +981,14 @@
 			files = (
 				9CEBC01F281176BD00C16CD0 /* Feature.swift in Sources */,
 				9CFEAE6928329B1000841EDB /* HapticFeedbackButton.swift in Sources */,
-				9C393A3628147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
 				9CFEAE6D28329F9F00841EDB /* ImageActivityItemSource.swift in Sources */,
 				9CE07E8228746602001946FC /* RegionState.swift in Sources */,
 				9CA0FFF0282C330000545C02 /* StubAirAlertsDataService.swift in Sources */,
 				9C94CCCD2869A16F00044AA2 /* AirAlertStateInteractor.swift in Sources */,
-				9CFF53A32877591800F69DE8 /* EdgeInsetsExtensions.swift in Sources */,
-				9C6B19C2286C9BFA0038FEAC /* LoggerExtensions.swift in Sources */,
 				9C9EFFFD28107F0000410B75 /* RegionStateModel.swift in Sources */,
 				9CE07E8C287475FC001946FC /* RegionStateDAO.swift in Sources */,
 				9CFEAE712832A8C400841EDB /* MapView.swift in Sources */,
-				9C1E3B9B28784F4E000B48AB /* SizeModifier.swift in Sources */,
-				9CBC8B3E28731EF500770912 /* NotificationCenter+Extensions.swift in Sources */,
 				9CA0FFEB282C310600545C02 /* IAirAlertsDataService.swift in Sources */,
-				9C1E3B9728783317000B48AB /* ColorSchemeExtensions.swift in Sources */,
 				9C5E600E2819446A00CEEBF1 /* AlertState.swift in Sources */,
 				9C08051D288309D400A77233 /* TabType.swift in Sources */,
 				9C393A3A2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,
@@ -1073,14 +1001,11 @@
 				9CD63A992811D28A00116F1E /* RegionOverlay.swift in Sources */,
 				9CC0BE52286B4002009AA770 /* AirAlertState.swift in Sources */,
 				9CF79ED4280FD21B00FBAE90 /* ContentView.swift in Sources */,
-				9CD63A7C2811A4F300116F1E /* PlaftormExtensions.swift in Sources */,
 				9CC0BE5E286B737F009AA770 /* AirAlertStatesProvider.swift in Sources */,
 				9CA94D552838CAC400EF665B /* AirRaidAlerts.xcdatamodeld in Sources */,
 				9C7C92252835850000EDE9F6 /* DragGestureExtensions.swift in Sources */,
 				9CE2A6DA2810539200241EB4 /* Region.swift in Sources */,
-				9C278F97281071A700811961 /* Extensions.swift in Sources */,
 				9C393A582816906800A9CCA6 /* MapContants.swift in Sources */,
-				9C393A502816860E00A9CCA6 /* Orientation.swift in Sources */,
 				9C7C923128358BCB00EDE9F6 /* BottomSheet.swift in Sources */,
 				9C14241428786E02008B8C9B /* ShareActivityView.swift in Sources */,
 				9CA0FFE6282C307D00545C02 /* MapViewInteractor.swift in Sources */,
@@ -1088,9 +1013,7 @@
 				9C7C922B283586AD00EDE9F6 /* UIApplicationExtensions.swift in Sources */,
 				9C94CCC92868767300044AA2 /* AirAlertStateDAO.swift in Sources */,
 				9CCD77A828144D930050584C /* NetworkManager.swift in Sources */,
-				9C6B19C7286CA1460038FEAC /* NSManagedObjectContextExtensions.swift in Sources */,
 				9CE07E962874D76D001946FC /* WidgedConstants.swift in Sources */,
-				9C5E601A2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */,
 				9CF79ED2280FD21B00FBAE90 /* AirRaidMapApp.swift in Sources */,
 				9C7C9223283584A400EDE9F6 /* BottomSheetPosition.swift in Sources */,
 				9C7C92292835854100EDE9F6 /* RoundedCorner.swift in Sources */,
@@ -1101,7 +1024,6 @@
 				9C5E60152819839800CEEBF1 /* AirAlertsDataService.swift in Sources */,
 				9C9E00012810807800410B75 /* RegionStatesDecodable.swift in Sources */,
 				9CD63A912811D1AF00116F1E /* Country.swift in Sources */,
-				9C393A3E2815790A00A9CCA6 /* OrientationManager.swift in Sources */,
 				9CE2A6D62810414000241EB4 /* RegionsRepository.swift in Sources */,
 				9CC0BE56286B4864009AA770 /* AirAlertError.swift in Sources */,
 				9C026AF0282254A500E0324B /* Constants.swift in Sources */,
@@ -1114,9 +1036,7 @@
 			files = (
 				9CEBC020281176BD00C16CD0 /* Feature.swift in Sources */,
 				9C5E60162819839800CEEBF1 /* AirAlertsDataService.swift in Sources */,
-				9C393A3728147BC600A9CCA6 /* CombineExtensions.swift in Sources */,
 				9CC0BE53286B4002009AA770 /* AirAlertState.swift in Sources */,
-				9C1E3B9C28784F4E000B48AB /* SizeModifier.swift in Sources */,
 				9CAB4DD32810A7AE00812938 /* MapViewRepresentable.swift in Sources */,
 				9C3E647328771669005BBAD5 /* RegionStateListItemViewContent.swift in Sources */,
 				9CE07E8328746602001946FC /* RegionState.swift in Sources */,
@@ -1125,11 +1045,7 @@
 				9CE07E9B2874D788001946FC /* Constants.swift in Sources */,
 				9CD63A9A2811D28A00116F1E /* RegionOverlay.swift in Sources */,
 				9C08051E288309D400A77233 /* TabType.swift in Sources */,
-				9C1E3B9828783317000B48AB /* ColorSchemeExtensions.swift in Sources */,
-				9CAB4DD12810A79400812938 /* Extensions.swift in Sources */,
-				9CD63A7D2811A4F300116F1E /* PlaftormExtensions.swift in Sources */,
 				9CE07E8D287475FC001946FC /* RegionStateDAO.swift in Sources */,
-				9C5E601B2819944600CEEBF1 /* HapticFeedbackExtension.swift in Sources */,
 				9CC0BE5F286B737F009AA770 /* AirAlertStatesProvider.swift in Sources */,
 				9C64DD4B28777C62009FB992 /* MapWidgetSnapshotter.swift in Sources */,
 				9CFEAE782832B14900841EDB /* MapViewModel.swift in Sources */,
@@ -1142,18 +1058,15 @@
 				9CA0FFEC282C310600545C02 /* IAirAlertsDataService.swift in Sources */,
 				9CEBC01C2811769D00C16CD0 /* IDecodableGeoJSONFeature.swift in Sources */,
 				9CA94D562838CAC400EF665B /* AirRaidAlerts.xcdatamodeld in Sources */,
-				9C6B19C8286CA1460038FEAC /* NSManagedObjectContextExtensions.swift in Sources */,
 				9CFEAE742832AEAC00841EDB /* HapticFeedbackButton.swift in Sources */,
 				9C94CCCA2868767300044AA2 /* AirAlertStateDAO.swift in Sources */,
 				9CC0BE57286B4864009AA770 /* AirAlertError.swift in Sources */,
-				9CA00000283004F100545C02 /* AppKitExtensions.swift in Sources */,
 				9CCD77A928144D930050584C /* NetworkManager.swift in Sources */,
 				9CF79ED3280FD21B00FBAE90 /* AirRaidMapApp.swift in Sources */,
 				9CEBC0242811777700C16CD0 /* GeoJSONError.swift in Sources */,
 				9CD63A922811D1AF00116F1E /* Country.swift in Sources */,
 				9CA0FFF1282C330000545C02 /* StubAirAlertsDataService.swift in Sources */,
 				9CA0FFE7282C307D00545C02 /* MapViewInteractor.swift in Sources */,
-				9C6B19C3286C9BFA0038FEAC /* LoggerExtensions.swift in Sources */,
 				9CE07E88287469E1001946FC /* FetchedResultsPublisher.swift in Sources */,
 				9CE2A6D72810414000241EB4 /* RegionsRepository.swift in Sources */,
 				9C94CCCE2869A16F00044AA2 /* AirAlertStateInteractor.swift in Sources */,
@@ -1687,6 +1600,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9CBC8B282872F66500770912 /* XCRemoteSwiftPackageReference "Hyperconnectivity" */;
 			productName = Hyperconnectivity;
+		};
+		9CE19CE22887236800E252FC /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
+		};
+		9CE19CE42887247C00E252FC /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
+		};
+		9CE19CE62887247F00E252FC /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
+		};
+		9CE19CE82887248400E252FC /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
+		};
+		9CE19CEA2887248D00E252FC /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Extensions;
 		};
 /* End XCSwiftPackageProductDependency section */
 

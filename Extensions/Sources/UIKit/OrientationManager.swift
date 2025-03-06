@@ -5,6 +5,8 @@
 //  Created by Nazar Rudnyk on 24.04.2022.
 //
 
+#if os(iOS)
+
 import Foundation
 import SwiftUI
 import Combine
@@ -49,3 +51,5 @@ class OrientationManager: ObservableObject {
         }
     }
 }
+
+#endif

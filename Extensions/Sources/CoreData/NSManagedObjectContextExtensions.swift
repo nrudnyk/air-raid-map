@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-extension NSManagedObjectContext {
+public extension NSManagedObjectContext {
     func performBlock(_ block: @escaping () throws -> Void) async throws {
         if #available(macOS 12.0, iOS 15.0, *) {
             try await perform(block)

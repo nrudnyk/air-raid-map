@@ -7,6 +7,7 @@
 
 import CoreData
 import OSLog
+import Extensions
 
 class AirAlertStatesProvider {
 

@@ -5,6 +5,8 @@
 //  Created by Nazar Rudnyk on 14.05.2022.
 //
 
+#if os(macOS)
+
 import AppKit
 
 extension NSEdgeInsets {
@@ -14,3 +16,5 @@ extension NSEdgeInsets {
 extension NSSharingService {
     static let items = NSSharingService.sharingServices(forItems: [""])
 }
+
+#endif

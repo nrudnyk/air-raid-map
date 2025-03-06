@@ -23,7 +23,7 @@ struct SizeModifier: ViewModifier {
     }
 }
 
-extension View {
+public extension View {
     func takeSize(_ size: Binding<CGSize>) -> some View {
         self.modifier(SizeModifier(size))
     }

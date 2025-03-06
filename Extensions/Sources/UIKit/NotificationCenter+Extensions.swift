@@ -5,11 +5,12 @@
 //  Created by Nazar Rudnyk on 04.07.2022.
 //
 
+#if os(iOS)
+
 import UIKit
-import Foundation
 import Combine
 
-extension NotificationCenter {
+public extension NotificationCenter {
     func appForegroundStatePublisher() -> AnyPublisher<Bool, Never> {
         return Publishers.Merge(
             NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification).map { _ in false },
@@ -19,7 +20,8 @@ extension NotificationCenter {
     }
 }
 
-
-extension UIImage: Identifiable {
-    public var id: Int { return self.hash }
+public extension UIImage: Identifiable {
+    var id: Int { return self.hash }
 }
+
+#endif

@@ -7,6 +7,7 @@
 import SwiftUI
 import MapKit
 import Combine
+import Extensions
 
 public struct MapViewRepresentable: PlatformViewRepresentable {
 

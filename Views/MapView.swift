@@ -7,6 +7,7 @@
 
 import MapKit
 import SwiftUI
+import Extensions
 
 struct MapView: View {
     @Environment(\.sizeCategory) var sizeCategory

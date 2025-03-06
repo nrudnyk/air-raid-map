@@ -7,6 +7,7 @@
 
 import Foundation
 import MapKit
+import Extensions
 
 extension MKMapView {
     static func mapRect(for region: MKCoordinateRegion) -> MKMapRect {
@@ -42,7 +43,7 @@ extension MKMapView {
 }
 
 extension MKCoordinateRegion: Equatable {
-#if os(iOS)
+//#if os(iOS)
     func withVerticalPadding(_ coef: CGFloat) -> MKCoordinateRegion {
         let verticalSpan = self.span.latitudeDelta
         let additionalSpan = verticalSpan * coef
@@ -76,7 +77,7 @@ extension MKCoordinateRegion: Equatable {
 
         return newRegion
     }
-#endif
+//#endif
 
     public static func == (lhs: MKCoordinateRegion, rhs: MKCoordinateRegion) -> Bool {
         return

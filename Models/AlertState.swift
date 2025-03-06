@@ -8,6 +8,7 @@
 import Foundation
 import CoreGraphics
 import SwiftUI
+import Extensions
 
 public enum AlertType: String, CaseIterable {
     case airAlarm = "air_alarm"

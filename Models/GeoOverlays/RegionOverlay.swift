@@ -6,6 +6,7 @@
 //
 
 import MapKit
+import Extensions
 
 class RegionOverlay: NSObject, MKOverlay {
     let coordinate: CLLocationCoordinate2D

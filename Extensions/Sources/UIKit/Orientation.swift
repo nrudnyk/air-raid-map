@@ -5,6 +5,8 @@
 //  Created by Nazar Rudnyk on 25.04.2022.
 //
 
+#if os(iOS)
+
 import SwiftUI
 
 @propertyWrapper struct Orientation: DynamicProperty {
@@ -14,3 +16,5 @@ import SwiftUI
         orientationManager.type
     }
 }
+
+#endif

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-extension ColorScheme {
-#if os(iOS)
+public extension ColorScheme {
+#if os(iOS) || os(tvOS)
     var userInterfaceStyle: UIUserInterfaceStyle {
         switch self {
         case .light: return .light

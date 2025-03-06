@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Extensions
 
 struct RegionStatesDecodable: Decodable {
     private enum CodingKeys: String, CodingKey {
