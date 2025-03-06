@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+#if os(iOS)
+
 internal extension DragGesture {
     enum DragState {
         case none
@@ -14,3 +16,5 @@ internal extension DragGesture {
         case ended(value: DragGesture.Value)
     }
 }
+
+#endif
