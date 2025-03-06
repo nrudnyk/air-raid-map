@@ -47,22 +47,23 @@ struct RegionStateProperties: Decodable {
         let rawNameEn = try? values.decode(String.self, forKey: .name_en)
         let rawAlert = try? values.decode(Bool.self, forKey: .alert)
         let rawChangedAt = try? values.decode(String.self, forKey: .changed)
-
+        
         // Ignore region state with missing data.
         guard let id = rawId,
               let name = rawName,
               let nameEn = rawNameEn,
-              let alert = rawAlert,
-              let dateStr = rawChangedAt
+              let alert = rawAlert
         else { throw AirAlertStateError.missingData }
-
-        guard let changedDate = DateFormatter.iso8601Full.date(from: dateStr)
-        else { throw AirAlertStateError.missingData }
-
+        
         self.id = id
         self.name = name
         self.name_en = nameEn
         self.alert = alert
-        self.changed = changedDate
+        
+        if let dateStr = rawChangedAt, let changedDate = DateFormatter.iso8601Full.date(from: dateStr) {
+            changed = changedDate
+        } else {
+            changed = Date()
+        }
     }
 }

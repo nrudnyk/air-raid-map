@@ -20,13 +20,17 @@ class AirAlertsDataService: IAirAlertsDataService {
             return Fail(error: NSError(domain: "Missing Air-Raid Alarms URL", code: -10001, userInfo: nil))
                 .eraseToAnyPublisher()
         }
-        
+
         var request = URLRequest(url: url)
         request.setValue(apiKeyValue, forHTTPHeaderField: apiKey)
         request.httpMethod = "GET"
  
         return NetworkManager.download(request: request)
             .decode(type: RegionStatesDecodable.self, decoder: JSONDecoder())
+            .catch { error -> AnyPublisher<RegionStatesDecodable, Error> in
+                 print("Decoding error: \(error)")
+                 return Fail(error: error).eraseToAnyPublisher()
+             }
             .map { regionsDecodable in
                 print(regionsDecodable.lastUpdate)
                 UserDefaults.standard.set(
