@@ -93,10 +93,6 @@
 		9CA0FFF1282C330000545C02 /* StubAirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0FFEF282C330000545C02 /* StubAirAlertsDataService.swift */; };
 		9CA0FFF2282C330000545C02 /* StubAirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0FFEF282C330000545C02 /* StubAirAlertsDataService.swift */; };
 		9CA0FFF3282C330000545C02 /* StubAirAlertsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0FFEF282C330000545C02 /* StubAirAlertsDataService.swift */; };
-		9CA0FFF5282FE12200545C02 /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0FFF4282FE12200545C02 /* MapKitExtensions.swift */; };
-		9CA0FFF6282FE12200545C02 /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0FFF4282FE12200545C02 /* MapKitExtensions.swift */; };
-		9CA0FFF7282FE12200545C02 /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0FFF4282FE12200545C02 /* MapKitExtensions.swift */; };
-		9CA0FFF8282FE12200545C02 /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA0FFF4282FE12200545C02 /* MapKitExtensions.swift */; };
 		9CA94D552838CAC400EF665B /* AirRaidAlerts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CA94D532838CAC400EF665B /* AirRaidAlerts.xcdatamodeld */; };
 		9CA94D562838CAC400EF665B /* AirRaidAlerts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CA94D532838CAC400EF665B /* AirRaidAlerts.xcdatamodeld */; };
 		9CA94D572838CAC400EF665B /* AirRaidAlerts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CA94D532838CAC400EF665B /* AirRaidAlerts.xcdatamodeld */; };
@@ -311,7 +307,6 @@
 		9CA0FFE5282C307D00545C02 /* MapViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewInteractor.swift; sourceTree = "<group>"; };
 		9CA0FFEA282C310600545C02 /* IAirAlertsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAirAlertsDataService.swift; sourceTree = "<group>"; };
 		9CA0FFEF282C330000545C02 /* StubAirAlertsDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAirAlertsDataService.swift; sourceTree = "<group>"; };
-		9CA0FFF4282FE12200545C02 /* MapKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitExtensions.swift; sourceTree = "<group>"; };
 		9CA94D542838CAC400EF665B /* AirRaidAlerts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AirRaidAlerts.xcdatamodel; sourceTree = "<group>"; };
 		9CA94D642838CCCC00EF665B /* test-history.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-history.json"; sourceTree = "<group>"; };
 		9CA94D682838D10800EF665B /* AirAlertStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirAlertStateModel.swift; sourceTree = "<group>"; };
@@ -434,7 +429,6 @@
 		9C393A4E2816860200A9CCA6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9CA0FFF4282FE12200545C02 /* MapKitExtensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -874,7 +868,6 @@
 				9CB7E2A92879874700FD4553 /* AirAlertStatesProvider.swift in Sources */,
 				9C459595281E83E200DD561D /* WidgetMapView.swift in Sources */,
 				9C4595B1281ECC7600DD561D /* RegionOverlay.swift in Sources */,
-				9CA0FFF8282FE12200545C02 /* MapKitExtensions.swift in Sources */,
 				9C4595AE281ECC7600DD561D /* Region.swift in Sources */,
 				9CA0FFF3282C330000545C02 /* StubAirAlertsDataService.swift in Sources */,
 				9CA0FFE9282C307D00545C02 /* MapViewInteractor.swift in Sources */,
@@ -971,7 +964,6 @@
 				9CA0FFE8282C307D00545C02 /* MapViewInteractor.swift in Sources */,
 				9CE2A6D82810414000241EB4 /* RegionsRepository.swift in Sources */,
 				9C94CCCF2869A16F00044AA2 /* AirAlertStateInteractor.swift in Sources */,
-				9CA0FFF7282FE12200545C02 /* MapKitExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -994,7 +986,6 @@
 				9C393A3A2814817300A9CCA6 /* RegionStateListItemView.swift in Sources */,
 				9C7C9221283580B700EDE9F6 /* BottomSheetView.swift in Sources */,
 				9CE07E87287469E1001946FC /* FetchedResultsPublisher.swift in Sources */,
-				9CA0FFF5282FE12200545C02 /* MapKitExtensions.swift in Sources */,
 				9C278F95281061E500811961 /* MapViewRepresentable.swift in Sources */,
 				9CE05A2D28325802000383D5 /* MapWidgetSnapshotter.swift in Sources */,
 				9C7C92272835852000EDE9F6 /* EffectView.swift in Sources */,
@@ -1070,7 +1061,6 @@
 				9CE07E88287469E1001946FC /* FetchedResultsPublisher.swift in Sources */,
 				9CE2A6D72810414000241EB4 /* RegionsRepository.swift in Sources */,
 				9C94CCCE2869A16F00044AA2 /* AirAlertStateInteractor.swift in Sources */,
-				9CA0FFF6282FE12200545C02 /* MapKitExtensions.swift in Sources */,
 				9CA94D6A2838D10800EF665B /* AirAlertStateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
