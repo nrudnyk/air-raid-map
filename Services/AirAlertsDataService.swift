@@ -9,9 +9,9 @@ import Foundation
 import Combine
 
 class AirAlertsDataService: IAirAlertsDataService {
-    private let alertsApiEndpoint = "https://alerts.com.ua/api/states"
+    private let alertsApiEndpoint = "https://raid.fly.dev/api/states"
     private let apiKey = "X-API-Key"
-    private let apiKeyValue = "df0ad7ea014f74e2bc741960c6d2f681c9cf34fd"
+    private let apiKeyValue = ""
 
     private let regionsRepository = RegionsRepository()
 
